@@ -4,79 +4,151 @@ import "./hero.css";
 function Hero() {
   return (
     <section className="hero">
+
+      {/* Background image */}
+      <div className="hero-bg" aria-hidden="true"></div>
+
+      {/* Cinematic overlays */}
+      <div className="hero-overlay"></div>
+      <div className="hero-overlay-gradient"></div>
+
+      {/* Decorative elements */}
+      <div className="hero-bg-number">1995</div>
+
+      <div className="hero-frame hero-frame-top"></div>
+      <div className="hero-frame hero-frame-bottom"></div>
+
+
+      {/* =========================================
+          MAIN HERO
+      ========================================= */}
+
       <div className="hero-container">
 
-        {/* LEFT CONTENT */}
         <div className="hero-content">
 
-          <div className="hero-badges">
-            <span>Est. 1995</span>
-            <span>UGC Approved</span>
-            <span>NAAC</span>
-            <span>BCI Approved</span>
-            <span>NCTE</span>
+          {/* Brand eyebrow */}
+
+          <div className="hero-eyebrow">
+
+            <span className="hero-eyebrow-line"></span>
+
+            <span>
+              R. K. C. S. EDUCATIONAL SOCIETY
+            </span>
+
           </div>
+
+
+          {/* Established badge */}
+
+          <div className="hero-established">
+
+            <span className="hero-status-dot"></span>
+
+            ESTABLISHED 1995
+
+          </div>
+
+
+          {/* Heading */}
 
           <h1>
-            One Group.
+
+            Education
             <br />
-            Five Institutions.
+
+            <span>That Shapes</span>
             <br />
-            <span>Infinite Futures.</span>
+
+            Your Future.
+
           </h1>
 
-          <p>
-            R. K. C. S. Educational Society has been committed to
-            providing quality and professional education since 1995,
-            helping students build successful careers and brighter futures.
+
+          {/* Description */}
+
+          <p className="hero-description">
+
+            A legacy of quality and professional education,
+            empowering students to build meaningful careers
+            and brighter futures.
+
           </p>
 
+
+          {/* Motto */}
+
           <div className="hero-motto">
-            विद्या धनम् सर्वधनम् प्रधानम्
+
+            <span></span>
+
+            <strong>
+              विद्या धनम् सर्वधनम् प्रधानम्
+            </strong>
+
+            <span></span>
+
           </div>
 
-          <div className="hero-buttons">
+
+          {/* =========================================
+              BUTTONS
+          ========================================= */}
+
+          <div className="hero-actions">
 
             <Link
               to="/apply"
               className="hero-primary-btn"
             >
-              Apply for Admission →
+
+              <span>
+                Apply for Admission
+              </span>
+
+              <b>↗</b>
+
             </Link>
 
-            <a
-              href="https://wa.me/"
-              className="hero-whatsapp-btn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              WhatsApp Us
-            </a>
 
             <Link
               to="/courses"
               className="hero-secondary-btn"
             >
-              Browse Courses
+
+              <span>
+                Explore Courses
+              </span>
+
+              <b>→</b>
+
             </Link>
 
           </div>
 
+
+          {/* Trust */}
+
           <div className="hero-trust">
 
             <div>
-              <strong>✓</strong>
-              <span>Professional Education</span>
+              <strong>30+</strong>
+              <span>Years of Excellence</span>
             </div>
 
-            <div>
-              <strong>✓</strong>
-              <span>Career Focused</span>
-            </div>
+            <i></i>
 
             <div>
-              <strong>✓</strong>
-              <span>Since 1995</span>
+              <strong>05</strong>
+              <span>Institutions</span>
+            </div>
+
+            <i></i>
+
+            <div>
+              <strong>20+</strong>
+              <span>Programmes</span>
             </div>
 
           </div>
@@ -84,55 +156,163 @@ function Hero() {
         </div>
 
 
-        {/* RIGHT OVERVIEW */}
-        <div className="hero-overview">
+        {/* =========================================
+            RIGHT SIDE
+        ========================================= */}
 
-          <div className="overview-heading">
-            <span>RK GROUP</span>
-            <h2>Our Journey</h2>
-          </div>
+        <div className="hero-right">
 
-          <div className="overview-stats">
+          <div className="hero-right-top">
 
-            <div className="overview-stat">
-              <strong>30+</strong>
-              <span>Years of Excellence</span>
-            </div>
+            <span>
+              RK GROUP
+            </span>
 
-            <div className="overview-stat">
-              <strong>5</strong>
-              <span>Institutions</span>
-            </div>
-
-            <div className="overview-stat">
-              <strong>20+</strong>
-              <span>Programmes</span>
-            </div>
-
-            <div className="overview-stat">
-              <strong>500+</strong>
-              <span>Students</span>
-            </div>
+            <span>
+              01 — 05
+            </span>
 
           </div>
 
-          <div className="institution-list">
 
-            <div>R. K. College of Systems & Management</div>
+          <div className="hero-right-middle">
 
-            <div>R. K. College of Law</div>
+            <div className="hero-vertical-line"></div>
 
-            <div>R. K. Films & Media Academy</div>
+            <div className="hero-right-copy">
 
-            <div>R. K. Academy of Art & Design</div>
+              <span>
+                ONE GROUP
+              </span>
 
-            <div>R. K. Sports Academy</div>
+              <span>
+                FIVE INSTITUTIONS
+              </span>
+
+              <strong>
+                INFINITE FUTURES
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div className="hero-right-bottom">
+
+            <span className="hero-scroll-text">
+              SCROLL TO EXPLORE
+            </span>
+
+            <span className="hero-scroll">
+              ↓
+            </span>
 
           </div>
 
         </div>
 
       </div>
+
+
+      {/* =========================================
+          BOTTOM STATS
+      ========================================= */}
+
+      <div className="hero-bottom">
+
+        <div className="hero-bottom-inner">
+
+
+          <div className="hero-bottom-label">
+
+            <span>
+              01
+            </span>
+
+            <p>
+              OUR LEGACY
+            </p>
+
+          </div>
+
+
+          <div className="hero-bottom-stat">
+
+            <strong>
+              30<span>+</span>
+            </strong>
+
+            <p>
+              Years of
+              <br />
+              Excellence
+            </p>
+
+          </div>
+
+
+          <div className="hero-bottom-stat">
+
+            <strong>
+              05
+            </strong>
+
+            <p>
+              Institutions
+              <br />
+              Under RK Group
+            </p>
+
+          </div>
+
+
+          <div className="hero-bottom-stat">
+
+            <strong>
+              20<span>+</span>
+            </strong>
+
+            <p>
+              Academic
+              <br />
+              Programmes
+            </p>
+
+          </div>
+
+
+          <div className="hero-bottom-stat">
+
+            <strong>
+              500<span>+</span>
+            </strong>
+
+            <p>
+              Students
+              <br />
+              & Counting
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* Image indicator */}
+
+      <div className="hero-media-label">
+
+        <span></span>
+
+        <p>
+          RKCSM / 1995
+        </p>
+
+      </div>
+
     </section>
   );
 }
