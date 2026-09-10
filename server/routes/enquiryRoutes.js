@@ -40,6 +40,15 @@ const allowedCourses = [
 
 
 /* =================================
+   COMMON CLEANING HELPER
+================================= */
+
+const cleanString = (value) => {
+  return typeof value === "string" ? value.trim() : "";
+};
+
+
+/* =================================
    GENERAL ENQUIRY API
 ================================= */
 
@@ -52,10 +61,10 @@ router.post("/enquiry", (req, res) => {
   } = req.body;
 
   /* Clean input */
-  name = name?.trim();
-  phone = phone?.trim();
-  email = email?.trim().toLowerCase();
-  course = course?.trim();
+  name = cleanString(name);
+  phone = cleanString(phone);
+  email = cleanString(email).toLowerCase();
+  course = cleanString(course);
 
 
   /* Required fields */
@@ -136,11 +145,11 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Clean input */
-  name = name?.trim();
-  phone = phone?.trim();
-  email = email?.trim().toLowerCase();
-  course = course?.trim();
-  message = message?.trim();
+  name = cleanString(name);
+  phone = cleanString(phone);
+  email = cleanString(email).toLowerCase();
+  course = cleanString(course);
+  message = cleanString(message);
 
 
   /* Required fields */
@@ -190,7 +199,7 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Message validation */
-  if (message && message.length > 1000) {
+  if (message.length > 1000) {
     return res.status(400).json({
       success: false,
       message: "Message cannot exceed 1000 characters.",
@@ -204,7 +213,7 @@ router.post("/admission-enquiry", (req, res) => {
     phone,
     email,
     course,
-    message: message || "",
+    message,
     receivedAt: new Date().toISOString(),
   });
 
@@ -234,13 +243,13 @@ router.post("/career-application", (req, res) => {
 
 
   /* Clean input */
-  position = position?.trim();
-  name = name?.trim();
-  email = email?.trim().toLowerCase();
-  phone = phone?.trim();
-  experience = experience?.trim();
-  portfolio = portfolio?.trim();
-  note = note?.trim();
+  position = cleanString(position);
+  name = cleanString(name);
+  email = cleanString(email).toLowerCase();
+  phone = cleanString(phone);
+  experience = cleanString(experience);
+  portfolio = cleanString(portfolio);
+  note = cleanString(note);
 
 
   /* Required fields */
@@ -262,6 +271,7 @@ router.post("/career-application", (req, res) => {
   ];
 
 
+  /* Position validation */
   if (!allowedPositions.includes(position)) {
     return res.status(400).json({
       success: false,
@@ -299,7 +309,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Experience validation */
-  if (experience && experience.length > 100) {
+  if (experience.length > 100) {
     return res.status(400).json({
       success: false,
       message:
@@ -323,7 +333,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Covering note validation */
-  if (note && note.length > 1500) {
+  if (note.length > 1500) {
     return res.status(400).json({
       success: false,
       message:
@@ -338,9 +348,9 @@ router.post("/career-application", (req, res) => {
     name,
     email,
     phone,
-    experience: experience || "",
-    portfolio: portfolio || "",
-    note: note || "",
+    experience,
+    portfolio,
+    note,
     receivedAt: new Date().toISOString(),
   });
 

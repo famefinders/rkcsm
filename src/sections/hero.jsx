@@ -1,43 +1,3 @@
-// function Hero() {
-//   return (
-//     <section className="hero">
-//       <div className="container">
-//         <div className="hero-content">
-
-//           <span className="hero-tag">
-//             Admissions Open for 2026
-//           </span>
-
-//           <h1>
-//             Professional education
-//             <br />
-//             that turns <span>ambition into a career.</span>
-//           </h1>
-
-//           <p>
-//             Explore quality education, professional programmes and
-//             career-focused opportunities designed to help students
-//             build a stronger future.
-//           </p>
-
-//           <div className="hero-buttons">
-//             <a href="#admissions" className="primary-btn">
-//               Start Your Application →
-//             </a>
-
-//             <a href="#courses" className="secondary-btn">
-//               Browse Programmes
-//             </a>
-//           </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Hero;
-
 import { Link } from "react-router-dom";
 import "./hero.css";
 
@@ -78,7 +38,7 @@ function Hero() {
           <div className="hero-buttons">
 
             <Link
-              to="/admissions"
+              to="/apply"
               className="hero-primary-btn"
             >
               Apply for Admission →

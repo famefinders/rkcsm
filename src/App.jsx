@@ -20,6 +20,7 @@ import Mission from "./sections/Mission";
 import About from "./sections/About";
 import Courses from "./sections/Courses";
 import Admissions from "./sections/Admissions";
+import Apply from "./sections/Apply";
 import Careers from "./sections/Career"; 
 import Alumni from "./sections/Alumni";
 import Contact, { HomeEnquiry } from "./sections/Contact";
@@ -70,6 +71,8 @@ function App() {
         <Route path="/courses" element={<Courses />} />
 
         <Route path="/admissions" element={<Admissions />} />
+
+        <Route path="/apply" element={<Apply />} />
 
         <Route path="/careers" element={<Careers />} />
 

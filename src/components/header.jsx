@@ -119,7 +119,7 @@ const Header = () => {
 
             {/* APPLY BUTTON */}
             <Link
-              to="/admissions"
+              to="/apply"
               className="apply-button"
             >
               Apply Now
@@ -230,7 +230,7 @@ const Header = () => {
 
         {/* APPLY BUTTON */}
         <Link
-          to="/admissions"
+          to="/apply"
           className="mobile-apply"
           onClick={closeMenu}
         >
