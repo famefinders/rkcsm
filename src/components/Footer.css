@@ -1,0 +1,167 @@
+.site-footer {
+  background: #101b35;
+  color: white;
+}
+
+/* MAIN */
+
+.footer-main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 75px 20px 60px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 50px;
+}
+
+/* BRAND */
+
+.footer-brand {
+  max-width: 330px;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.footer-brand h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.footer-brand p {
+  color: #bfc7d6;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-email {
+  color: #d59b24;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* COLUMNS */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h4 {
+  margin: 0 0 22px;
+  font-size: 15px;
+  color: #d59b24;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.footer-column a {
+  color: #d7dce6;
+  text-decoration: none;
+  margin-bottom: 13px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.footer-column a:hover {
+  color: #d59b24;
+  transform: translateX(3px);
+}
+
+/* CAMPUSES */
+
+.footer-campus > div {
+  margin-bottom: 20px;
+}
+
+.footer-campus strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.footer-campus p {
+  color: #bfc7d6;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: auto;
+  padding: 22px 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  color: #9fa8b9;
+  margin: 0;
+  font-size: 13px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: #bfc7d6;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-bottom-links a:hover {
+  color: #d59b24;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    padding: 60px 20px 40px;
+    gap: 35px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-links {
+    gap: 15px;
+  }
+
+}

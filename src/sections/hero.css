@@ -1,0 +1,389 @@
+.hero {
+  background: #142332;
+  min-height: 650px;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1350px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 70px;
+  align-items: start;
+
+  padding: 45px 0 75px;
+}
+
+
+/* ==============================
+   LEFT CONTENT
+============================== */
+
+.hero-content {
+  color: #ffffff;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  margin-bottom: 20px;
+}
+
+.hero-badges span {
+  padding: 7px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.hero h1 {
+  margin: 0 0 22px;
+
+  font-size: clamp(38px, 4vw, 54px);
+  line-height: 1.08;
+
+  letter-spacing: -1.2px;
+
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: #ffbf00;
+}
+
+
+.hero p {
+  max-width: 700px;
+
+  margin: 0 0 22px;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+.hero-motto {
+  margin-bottom: 30px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #ffbf00;
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn,
+.hero-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 0 22px;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.25s ease;
+}
+
+
+.hero-primary-btn {
+  background: #ffbf00;
+  color: #172331;
+}
+
+.hero-primary-btn:hover {
+  background: #ffc933;
+  transform: translateY(-2px);
+}
+
+
+.hero-whatsapp-btn {
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-whatsapp-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+.hero-secondary-btn {
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ==============================
+   TRUST ITEMS
+============================== */
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  margin-top: 30px;
+}
+
+.hero-trust div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 12px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-trust strong {
+  color: #ffbf00;
+  font-size: 15px;
+}
+
+
+/* ==============================
+   RIGHT OVERVIEW CARD
+============================== */
+
+.hero-overview {
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 8px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+.overview-heading {
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.overview-heading span {
+  color: #ffbf00;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.overview-heading h2 {
+  margin: 7px 0 0;
+
+  color: #ffffff;
+
+  font-size: 30px;
+}
+
+
+/* ==============================
+   STATS
+============================== */
+
+.overview-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin: 25px 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.overview-stat {
+  padding: 20px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.overview-stat:nth-child(2n) {
+  border-right: none;
+}
+
+.overview-stat:nth-child(3),
+.overview-stat:nth-child(4) {
+  border-bottom: none;
+}
+
+.overview-stat strong {
+  display: block;
+
+  color: #ffbf00;
+
+  font-size: 32px;
+  line-height: 1;
+}
+
+.overview-stat span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+}
+
+
+/* ==============================
+   INSTITUTIONS
+============================== */
+
+.institution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.institution-list div {
+  padding: 11px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  transition: 0.2s ease;
+}
+
+.institution-list div:hover {
+  border-color: rgba(255, 191, 0, 0.5);
+  color: #ffffff;
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 950px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 65px 0;
+  }
+
+  .hero-overview {
+    max-width: 700px;
+  }
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-container {
+    width: 90%;
+
+    padding: 35px 0 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    letter-spacing: -0.8px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-motto {
+    font-size: 17px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn,
+  .hero-whatsapp-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-trust {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-overview {
+    padding: 22px;
+  }
+
+  .overview-heading h2 {
+    font-size: 25px;
+  }
+
+  .overview-stat {
+    padding: 15px;
+  }
+
+  .overview-stat strong {
+    font-size: 27px;
+  }
+
+}

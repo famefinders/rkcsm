@@ -1,0 +1,202 @@
+.alumni-section {
+  padding: 90px 0;
+  background: #1b2a4a;
+}
+
+.alumni-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 55px;
+}
+
+.alumni-heading span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #e8b030;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.alumni-heading h2 {
+  max-width: 650px;
+  margin: 0;
+  color: #e8b030 !important;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.alumni-heading h2 strong {
+  color: #e8b030;
+  font-weight: 800;
+}
+
+.alumni-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border: 1px solid #e8b030;
+  border-radius: 6px;
+  color: #e8b030;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.alumni-view-btn:hover {
+  background: #e8b030;
+  color: #1b2a4a;
+}
+
+/* Main Content */
+
+.alumni-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: stretch;
+}
+
+/* Quote */
+
+.alumni-quote {
+  position: relative;
+  padding: 45px;
+  background: #ffffff;
+  border: 1px solid rgba(232, 176, 48, 0.25);
+  border-radius: 10px;
+}
+
+.quote-mark {
+  margin-bottom: 10px;
+  color: #e8b030;
+  font-family: Georgia, serif;
+  font-size: 72px;
+  line-height: 0.7;
+}
+
+.alumni-quote p {
+  margin: 20px 0 30px;
+  color: #e8b030;
+  font-size: 22px;
+  line-height: 1.65;
+}
+
+.quote-line {
+  width: 45px;
+  height: 2px;
+  margin-bottom: 14px;
+  background: #e8b030;
+}
+
+.alumni-quote > span {
+  color: #cdbca7;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Points */
+
+.alumni-points {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.alumni-point {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.alumni-point:first-child {
+  padding-top: 0;
+}
+
+.alumni-point:last-child {
+  border-bottom: none;
+}
+
+.point-number {
+  color: #e8b030;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.alumni-point h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.alumni-point p {
+  margin: 0;
+  color: #cdbca7;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .alumni-section {
+    padding: 70px 0;
+  }
+
+  .alumni-heading h2 {
+    font-size: 34px;
+  }
+
+  .alumni-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .alumni-section {
+    padding: 55px 0;
+  }
+
+  .alumni-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 35px;
+  }
+
+  .alumni-heading h2 {
+    font-size: 30px;
+  }
+
+  .alumni-view-btn {
+    width: 100%;
+  }
+
+  .alumni-quote {
+    padding: 30px;
+  }
+
+  .alumni-quote p {
+    font-size: 18px;
+  }
+
+  .alumni-point {
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+  }
+
+  .alumni-point h3 {
+    font-size: 18px;
+  }
+}

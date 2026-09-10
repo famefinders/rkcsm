@@ -1,0 +1,320 @@
+.mission-section {
+  width: 100%;
+  padding: 100px 0;
+  background: #fdf8f2;
+}
+
+.mission-section .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mission-content {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 90px;
+  align-items: start;
+}
+
+/* LEFT SIDE */
+
+.mission-main > span {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #c8920a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.mission-main h2 {
+  margin: 0;
+  color: #1b2a4a;
+  font-size: 44px;
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.mission-main h2 strong {
+  color: #8b1a1a;
+  font-weight: 800;
+}
+
+.mission-rule {
+  width: 55px;
+  height: 3px;
+  margin: 24px 0 24px;
+  background: #c8920a;
+}
+
+.mission-main > p {
+  max-width: 480px;
+  margin: 0;
+  color: #6b5040;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* BRAND */
+
+.mission-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.mission-logo-mark {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #8b1a1a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 4px;
+}
+
+.mission-brand > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mission-brand strong {
+  color: #1b2a4a;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.mission-brand span {
+  color: #9e8060;
+  font-size: 12px;
+}
+
+/* PILLS */
+
+.mission-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.mission-pills span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  background: #fff;
+  border: 1px solid #e4d6c5;
+  border-radius: 3px;
+  color: #6b5040;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* RIGHT SIDE */
+
+.mission-story-heading {
+  margin-bottom: 34px;
+}
+
+.mission-story-heading > span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #c8920a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.mission-story-heading h3 {
+  max-width: 520px;
+  margin: 0;
+  color: #1b2a4a;
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.mission-story-heading h3 strong {
+  color: #8b1a1a;
+  font-weight: 800;
+}
+
+/* TIMELINE */
+
+.mission-timeline {
+  position: relative;
+  border-top: 1px solid #e5d8ca;
+}
+
+.mission-timeline::before {
+  content: "";
+  position: absolute;
+  left: 82px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #dfd1c1;
+}
+
+.mission-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 65px 36px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 25px 0;
+  border-bottom: 1px solid #e5d8ca;
+  background: transparent;
+}
+
+.mission-year {
+  padding-top: 2px;
+  color: #8b1a1a;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.mission-icon {
+  position: relative;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff8e8;
+  border: 1px solid #c8920a;
+  border-radius: 50%;
+  color: #c8920a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mission-card h4 {
+  margin: 1px 0 7px;
+  color: #1b2a4a;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.mission-card p {
+  margin: 0;
+  color: #6b5040;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* HOVER */
+
+.mission-card {
+  transition: background 0.2s ease;
+}
+
+.mission-card:hover {
+  background: #fffaf2;
+}
+
+.mission-card:hover .mission-icon {
+  background: #8b1a1a;
+  border-color: #8b1a1a;
+  color: #fff;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .mission-section {
+    padding: 75px 0;
+  }
+
+  .mission-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .mission-main > p {
+    max-width: 650px;
+  }
+
+  .mission-main h2 {
+    font-size: 38px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .mission-section {
+    padding: 60px 0;
+  }
+
+  .mission-section .container {
+    padding: 0 18px;
+  }
+
+  .mission-content {
+    gap: 45px;
+  }
+
+  .mission-main h2 {
+    font-size: 30px;
+  }
+
+  .mission-main > p {
+    font-size: 14px;
+  }
+
+  .mission-brand {
+    margin-top: 30px;
+  }
+
+  .mission-story-heading h3 {
+    font-size: 23px;
+  }
+
+  .mission-timeline::before {
+    left: 68px;
+  }
+
+  .mission-card {
+    grid-template-columns: 52px 32px 1fr;
+    gap: 12px;
+    padding: 22px 0;
+  }
+
+  .mission-year {
+    font-size: 13px;
+  }
+
+  .mission-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
+  }
+
+  .mission-card h4 {
+    font-size: 15px;
+  }
+
+  .mission-card p {
+    font-size: 12px;
+  }
+
+  .mission-pills {
+    gap: 6px;
+  }
+
+  .mission-pills span {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+}

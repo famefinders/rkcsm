@@ -1,0 +1,322 @@
+/* ================================
+   ACADEMIC PROGRAMMES
+================================ */
+
+.courses-section {
+  width: 100%;
+  padding: 90px 0;
+  background: #fdf8f2;
+}
+
+.courses-section .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* ================================
+   SECTION TITLE
+================================ */
+
+.courses-section-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: #c8920a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.courses-section-title h2 {
+  margin: 0;
+  color: #1b2a4a;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.title-rule {
+  width: 55px;
+  height: 3px;
+  margin: 18px auto 16px;
+  background: #c8920a;
+}
+
+.courses-section-title p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #6b5040;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* ================================
+   FILTER TABS
+================================ */
+
+.course-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 38px;
+}
+
+.course-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 10px 17px;
+
+  background: transparent;
+  border: 1px solid #d9cbbb;
+  border-radius: 4px;
+
+  color: #6b5040;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.course-tab:hover {
+  border-color: #c8920a;
+  color: #8b1a1a;
+  background: #fffaf2;
+}
+
+.course-tab.active {
+  background: #8b1a1a;
+  border-color: #8b1a1a;
+  color: #ffffff;
+}
+
+.course-tab span {
+  font-size: 14px;
+}
+
+
+/* ================================
+   COURSE GRID
+================================ */
+
+.discipline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+
+/* ================================
+   COURSE CARD
+================================ */
+
+.discipline-card {
+  min-height: 220px;
+  padding: 26px 24px;
+
+  background: #ffffff;
+  border: 1px solid #e7dbcd;
+  border-radius: 6px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.discipline-card:hover {
+  transform: translateY(-4px);
+  border-color: #c8920a;
+  box-shadow: 0 12px 30px rgba(27, 42, 74, 0.08);
+}
+
+
+/* ================================
+   ICON
+================================ */
+
+.discipline-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  background: #fff8e8;
+  border: 1px solid #f0dfbd;
+  border-radius: 5px;
+
+  font-size: 23px;
+}
+
+
+/* ================================
+   COURSE NAME
+================================ */
+
+.discipline-card h3 {
+  margin: 0 0 8px;
+
+  color: #1b2a4a;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+
+/* ================================
+   INSTITUTION
+================================ */
+
+.discipline-institution {
+  margin: 0 0 17px;
+
+  color: #6b5040;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* ================================
+   TAGS
+================================ */
+
+.discipline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.discipline-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  border-radius: 3px;
+
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 750;
+}
+
+
+/* Degree */
+
+.discipline-tag.degree {
+  background: #e8f1ff;
+  color: #28538a;
+}
+
+
+/* Diploma / duration */
+
+.discipline-tag.dip {
+  background: #f5ede0;
+  color: #725538;
+}
+
+
+/* Certificate / approval */
+
+.discipline-tag.cert {
+  background: #edf6ed;
+  color: #3c7042;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1050px) {
+
+  .discipline-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .courses-section {
+    padding: 75px 0;
+  }
+
+  .courses-section-title h2 {
+    font-size: 36px;
+  }
+
+  .discipline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-tabs {
+    justify-content: flex-start;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .courses-section {
+    padding: 60px 0;
+  }
+
+  .courses-section .container {
+    padding: 0 18px;
+  }
+
+  .courses-section-title {
+    margin-bottom: 25px;
+  }
+
+  .courses-section-title h2 {
+    font-size: 30px;
+  }
+
+  .courses-section-title p {
+    font-size: 13px;
+  }
+
+  .course-tabs {
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+
+  .course-tab {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+
+  .discipline-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .discipline-card {
+    min-height: auto;
+    padding: 23px 20px;
+  }
+
+}
