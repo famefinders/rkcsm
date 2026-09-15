@@ -1,322 +1,933 @@
-/* ================================
-   ACADEMIC PROGRAMMES
-================================ */
+/* =========================================
+   RKCSM — POPULAR COURSES
+   PREMIUM ACADEMIC DIRECTORY
+========================================= */
 
-.courses-section {
+.popular-courses-section {
+  position: relative;
+
   width: 100%;
-  padding: 90px 0;
-  background: #fdf8f2;
-}
 
-.courses-section .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
+  overflow: hidden;
 
+  padding: 115px 0 90px;
 
-/* ================================
-   SECTION TITLE
-================================ */
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(139, 26, 26, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 5% 90%,
+      rgba(200, 146, 10, 0.08),
+      transparent 25%
+    ),
+    #121b2f;
 
-.courses-section-title {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.eyebrow {
-  margin-bottom: 12px;
-  color: #c8920a;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.courses-section-title h2 {
-  margin: 0;
-  color: #1b2a4a;
-  font-size: 42px;
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.title-rule {
-  width: 55px;
-  height: 3px;
-  margin: 18px auto 16px;
-  background: #c8920a;
-}
-
-.courses-section-title p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: #6b5040;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-
-/* ================================
-   FILTER TABS
-================================ */
-
-.course-tabs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 38px;
-}
-
-.course-tab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-
-  padding: 10px 17px;
-
-  background: transparent;
-  border: 1px solid #d9cbbb;
-  border-radius: 4px;
-
-  color: #6b5040;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 650;
-
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.course-tab:hover {
-  border-color: #c8920a;
-  color: #8b1a1a;
-  background: #fffaf2;
-}
-
-.course-tab.active {
-  background: #8b1a1a;
-  border-color: #8b1a1a;
   color: #ffffff;
 }
 
-.course-tab span {
-  font-size: 14px;
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.popular-courses-section::before {
+  content: "PROGRAMMES";
+
+  position: absolute;
+
+  top: 30px;
+  right: -20px;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(100px, 17vw, 230px);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  pointer-events: none;
 }
 
 
-/* ================================
-   COURSE GRID
-================================ */
+/* =========================================
+   CONTAINER
+========================================= */
 
-.discipline-grid {
+.popular-courses-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1240px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.popular-courses-intro {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(320px, 0.9fr);
+
+  gap: 90px;
+
+  align-items: end;
+
+  margin-bottom: 70px;
 }
 
 
-/* ================================
-   COURSE CARD
-================================ */
+/* =========================================
+   KICKER
+========================================= */
 
-.discipline-card {
-  min-height: 220px;
-  padding: 26px 24px;
+.popular-kicker {
+  display: flex;
+  align-items: center;
 
-  background: #ffffff;
-  border: 1px solid #e7dbcd;
-  border-radius: 6px;
+  gap: 11px;
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+  margin-bottom: 25px;
+
+  color: #d4a42d;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.6px;
+
+  text-transform: uppercase;
 }
 
-.discipline-card:hover {
-  transform: translateY(-4px);
-  border-color: #c8920a;
-  box-shadow: 0 12px 30px rgba(27, 42, 74, 0.08);
+.popular-kicker span {
+  width: 32px;
+  height: 1px;
+
+  background: #d4a42d;
 }
 
 
-/* ================================
-   ICON
-================================ */
+/* =========================================
+   TITLE
+========================================= */
 
-.discipline-icon {
-  width: 48px;
-  height: 48px;
+.popular-title-row {
+  display: flex;
+  align-items: flex-start;
 
+  gap: 22px;
+}
+
+.popular-index {
+  padding-top: 12px;
+
+  color: #c8920a;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.popular-courses-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(52px, 6vw, 80px);
+
+  font-weight: 500;
+
+  line-height: 0.96;
+
+  letter-spacing: -3px;
+}
+
+.popular-courses-heading h2 em {
+  color: #e08a48;
+
+  font-style: italic;
+}
+
+
+/* =========================================
+   COPY
+========================================= */
+
+.popular-courses-copy {
+  padding-bottom: 4px;
+}
+
+.popular-count {
+  display: flex;
+  align-items: baseline;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.popular-count strong {
+  color: #d39b22;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 46px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.popular-count span {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.popular-courses-copy > p {
+  max-width: 450px;
+
+  margin: 0 0 25px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================
+   ALL PROGRAMMES LINK
+========================================= */
+
+.popular-all-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+
+  text-decoration: none;
+}
+
+.popular-all-link span {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 20px;
+  width: 30px;
+  height: 30px;
 
-  background: #fff8e8;
-  border: 1px solid #f0dfbd;
-  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 
-  font-size: 23px;
+  border-radius: 50%;
+
+  color: #d4a42d;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.popular-all-link:hover span {
+  background: #d4a42d;
+
+  color: #121b2f;
+
+  transform: rotate(8deg);
 }
 
 
-/* ================================
-   COURSE NAME
-================================ */
+/* =========================================
+   FILTER AREA
+========================================= */
 
-.discipline-card h3 {
-  margin: 0 0 8px;
+.popular-filters {
+  display: flex;
+  align-items: center;
 
-  color: #1b2a4a;
-  font-size: 18px;
-  line-height: 1.3;
+  gap: 30px;
+
+  margin-bottom: 25px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popular-filter-label {
+  flex-shrink: 0;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 8px;
+
   font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.popular-tabs {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.popular-tab {
+  padding: 8px 14px;
+
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 100px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.popular-tab:hover {
+  border-color: rgba(212, 164, 45, 0.6);
+
+  color: #ffffff;
+}
+
+.popular-tab.active {
+  background: #d4a42d;
+
+  border-color: #d4a42d;
+
+  color: #121b2f;
 }
 
 
-/* ================================
-   INSTITUTION
-================================ */
+/* =========================================
+   COURSE LIST
+========================================= */
 
-.discipline-institution {
-  margin: 0 0 17px;
+.popular-course-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-  color: #6b5040;
-  font-size: 12px;
+
+/* =========================================
+   COURSE ROW
+========================================= */
+
+.popular-course-row {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    60px
+    65px
+    minmax(240px, 1fr)
+    minmax(250px, 0.75fr)
+    55px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 150px;
+
+  padding: 25px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition:
+    padding 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* LEFT ACCENT */
+
+.popular-course-row::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 0;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d4a42d,
+      #8b1a1a
+    );
+
+  transition: width 0.35s ease;
+}
+
+
+/* HOVER */
+
+.popular-course-row:hover {
+  padding-left: 18px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.popular-course-row:hover::before {
+  width: 2px;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.popular-course-number {
+  align-self: start;
+
+  padding-top: 8px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.popular-course-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  border: 1px solid rgba(212, 164, 45, 0.3);
+
+  color: #d4a42d;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.popular-course-row:hover .popular-course-icon {
+  background: rgba(212, 164, 45, 0.1);
+
+  border-color: #d4a42d;
+}
+
+
+/* =========================================
+   COURSE MAIN
+========================================= */
+
+.popular-course-category {
+  margin-bottom: 7px;
+
+  color: #d4a42d;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.popular-course-main h3 {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.5px;
+
+  transition: color 0.25s ease;
+}
+
+.popular-course-row:hover .popular-course-main h3 {
+  color: #e5aa62;
+}
+
+.popular-course-main p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 10px;
+
   line-height: 1.5;
 }
 
 
-/* ================================
-   TAGS
-================================ */
+/* =========================================
+   META
+========================================= */
 
-.discipline-tags {
+.popular-course-meta {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 6px;
 }
 
-.discipline-tag {
+.popular-course-meta span {
   display: inline-flex;
   align-items: center;
 
-  padding: 5px 8px;
+  padding: 6px 9px;
 
-  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 2px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.popular-course-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 17px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.popular-course-row:hover .popular-course-arrow {
+  background: #d4a42d;
+
+  border-color: #d4a42d;
+
+  color: #121b2f;
+
+  transform: rotate(8deg);
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.popular-empty {
+  padding: 60px 0;
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   BOTTOM CTA
+========================================= */
+
+.popular-bottom {
+  display: grid;
+
+  grid-template-columns: 1fr auto auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 45px;
+}
+
+.popular-bottom-line {
+  width: 100%;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.popular-bottom p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.4);
 
   font-size: 10px;
-  line-height: 1;
-  font-weight: 750;
+}
+
+.popular-bottom a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.popular-bottom a span {
+  color: #d4a42d;
+
+  font-size: 16px;
 }
 
 
-/* Degree */
+/* =========================================
+   TABLET
+========================================= */
 
-.discipline-tag.degree {
-  background: #e8f1ff;
-  color: #28538a;
-}
+@media (max-width: 1000px) {
 
+  .popular-courses-intro {
+    gap: 50px;
+  }
 
-/* Diploma / duration */
+  .popular-course-row {
+    grid-template-columns:
+      45px
+      55px
+      minmax(220px, 1fr)
+      minmax(180px, 0.7fr)
+      45px;
 
-.discipline-tag.dip {
-  background: #f5ede0;
-  color: #725538;
-}
+    gap: 14px;
+  }
 
-
-/* Certificate / approval */
-
-.discipline-tag.cert {
-  background: #edf6ed;
-  color: #3c7042;
-}
-
-
-/* ================================
-   RESPONSIVE
-================================ */
-
-@media (max-width: 1050px) {
-
-  .discipline-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .popular-course-main h3 {
+    font-size: 22px;
   }
 
 }
 
+
+/* =========================================
+   TABLET / SMALL
+========================================= */
 
 @media (max-width: 800px) {
 
-  .courses-section {
-    padding: 75px 0;
+  .popular-courses-section {
+    padding: 85px 0 70px;
   }
 
-  .courses-section-title h2 {
-    font-size: 36px;
+  .popular-courses-intro {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    margin-bottom: 50px;
   }
 
-  .discipline-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .popular-courses-copy {
+    padding-left: 44px;
   }
 
-  .course-tabs {
-    justify-content: flex-start;
+  .popular-filters {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .popular-course-row {
+    grid-template-columns:
+      40px
+      52px
+      minmax(0, 1fr)
+      45px;
+
+    gap: 15px;
+  }
+
+  .popular-course-meta {
+    grid-column: 3 / 4;
+  }
+
+  .popular-course-arrow {
+    grid-column: 4;
+    grid-row: 1 / span 2;
   }
 
 }
 
 
-@media (max-width: 560px) {
+/* =========================================
+   MOBILE
+========================================= */
 
-  .courses-section {
-    padding: 60px 0;
+@media (max-width: 600px) {
+
+  .popular-courses-section {
+    padding: 70px 0 60px;
   }
 
-  .courses-section .container {
-    padding: 0 18px;
+  .popular-courses-container {
+    width: min(100% - 32px, 520px);
   }
 
-  .courses-section-title {
-    margin-bottom: 25px;
+  .popular-courses-intro {
+    gap: 25px;
+
+    margin-bottom: 40px;
   }
 
-  .courses-section-title h2 {
-    font-size: 30px;
+  .popular-title-row {
+    gap: 13px;
   }
 
-  .courses-section-title p {
-    font-size: 13px;
+  .popular-index {
+    padding-top: 8px;
+
+    font-size: 9px;
   }
 
-  .course-tabs {
-    gap: 6px;
-    margin-bottom: 28px;
+  .popular-courses-heading h2 {
+    font-size: 46px;
+
+    letter-spacing: -2px;
   }
 
-  .course-tab {
-    padding: 8px 11px;
-    font-size: 11px;
+  .popular-courses-copy {
+    padding-left: 0;
   }
 
-  .discipline-grid {
-    grid-template-columns: 1fr;
+  .popular-count strong {
+    font-size: 40px;
+  }
+
+  .popular-courses-copy > p {
+    font-size: 12px;
+  }
+
+
+  /* Filters */
+
+  .popular-filters {
+    margin-bottom: 20px;
+  }
+
+  .popular-tabs {
+    gap: 5px;
+  }
+
+  .popular-tab {
+    padding: 7px 10px;
+
+    font-size: 9px;
+  }
+
+
+  /* Course rows */
+
+  .popular-course-row {
+    grid-template-columns:
+      32px
+      44px
+      minmax(0, 1fr);
+
     gap: 12px;
+
+    min-height: auto;
+
+    padding: 25px 0;
   }
 
-  .discipline-card {
-    min-height: auto;
-    padding: 23px 20px;
+  .popular-course-row:hover {
+    padding-left: 8px;
+  }
+
+  .popular-course-number {
+    padding-top: 5px;
+
+    font-size: 8px;
+  }
+
+  .popular-course-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 7px;
+  }
+
+  .popular-course-category {
+    margin-bottom: 5px;
+
+    font-size: 7px;
+  }
+
+  .popular-course-main h3 {
+    font-size: 20px;
+
+    line-height: 1.2;
+  }
+
+  .popular-course-main p {
+    font-size: 9px;
+
+    line-height: 1.5;
+  }
+
+  .popular-course-meta {
+    grid-column: 2 / 4;
+
+    gap: 5px;
+
+    margin-top: 4px;
+  }
+
+  .popular-course-meta span {
+    padding: 5px 7px;
+
+    font-size: 7px;
+  }
+
+  .popular-course-arrow {
+    display: none;
+  }
+
+
+  /* Bottom */
+
+  .popular-bottom {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    margin-top: 30px;
+  }
+
+  .popular-bottom-line {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL
+========================================= */
+
+@media (max-width: 380px) {
+
+  .popular-courses-heading h2 {
+    font-size: 41px;
+  }
+
+  .popular-course-main h3 {
+    font-size: 18px;
+  }
+
+  .popular-course-main p {
+    font-size: 8px;
   }
 
 }

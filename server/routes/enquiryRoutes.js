@@ -1,5 +1,9 @@
 const express = require("express");
 
+const Enquiry = require("../models/Enquiry");
+const AdmissionEnquiry = require("../models/AdmissionEnquiry");
+const CareerApplication = require("../models/CareerApplication");
+
 const router = express.Router();
 
 /* =================================
@@ -17,11 +21,6 @@ const emailRegex =
 /* =================================
    ALLOWED COURSES
 ================================= */
-
-/*
-  All website enquiry/admission forms
-  use the same 12 descriptive course values.
-*/
 
 const allowedCourses = [
   "BCA — Bachelor of Computer Applications",
@@ -50,91 +49,10 @@ const cleanString = (value) => {
 
 /* =================================
    GENERAL ENQUIRY API
+   Home + Contact enquiries
 ================================= */
 
-router.post("/enquiry", (req, res) => {
-  let {
-    name,
-    phone,
-    email,
-    course,
-  } = req.body;
-
-  /* Clean input */
-  name = cleanString(name);
-  phone = cleanString(phone);
-  email = cleanString(email).toLowerCase();
-  course = cleanString(course);
-
-
-  /* Required fields */
-  if (!name || !phone || !email || !course) {
-    return res.status(400).json({
-      success: false,
-      message: "Please fill in all required fields.",
-    });
-  }
-
-
-  /* Name validation */
-  if (!nameRegex.test(name)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please enter a valid name.",
-    });
-  }
-
-
-  /* Phone validation */
-  if (!phoneRegex.test(phone)) {
-    return res.status(400).json({
-      success: false,
-      message:
-        "Please enter a valid 10-digit Indian mobile number.",
-    });
-  }
-
-
-  /* Email validation */
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please enter a valid email address.",
-    });
-  }
-
-
-  /* Course validation */
-  if (!allowedCourses.includes(course)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please select a valid course.",
-    });
-  }
-
-
-  /* Successful enquiry */
-  console.log("New Enquiry:", {
-    name,
-    phone,
-    email,
-    course,
-    receivedAt: new Date().toISOString(),
-  });
-
-
-  return res.status(201).json({
-    success: true,
-    message: "Enquiry received successfully!",
-  });
-});
-
-
-/* =================================
-   ADMISSION ENQUIRY API
-================================= */
-
-router.post("/admission-enquiry", (req, res) => {
+router.post("/enquiry", async (req, res) => {
   let {
     name,
     phone,
@@ -143,8 +61,8 @@ router.post("/admission-enquiry", (req, res) => {
     message,
   } = req.body;
 
-
   /* Clean input */
+
   name = cleanString(name);
   phone = cleanString(phone);
   email = cleanString(email).toLowerCase();
@@ -153,6 +71,7 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Required fields */
+
   if (!name || !phone || !email || !course) {
     return res.status(400).json({
       success: false,
@@ -162,6 +81,7 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Name validation */
+
   if (!nameRegex.test(name)) {
     return res.status(400).json({
       success: false,
@@ -171,6 +91,7 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Phone validation */
+
   if (!phoneRegex.test(phone)) {
     return res.status(400).json({
       success: false,
@@ -181,6 +102,7 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Email validation */
+
   if (!emailRegex.test(email)) {
     return res.status(400).json({
       success: false,
@@ -190,6 +112,7 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Course validation */
+
   if (!allowedCourses.includes(course)) {
     return res.status(400).json({
       success: false,
@@ -199,6 +122,7 @@ router.post("/admission-enquiry", (req, res) => {
 
 
   /* Message validation */
+
   if (message.length > 1000) {
     return res.status(400).json({
       success: false,
@@ -207,22 +131,148 @@ router.post("/admission-enquiry", (req, res) => {
   }
 
 
-  /* Admission enquiry received */
-  console.log("New Admission Enquiry:", {
+  /* Save to MongoDB */
+
+  try {
+    const enquiry = await Enquiry.create({
+      name,
+      phone,
+      email,
+      course,
+      message,
+    });
+
+    console.log("New Enquiry saved:", enquiry._id);
+
+    return res.status(201).json({
+      success: true,
+      message: "Enquiry received successfully!",
+    });
+  } catch (error) {
+    console.error("General enquiry database error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Unable to save enquiry. Please try again.",
+    });
+  }
+});
+
+
+/* =================================
+   ADMISSION ENQUIRY API
+================================= */
+
+router.post("/admission-enquiry", async (req, res) => {
+  let {
     name,
     phone,
     email,
     course,
     message,
-    receivedAt: new Date().toISOString(),
-  });
+  } = req.body;
 
 
-  return res.status(201).json({
-    success: true,
-    message:
-      "Your admission enquiry has been received successfully!",
-  });
+  /* Clean input */
+
+  name = cleanString(name);
+  phone = cleanString(phone);
+  email = cleanString(email).toLowerCase();
+  course = cleanString(course);
+  message = cleanString(message);
+
+
+  /* Required fields */
+
+  if (!name || !phone || !email || !course) {
+    return res.status(400).json({
+      success: false,
+      message: "Please fill in all required fields.",
+    });
+  }
+
+
+  /* Name validation */
+
+  if (!nameRegex.test(name)) {
+    return res.status(400).json({
+      success: false,
+      message: "Please enter a valid name.",
+    });
+  }
+
+
+  /* Phone validation */
+
+  if (!phoneRegex.test(phone)) {
+    return res.status(400).json({
+      success: false,
+      message:
+        "Please enter a valid 10-digit Indian mobile number.",
+    });
+  }
+
+
+  /* Email validation */
+
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({
+      success: false,
+      message: "Please enter a valid email address.",
+    });
+  }
+
+
+  /* Course validation */
+
+  if (!allowedCourses.includes(course)) {
+    return res.status(400).json({
+      success: false,
+      message: "Please select a valid course.",
+    });
+  }
+
+
+  /* Message validation */
+
+  if (message.length > 1000) {
+    return res.status(400).json({
+      success: false,
+      message: "Message cannot exceed 1000 characters.",
+    });
+  }
+
+
+  /* Save to MongoDB */
+
+  try {
+    const admissionEnquiry = await AdmissionEnquiry.create({
+      name,
+      phone,
+      email,
+      course,
+      message,
+    });
+
+    console.log(
+      "New Admission Enquiry saved:",
+      admissionEnquiry._id
+    );
+
+    return res.status(201).json({
+      success: true,
+      message:
+        "Your admission enquiry has been received successfully!",
+    });
+  } catch (error) {
+    console.error("Admission enquiry database error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message:
+        "Unable to save admission enquiry. Please try again.",
+    });
+  }
 });
 
 
@@ -230,7 +280,7 @@ router.post("/admission-enquiry", (req, res) => {
    CAREER APPLICATION API
 ================================= */
 
-router.post("/career-application", (req, res) => {
+router.post("/career-application", async (req, res) => {
   let {
     position,
     name,
@@ -243,6 +293,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Clean input */
+
   position = cleanString(position);
   name = cleanString(name);
   email = cleanString(email).toLowerCase();
@@ -253,6 +304,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Required fields */
+
   if (!position || !name || !email || !phone) {
     return res.status(400).json({
       success: false,
@@ -262,6 +314,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Allowed positions */
+
   const allowedPositions = [
     "Assistant Professor — Computer Science",
     "Lecturer — Journalism & Media Production",
@@ -272,6 +325,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Position validation */
+
   if (!allowedPositions.includes(position)) {
     return res.status(400).json({
       success: false,
@@ -281,6 +335,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Name validation */
+
   if (!nameRegex.test(name)) {
     return res.status(400).json({
       success: false,
@@ -290,6 +345,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Phone validation */
+
   if (!phoneRegex.test(phone)) {
     return res.status(400).json({
       success: false,
@@ -300,6 +356,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Email validation */
+
   if (!emailRegex.test(email)) {
     return res.status(400).json({
       success: false,
@@ -309,6 +366,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Experience validation */
+
   if (experience.length > 100) {
     return res.status(400).json({
       success: false,
@@ -319,6 +377,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Portfolio validation */
+
   if (portfolio) {
     try {
       new URL(portfolio);
@@ -333,6 +392,7 @@ router.post("/career-application", (req, res) => {
 
 
   /* Covering note validation */
+
   if (note.length > 1500) {
     return res.status(400).json({
       success: false,
@@ -342,24 +402,38 @@ router.post("/career-application", (req, res) => {
   }
 
 
-  /* Career application received */
-  console.log("New Career Application:", {
-    position,
-    name,
-    email,
-    phone,
-    experience,
-    portfolio,
-    note,
-    receivedAt: new Date().toISOString(),
-  });
+  /* Save to MongoDB */
 
+  try {
+    const careerApplication = await CareerApplication.create({
+      position,
+      name,
+      email,
+      phone,
+      experience,
+      portfolio,
+      note,
+    });
 
-  return res.status(201).json({
-    success: true,
-    message:
-      "Your career application has been received successfully!",
-  });
+    console.log(
+      "New Career Application saved:",
+      careerApplication._id
+    );
+
+    return res.status(201).json({
+      success: true,
+      message:
+        "Your career application has been received successfully!",
+    });
+  } catch (error) {
+    console.error("Career application database error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message:
+        "Unable to save career application. Please try again.",
+    });
+  }
 });
 
 

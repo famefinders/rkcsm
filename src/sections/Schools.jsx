@@ -7,36 +7,41 @@ function Schools() {
       number: "01",
       title: "R. K. College of Systems & Management",
       location: "Firozabad",
+      short: "Systems & Management",
       text: "Professional programmes in commerce, education and computer applications with a focus on career-oriented learning.",
-      courses: "B.Com • B.Ed • D.El.Ed",
+      courses: ["B.Com", "B.Ed", "D.El.Ed"],
     },
     {
       number: "02",
       title: "R. K. College of Law",
       location: "Firozabad",
+      short: "Law & Legal Studies",
       text: "Professional legal education designed to develop strong foundations in law, advocacy and legal practice.",
-      courses: "BA.LLB • LLB",
+      courses: ["BA.LLB", "LLB"],
     },
     {
       number: "03",
       title: "R. K. Films & Media Academy",
       location: "New Delhi",
+      short: "Films & Media",
       text: "Media and communication education covering journalism, films, television and modern digital media.",
-      courses: "Mass Communication • Film & TV • Digital Media",
+      courses: ["Mass Communication", "Film & TV", "Digital Media"],
     },
     {
       number: "04",
       title: "R. K. Academy of Art & Design",
       location: "New Delhi",
+      short: "Art & Design",
       text: "Creative education across design and visual arts for students looking to build careers in the creative industry.",
-      courses: "Fashion • Interior • Fine Arts",
+      courses: ["Fashion", "Interior", "Fine Arts"],
     },
     {
       number: "05",
       title: "R. K. Sports Academy",
       location: "New Delhi",
+      short: "Sports & Development",
       text: "A platform focused on sports, physical development and opportunities for students with sporting interests.",
-      courses: "Sports & Physical Development",
+      courses: ["Sports & Physical Development"],
     },
   ];
 
@@ -44,38 +49,61 @@ function Schools() {
     <section className="schools-section">
       <div className="schools-container">
 
-        {/* HEADING */}
-        <div className="schools-heading">
+        {/* =========================================
+            SECTION INTRO
+        ========================================= */}
 
-          <div className="section-label">
-            OUR INSTITUTIONS
+        <div className="schools-intro">
+
+          <div className="schools-intro-left">
+            <span className="schools-kicker">
+              OUR INSTITUTIONS
+            </span>
+
+            <div className="schools-title-row">
+              <span className="schools-title-index">
+                01
+              </span>
+
+              <h2>
+                One group.
+                <br />
+                <em>Many possibilities.</em>
+              </h2>
+            </div>
           </div>
 
-          <h2>
-            One group.
-            <br />
-            <span>Five institutions.</span>
-          </h2>
+          <div className="schools-intro-right">
+            <p>
+              Five institutions. Different disciplines.
+              One shared commitment to helping students
+              learn, grow and build meaningful futures.
+            </p>
 
-          <p>
-            A group of educational institutions bringing together
-            professional education, technology, law, media, design
-            and sports.
-          </p>
+            <div className="schools-intro-line">
+              <span></span>
+              <small>RK GROUP / EDUCATION</small>
+            </div>
+          </div>
 
         </div>
 
 
-        {/* INSTITUTION CARDS */}
+        {/* =========================================
+            INSTITUTION GRID
+        ========================================= */}
+
         <div className="schools-grid">
 
           {institutions.map((institution) => (
-            <div
+            <article
               className="school-card"
               key={institution.number}
             >
 
-              <div className="school-card-top">
+              <div className="school-card-accent"></div>
+
+              <div className="school-card-header">
 
                 <span className="school-number">
                   {institution.number}
@@ -87,54 +115,119 @@ function Schools() {
 
               </div>
 
-              <h3>
-                {institution.title}
-              </h3>
 
-              <p>
-                {institution.text}
-              </p>
+              <div className="school-card-content">
 
-              <div className="school-courses">
-                {institution.courses}
+                <span className="school-category">
+                  {institution.short}
+                </span>
+
+                <h3>
+                  {institution.title}
+                </h3>
+
+                <p>
+                  {institution.text}
+                </p>
+
               </div>
 
-              <Link
-                to="/courses"
-                className="school-link"
-              >
-                Explore programmes →
-              </Link>
 
-            </div>
+              <div className="school-card-footer">
+
+                <div className="school-courses">
+                  {institution.courses.map((course) => (
+                    <span key={course}>
+                      {course}
+                    </span>
+                  ))}
+                </div>
+
+                <Link
+                  to="/courses"
+                  className="school-link"
+                  aria-label={`Explore programmes at ${institution.title}`}
+                >
+                  <span>Explore programmes</span>
+                  <b>↗</b>
+                </Link>
+
+              </div>
+
+            </article>
           ))}
 
 
-          {/* CTA CARD */}
-          <div className="schools-cta">
+          {/* =========================================
+              FEATURE / CTA CARD
+          ========================================= */}
 
-            <div className="cta-number">
-              30+
+          <article className="schools-feature-card">
+
+            <div className="feature-top">
+
+              <span className="feature-index">
+                06
+              </span>
+
+              <span className="feature-label">
+                OUR LEGACY
+              </span>
+
             </div>
 
-            <h3>
-              Years of academic trust
-            </h3>
+            <div className="feature-content">
 
-            <p>
-              Since 1995, the RK Group has worked towards
-              providing quality and professional education
-              to students.
-            </p>
+              <span className="feature-number">
+                30<span>+</span>
+              </span>
+
+              <h3>
+                Years of
+                <br />
+                academic trust.
+              </h3>
+
+              <p>
+                Since 1995, the RK Group has worked towards
+                providing quality and professional education
+                to students.
+              </p>
+
+            </div>
 
             <Link
               to="/about"
-              className="cta-link"
+              className="feature-link"
             >
-              Discover our story →
+              <span>Discover our story</span>
+              <b>↗</b>
             </Link>
 
-          </div>
+          </article>
+
+        </div>
+
+
+        {/* =========================================
+            BOTTOM NOTE
+        ========================================= */}
+
+        <div className="schools-bottom">
+
+          <span>
+            RK GROUP
+          </span>
+
+          <p>
+            Education across management, law, media,
+            design and sports.
+          </p>
+
+          <Link to="/courses">
+            View all programmes
+            <span>→</span>
+          </Link>
 
         </div>
 

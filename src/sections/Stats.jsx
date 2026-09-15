@@ -1,35 +1,3 @@
-// function Stats() {
-//   return (
-//     <section className="stats-section">
-//       <div className="container stats-grid">
-
-//         <div className="stat-item">
-//           <span className="stat-number">30+</span>
-//           <span className="stat-label">Years of Education</span>
-//         </div>
-
-//         <div className="stat-item">
-//           <span className="stat-number">4</span>
-//           <span className="stat-label">Major Academic Areas</span>
-//         </div>
-
-//         <div className="stat-item">
-//           <span className="stat-number">2</span>
-//           <span className="stat-label">Campuses</span>
-//         </div>
-
-//         <div className="stat-item">
-//           <span className="stat-number">1995</span>
-//           <span className="stat-label">Society Established</span>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Stats;
-
 import "./Stats.css";
 
 function Stats() {

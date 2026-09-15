@@ -122,7 +122,7 @@ const Contact = () => {
       setIsSubmitting(true);
 
       const response = await fetch(
-        `${API_BASE_URL}/api/admission-enquiry`,
+        `${API_BASE_URL}/api/enquiry`,
         {
           method: "POST",
           headers: {
