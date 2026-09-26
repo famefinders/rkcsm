@@ -21,26 +21,6 @@ const Header = () => {
   return (
     <header className="site-header">
 
-      {/* ================= TOP BAR ================= */}
-      <div className="top-bar">
-        <div className="top-bar-container">
-
-          <div className="top-info">
-            <span>📍 New Delhi & Firozabad</span>
-            <span>📞 +91 XXXXX XXXXX</span>
-            <span>✉ info@rkfma.com</span>
-          </div>
-
-          <div className="top-social">
-            <span>f</span>
-            <span>𝕏</span>
-            <span>in</span>
-            <span>▶</span>
-          </div>
-
-        </div>
-      </div>
-
       {/* ================= MAIN NAVBAR ================= */}
       <div className="main-navbar">
 

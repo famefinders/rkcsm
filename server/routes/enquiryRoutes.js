@@ -3,6 +3,8 @@ const express = require("express");
 const Enquiry = require("../models/Enquiry");
 const AdmissionEnquiry = require("../models/AdmissionEnquiry");
 const CareerApplication = require("../models/CareerApplication");
+const allowedCourses = require("../constants/courses");
+const allowedPositions = require("../constants/positions");
 
 const router = express.Router();
 
@@ -17,33 +19,50 @@ const phoneRegex = /^[6-9][0-9]{9}$/;
 const emailRegex =
   /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-
-/* =================================
-   ALLOWED COURSES
-================================= */
-
-const allowedCourses = [
-  "BCA — Bachelor of Computer Applications",
-  "B.Sc. (IT) — Bachelor of Science in Information Technology",
-  "MCA — Master of Computer Applications",
-  "PGDCA — Post Graduate Diploma in Computer Applications",
-  "BJMC — Bachelor of Journalism & Mass Communication",
-  "MJMC — Master of Journalism & Mass Communication",
-  "PG Diploma in Journalism",
-  "BBA — Bachelor of Business Administration",
-  "MBA — Master of Business Administration",
-  "B.Ed. — Bachelor of Education",
-  "BA.LLB — Bachelor of Arts & Bachelor of Laws",
-  "LLB — Bachelor of Laws",
-];
-
-
 /* =================================
    COMMON CLEANING HELPER
 ================================= */
 
 const cleanString = (value) => {
   return typeof value === "string" ? value.trim() : "";
+};
+
+// =================================
+// COMMON ENQUIRY VALIDATION
+// =================================
+
+const validateCommonEnquiryFields = ({
+  name,
+  phone,
+  email,
+  course,
+  message,
+}) => {
+  if (!name || !phone || !email || !course) {
+    return "Please fill in all required fields.";
+  }
+
+  if (!nameRegex.test(name)) {
+    return "Please enter a valid name.";
+  }
+
+  if (!phoneRegex.test(phone)) {
+    return "Please enter a valid 10-digit Indian mobile number.";
+  }
+
+  if (!emailRegex.test(email)) {
+    return "Please enter a valid email address.";
+  }
+
+  if (!allowedCourses.includes(course)) {
+    return "Please select a valid course.";
+  }
+
+  if (message.length > 1000) {
+    return "Message cannot exceed 1000 characters.";
+  }
+
+  return null;
 };
 
 
@@ -70,65 +89,20 @@ router.post("/enquiry", async (req, res) => {
   message = cleanString(message);
 
 
-  /* Required fields */
+  const validationError = validateCommonEnquiryFields({
+  name,
+  phone,
+  email,
+  course,
+  message,
+});
 
-  if (!name || !phone || !email || !course) {
-    return res.status(400).json({
-      success: false,
-      message: "Please fill in all required fields.",
-    });
-  }
-
-
-  /* Name validation */
-
-  if (!nameRegex.test(name)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please enter a valid name.",
-    });
-  }
-
-
-  /* Phone validation */
-
-  if (!phoneRegex.test(phone)) {
-    return res.status(400).json({
-      success: false,
-      message:
-        "Please enter a valid 10-digit Indian mobile number.",
-    });
-  }
-
-
-  /* Email validation */
-
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please enter a valid email address.",
-    });
-  }
-
-
-  /* Course validation */
-
-  if (!allowedCourses.includes(course)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please select a valid course.",
-    });
-  }
-
-
-  /* Message validation */
-
-  if (message.length > 1000) {
-    return res.status(400).json({
-      success: false,
-      message: "Message cannot exceed 1000 characters.",
-    });
-  }
+if (validationError) {
+  return res.status(400).json({
+    success: false,
+    message: validationError,
+  });
+}
 
 
   /* Save to MongoDB */
@@ -182,65 +156,20 @@ router.post("/admission-enquiry", async (req, res) => {
   message = cleanString(message);
 
 
-  /* Required fields */
+  const validationError = validateCommonEnquiryFields({
+  name,
+  phone,
+  email,
+  course,
+  message,
+});
 
-  if (!name || !phone || !email || !course) {
-    return res.status(400).json({
-      success: false,
-      message: "Please fill in all required fields.",
-    });
-  }
-
-
-  /* Name validation */
-
-  if (!nameRegex.test(name)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please enter a valid name.",
-    });
-  }
-
-
-  /* Phone validation */
-
-  if (!phoneRegex.test(phone)) {
-    return res.status(400).json({
-      success: false,
-      message:
-        "Please enter a valid 10-digit Indian mobile number.",
-    });
-  }
-
-
-  /* Email validation */
-
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please enter a valid email address.",
-    });
-  }
-
-
-  /* Course validation */
-
-  if (!allowedCourses.includes(course)) {
-    return res.status(400).json({
-      success: false,
-      message: "Please select a valid course.",
-    });
-  }
-
-
-  /* Message validation */
-
-  if (message.length > 1000) {
-    return res.status(400).json({
-      success: false,
-      message: "Message cannot exceed 1000 characters.",
-    });
-  }
+if (validationError) {
+  return res.status(400).json({
+    success: false,
+    message: validationError,
+  });
+}
 
 
   /* Save to MongoDB */
@@ -312,25 +241,13 @@ router.post("/career-application", async (req, res) => {
     });
   }
 
-
-  /* Allowed positions */
-
-  const allowedPositions = [
-    "Assistant Professor — Computer Science",
-    "Lecturer — Journalism & Media Production",
-    "Visiting Faculty — Constitutional Law",
-    "Admissions Counsellor",
-    "Computer Lab Assistant",
-  ];
-
-
   /* Position validation */
 
   if (!allowedPositions.includes(position)) {
     return res.status(400).json({
       success: false,
       message: "Please select a valid position.",
-    });
+    });s
   }
 
 
@@ -436,6 +353,19 @@ router.post("/career-application", async (req, res) => {
   }
 });
 
+
+// =================================
+// CENTRAL ERROR HANDLER
+// =================================
+
+router.use((error, req, res, next) => {
+  console.error("Unhandled server error:", error);
+
+  res.status(500).json({
+    success: false,
+    message: "Something went wrong. Please try again later.",
+  });
+});
 
 /* =================================
    EXPORT ROUTER

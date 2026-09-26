@@ -7,28 +7,61 @@ const enquiryRoutes = require("./routes/enquiryRoutes");
 
 const app = express();
 
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log("MongoDB connected successfully");
-  })
-  .catch((error) => {
-    console.error("MongoDB connection failed:", error.message);
-  });
-  
+/* =================================
+   MIDDLEWARE
+================================= */
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+  })
+);
 app.use(express.json());
+
+/* =================================
+   API ROUTES
+================================= */
+
 app.use("/api", enquiryRoutes);
+
+/* =================================
+   HEALTH CHECK
+================================= */
 
 app.get("/", (req, res) => {
   res.json({
+    success: true,
     message: "RKCSM Backend is running successfully!",
+    database:
+      mongoose.connection.readyState === 1
+        ? "connected"
+        : "disconnected",
   });
 });
 
+/* =================================
+   SERVER CONFIGURATION
+================================= */
+
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+/* =================================
+   START SERVER
+================================= */
+
+const startServer = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+
+    console.log("MongoDB connected successfully");
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("MongoDB connection failed:", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
