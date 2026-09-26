@@ -20,6 +20,41 @@ function Hero() {
 
 
       {/* =========================================
+          THREE IMAGE COLLAGE
+      ========================================= */}
+
+      <div className="hero-image-collage" aria-label="RK Group highlights">
+
+        {/* Main image */}
+        <div className="hero-collage-main">
+          <img
+            src="/images/hero-card-1.jpg"
+            alt="RK Group students"
+          />
+        </div>
+
+
+        {/* Top / left small image */}
+        <div className="hero-collage-small hero-collage-top">
+          <img
+            src="/images/hero-card-2.jpg"
+            alt="RK Group campus"
+          />
+        </div>
+
+
+        {/* Bottom / right small image */}
+        <div className="hero-collage-small hero-collage-bottom">
+          <img
+            src="/images/hero-card-3.jpg"
+            alt="RK Group academic activities"
+          />
+        </div>
+
+      </div>
+
+
+      {/* =========================================
           MAIN HERO
       ========================================= */}
 

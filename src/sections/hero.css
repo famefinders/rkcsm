@@ -1,5 +1,5 @@
 /* =========================================================
-   RKCSM HERO — HIGH VISIBILITY IMAGE
+   RKCSM HERO — IMAGE COLLAGE EDITION
 ========================================================= */
 
 .hero {
@@ -34,21 +34,18 @@
 
   background-image: url("/images/hero-bg.jpg");
 
-  /* Full image visible without cropping */
   background-size: 100% 100%;
 
   background-position: center center;
 
   background-repeat: no-repeat;
 
-  /* Removed unnecessary zoom */
   transform: none;
 }
 
 
 /* =========================================================
    VERY LIGHT OVERLAY
-   IMAGE SHOULD BE CLEARLY VISIBLE
 ========================================================= */
 
 .hero-overlay {
@@ -77,15 +74,15 @@
   background:
     linear-gradient(
       90deg,
-      rgba(8, 3, 5, 0.72) 0%,
+      rgba(8, 3, 5, 0.78) 0%,
       rgba(25, 5, 9, 0.48) 25%,
-      rgba(45, 8, 14, 0.20) 50%,
-      rgba(8, 3, 5, 0.12) 100%
+      rgba(45, 8, 14, 0.18) 52%,
+      rgba(8, 3, 5, 0.08) 100%
     );
 }
 
 
-/* Bottom fade only */
+/* Bottom fade */
 
 .hero-overlay-gradient::after {
   content: "";
@@ -109,7 +106,7 @@
 
 
 /* =========================================================
-   REMOVE ANY TOP WHITE SPACE
+   BOX SIZING
 ========================================================= */
 
 .hero,
@@ -198,6 +195,147 @@
 
 
 /* =========================================================
+   THREE IMAGE COLLAGE
+========================================================= */
+
+.hero-image-collage {
+  position: absolute;
+
+  z-index: 3;
+
+  right: 5.5%;
+  top: 50%;
+
+  width: 455px;
+  height: 380px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.hero-collage-main {
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  width: 335px;
+  height: 205px;
+
+  overflow: hidden;
+
+  border:
+    3px solid
+    rgba(255, 255, 255, 0.92);
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 22px 50px
+    rgba(0, 0, 0, 0.38);
+}
+
+
+.hero-collage-main img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+/* =========================================================
+   SMALL IMAGES
+========================================================= */
+
+.hero-collage-small {
+  position: absolute;
+
+  width: 225px;
+  height: 155px;
+
+  overflow: hidden;
+
+  border:
+    3px solid
+    rgba(255, 255, 255, 0.92);
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 45px
+    rgba(0, 0, 0, 0.38);
+}
+
+
+.hero-collage-small img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+/* =========================================================
+   TOP / LEFT IMAGE
+========================================================= */
+
+.hero-collage-top {
+  left: 0;
+  bottom: 0;
+
+  z-index: 2;
+
+  transform:
+    rotate(-1deg);
+}
+
+
+/* =========================================================
+   BOTTOM / RIGHT IMAGE
+========================================================= */
+
+.hero-collage-bottom {
+  right: 5px;
+  bottom: -5px;
+
+  z-index: 3;
+
+  transform:
+    rotate(1deg);
+}
+
+
+/* =========================================================
+   MAIN IMAGE DEPTH
+========================================================= */
+
+.hero-collage-main {
+  z-index: 4;
+}
+
+
+/* =========================================================
    MAIN CONTAINER
 ========================================================= */
 
@@ -206,7 +344,7 @@
 
   z-index: 4;
 
-  width: 90%;
+  width: 92%;
 
   max-width: 1400px;
 
@@ -221,11 +359,11 @@
 
   grid-template-columns:
     minmax(0, 1fr)
-    275px;
+    220px;
 
   align-items: center;
 
-  gap: 65px;
+  gap: 40px;
 }
 
 
@@ -234,9 +372,13 @@
 ========================================================= */
 
 .hero-content {
-  max-width: 850px;
+  max-width: 780px;
 
   color: #ffffff;
+
+  position: relative;
+
+  z-index: 5;
 }
 
 
@@ -345,7 +487,7 @@
 ========================================================= */
 
 .hero h1 {
-  max-width: 880px;
+  max-width: 780px;
 
   margin:
     0 0 28px;
@@ -354,13 +496,13 @@
     #ffffff;
 
   font-size:
-    clamp(60px, 6.5vw, 90px);
+    clamp(58px, 6vw, 84px);
 
   line-height:
     0.96;
 
   letter-spacing:
-    -4.2px;
+    -4px;
 
   font-weight:
     900;
@@ -411,7 +553,7 @@
 ========================================================= */
 
 .hero-description {
-  max-width: 640px;
+  max-width: 590px;
 
   margin:
     0 0 23px;
@@ -661,6 +803,10 @@
 
   padding:
     25px 0;
+
+  position: relative;
+
+  z-index: 5;
 }
 
 
@@ -996,7 +1142,64 @@
    TABLET
 ========================================================= */
 
+@media (max-width: 1100px) {
+
+  .hero-image-collage {
+    right: 3%;
+
+    width: 390px;
+    height: 330px;
+
+    opacity: 0.95;
+  }
+
+
+  .hero-collage-main {
+    width: 285px;
+    height: 175px;
+  }
+
+
+  .hero-collage-small {
+    width: 195px;
+    height: 135px;
+  }
+
+
+  .hero-container {
+    width: 92%;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      180px;
+
+    gap: 25px;
+  }
+
+
+  .hero-content {
+    max-width: 720px;
+  }
+
+
+  .hero h1 {
+    font-size:
+      clamp(52px, 6vw, 72px);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
 @media (max-width: 1000px) {
+
+  .hero {
+    min-height: 700px;
+  }
+
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -1012,6 +1215,33 @@
     display: none;
   }
 
+
+  .hero-image-collage {
+    right: 4%;
+
+    top: 54%;
+
+    width: 370px;
+    height: 305px;
+  }
+
+
+  .hero-collage-main {
+    width: 270px;
+    height: 165px;
+  }
+
+
+  .hero-collage-small {
+    width: 185px;
+    height: 125px;
+  }
+
+
+  .hero-content {
+    max-width: 700px;
+  }
+
 }
 
 
@@ -1022,11 +1252,11 @@
 @media (max-width: 600px) {
 
   .hero {
-    min-height: 720px;
+    min-height: 760px;
   }
 
 
-  /* Keep the complete image visible on mobile too */
+  /* Keep the complete background image visible */
 
   .hero-bg {
     background-position:
@@ -1049,7 +1279,7 @@
         180deg,
         rgba(12,3,5,0.38) 0%,
         rgba(35,6,12,0.20) 42%,
-        rgba(8,3,5,0.72) 100%
+        rgba(8,3,5,0.78) 100%
       );
   }
 
@@ -1057,10 +1287,15 @@
   .hero-container {
     width: 90%;
 
-    min-height: 720px;
+    min-height: 760px;
 
     padding:
-      45px 0 150px !important;
+      40px 0 220px !important;
+  }
+
+
+  .hero-content {
+    max-width: 100%;
   }
 
 
@@ -1079,6 +1314,8 @@
 
 
   .hero h1 {
+    max-width: 95%;
+
     font-size: 42px;
 
     line-height: 1.02;
@@ -1090,6 +1327,8 @@
 
 
   .hero-description {
+    max-width: 95%;
+
     font-size: 13px;
 
     line-height: 1.7;
@@ -1109,6 +1348,8 @@
     align-items: stretch;
 
     gap: 8px;
+
+    max-width: 330px;
   }
 
 
@@ -1136,6 +1377,54 @@
 
   .hero-trust span {
     font-size: 6.5px;
+  }
+
+
+  /* =========================================
+     MOBILE IMAGE COLLAGE
+  ========================================= */
+
+  .hero-image-collage {
+    right: 50%;
+
+    top: auto;
+    bottom: 145px;
+
+    width: 310px;
+    height: 225px;
+
+    transform:
+      translateX(50%);
+  }
+
+
+  .hero-collage-main {
+    width: 215px;
+    height: 132px;
+
+    border-width: 2px;
+    border-radius: 9px;
+  }
+
+
+  .hero-collage-small {
+    width: 145px;
+    height: 98px;
+
+    border-width: 2px;
+    border-radius: 8px;
+  }
+
+
+  .hero-collage-top {
+    left: 0;
+    bottom: 0;
+  }
+
+
+  .hero-collage-bottom {
+    right: 0;
+    bottom: -2px;
   }
 
 
@@ -1223,7 +1512,15 @@
 @media (max-width: 380px) {
 
   .hero {
-    min-height: 700px;
+    min-height: 735px;
+  }
+
+
+  .hero-container {
+    min-height: 735px;
+
+    padding-bottom:
+      210px !important;
   }
 
 
@@ -1239,6 +1536,26 @@
 
   .hero-motto {
     font-size: 13px;
+  }
+
+
+  .hero-image-collage {
+    bottom: 140px;
+
+    width: 275px;
+    height: 205px;
+  }
+
+
+  .hero-collage-main {
+    width: 190px;
+    height: 118px;
+  }
+
+
+  .hero-collage-small {
+    width: 128px;
+    height: 88px;
   }
 
 }
