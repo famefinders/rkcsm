@@ -1,7 +1,5 @@
 /* =========================
-
    ABOUT PAGE
-
 ========================= */
 
 .about-page {
@@ -36,7 +34,7 @@
 ========================= */
 
 .about-hero {
-  min-height: 500px;
+  min-height: 600px;
 
   display: flex;
   align-items: center;
@@ -44,18 +42,13 @@
   position: relative;
   overflow: hidden;
 
-  /*
-    About page background image
-    Image must be inside:
-    public/images/aboutbg.jpg
-  */
   background-image:
     linear-gradient(
       90deg,
-      rgba(8, 16, 27, 0.78) 0%,
-      rgba(12, 25, 39, 0.60) 38%,
-      rgba(18, 35, 52, 0.42) 68%,
-      rgba(18, 35, 52, 0.30) 100%
+      rgba(8, 16, 27, 0.38) 0%,
+      rgba(12, 25, 39, 0.24) 38%,
+      rgba(18, 35, 52, 0.16) 70%,
+      rgba(18, 35, 52, 0.10) 100%
     ),
     url("/images/aboutbg.jpg");
 
@@ -67,7 +60,9 @@
 }
 
 
-/* Bottom dark fade */
+/* =========================
+   HERO BOTTOM FADE
+========================= */
 
 .about-hero::before {
   content: "";
@@ -78,13 +73,13 @@
   right: 0;
   bottom: 0;
 
-  height: 130px;
+  height: 95px;
 
   background:
     linear-gradient(
       to top,
-      rgba(8, 16, 27, 0.78),
-      rgba(8, 16, 27, 0.22),
+      rgba(8, 16, 27, 0.58),
+      rgba(8, 16, 27, 0.15),
       transparent
     );
 
@@ -94,7 +89,9 @@
 }
 
 
-/* Decorative circle */
+/* =========================
+   DECORATIVE CIRCLE
+========================= */
 
 .about-hero::after {
   content: "";
@@ -119,6 +116,26 @@
 }
 
 
+/* =========================
+   HERO CONTAINER
+========================= */
+
+/*
+   Only the hero gets a wider container.
+   This moves the text further toward
+   the left side without changing the
+   rest of the About page.
+*/
+
+.about-hero .about-container {
+  width: min(1320px, calc(100% - 56px));
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
 .about-hero-content {
   position: relative;
 
@@ -126,7 +143,7 @@
 
   max-width: 760px;
 
-  padding: 90px 0;
+  padding: 105px 0;
 }
 
 
@@ -135,7 +152,7 @@
 
   color: #ffffff;
 
-  font-size: clamp(48px, 6vw, 76px);
+  font-size: clamp(50px, 6vw, 78px);
 
   line-height: 0.98;
 
@@ -144,7 +161,7 @@
   font-weight: 750;
 
   text-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.55);
+    0 4px 18px rgba(0, 0, 0, 0.55);
 }
 
 
@@ -158,10 +175,10 @@
   line-height: 1.75;
 
   color:
-    rgba(255, 255, 255, 0.88);
+    rgba(255, 255, 255, 0.92);
 
   text-shadow:
-    0 3px 14px rgba(0, 0, 0, 0.55);
+    0 3px 12px rgba(0, 0, 0, 0.60);
 }
 
 
@@ -596,7 +613,7 @@
 
 
   .about-hero {
-    min-height: 440px;
+    min-height: 540px;
 
     background-size:
       100% 100%;
@@ -606,8 +623,13 @@
   }
 
 
+  .about-hero .about-container {
+    width: min(100% - 40px, 1180px);
+  }
+
+
   .about-hero-content {
-    padding: 70px 0;
+    padding: 80px 0;
   }
 
 
@@ -630,27 +652,27 @@
 
 
   .about-hero {
+    min-height: 520px;
 
-    min-height: 500px;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(8, 16, 27, 0.28) 0%,
+        rgba(8, 16, 27, 0.34) 45%,
+        rgba(8, 16, 27, 0.72) 100%
+      ),
+      url("/images/aboutbg.jpg");
 
-    /*
-      Keep the complete background visible
-      on mobile as well.
-    */
     background-size:
       100% 100%;
 
     background-position:
       center center;
+  }
 
-    background-image:
-      linear-gradient(
-        180deg,
-        rgba(8, 16, 27, 0.42) 0%,
-        rgba(8, 16, 27, 0.50) 45%,
-        rgba(8, 16, 27, 0.82) 100%
-      ),
-      url("/images/aboutbg.jpg");
+
+  .about-hero .about-container {
+    width: calc(100% - 28px);
   }
 
 
@@ -664,6 +686,8 @@
 
     line-height: 1.01;
 
+    letter-spacing: -1.5px;
+
     text-shadow:
       0 4px 18px rgba(0, 0, 0, 0.65);
   }
@@ -675,7 +699,7 @@
     line-height: 1.65;
 
     color:
-      rgba(255, 255, 255, 0.90);
+      rgba(255, 255, 255, 0.92);
 
     text-shadow:
       0 3px 12px rgba(0, 0, 0, 0.60);
