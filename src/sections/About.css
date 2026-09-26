@@ -34,7 +34,7 @@
 ========================= */
 
 .about-hero {
-  min-height: 600px;
+  min-height: 700px;
 
   display: flex;
   align-items: center;
@@ -45,10 +45,9 @@
   background-image:
     linear-gradient(
       90deg,
-      rgba(8, 16, 27, 0.38) 0%,
-      rgba(12, 25, 39, 0.24) 38%,
-      rgba(18, 35, 52, 0.16) 70%,
-      rgba(18, 35, 52, 0.10) 100%
+      rgba(8, 16, 27, 0.32) 0%,
+      rgba(12, 25, 39, 0.20) 40%,
+      rgba(18, 35, 52, 0.12) 100%
     ),
     url("/images/aboutbg.jpg");
 
@@ -73,13 +72,13 @@
   right: 0;
   bottom: 0;
 
-  height: 95px;
+  height: 100px;
 
   background:
     linear-gradient(
       to top,
-      rgba(8, 16, 27, 0.58),
-      rgba(8, 16, 27, 0.15),
+      rgba(8, 16, 27, 0.55),
+      rgba(8, 16, 27, 0.12),
       transparent
     );
 
@@ -90,7 +89,7 @@
 
 
 /* =========================
-   DECORATIVE CIRCLE
+   HERO DECORATIVE CIRCLE
 ========================= */
 
 .about-hero::after {
@@ -120,15 +119,11 @@
    HERO CONTAINER
 ========================= */
 
-/*
-   Only the hero gets a wider container.
-   This moves the text further toward
-   the left side without changing the
-   rest of the About page.
-*/
-
 .about-hero .about-container {
-  width: min(1320px, calc(100% - 56px));
+  width: min(1500px, calc(100% - 40px));
+
+  margin-left: 20px;
+  margin-right: auto;
 }
 
 
@@ -141,9 +136,9 @@
 
   z-index: 2;
 
-  max-width: 760px;
+  max-width: 800px;
 
-  padding: 105px 0;
+  padding: 120px 0;
 }
 
 
@@ -258,9 +253,7 @@
 
   background: #ffffff;
 
-  border:
-    1px solid
-    #e5d9c9;
+  border: 1px solid #e5d9c9;
 
   border-radius: 8px;
 
@@ -329,9 +322,7 @@
 }
 
 .development-list {
-  border-top:
-    1px solid
-    #e5d9c9;
+  border-top: 1px solid #e5d9c9;
 }
 
 .development-item {
@@ -343,9 +334,7 @@
 
   padding: 25px 0;
 
-  border-bottom:
-    1px solid
-    #e5d9c9;
+  border-bottom: 1px solid #e5d9c9;
 }
 
 .development-item > span {
@@ -613,23 +602,24 @@
 
 
   .about-hero {
-    min-height: 540px;
+    min-height: 620px;
 
-    background-size:
-      100% 100%;
+    background-size: 100% 100%;
 
-    background-position:
-      center center;
+    background-position: center center;
   }
 
 
   .about-hero .about-container {
-    width: min(100% - 40px, 1180px);
+    width: calc(100% - 40px);
+
+    margin-left: 20px;
+    margin-right: auto;
   }
 
 
   .about-hero-content {
-    padding: 80px 0;
+    padding: 90px 0;
   }
 
 
@@ -652,32 +642,33 @@
 
 
   .about-hero {
-    min-height: 520px;
+    min-height: 560px;
 
     background-image:
       linear-gradient(
         180deg,
-        rgba(8, 16, 27, 0.28) 0%,
-        rgba(8, 16, 27, 0.34) 45%,
-        rgba(8, 16, 27, 0.72) 100%
+        rgba(8, 16, 27, 0.25) 0%,
+        rgba(8, 16, 27, 0.32) 45%,
+        rgba(8, 16, 27, 0.70) 100%
       ),
       url("/images/aboutbg.jpg");
 
-    background-size:
-      100% 100%;
+    background-size: 100% 100%;
 
-    background-position:
-      center center;
+    background-position: center center;
   }
 
 
   .about-hero .about-container {
     width: calc(100% - 28px);
+
+    margin-left: 14px;
+    margin-right: auto;
   }
 
 
   .about-hero-content {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
 
