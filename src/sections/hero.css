@@ -34,13 +34,15 @@
 
   background-image: url("/images/hero-bg.jpg");
 
-  background-size: cover;
+  /* Full image visible without cropping */
+  background-size: 100% 100%;
 
   background-position: center center;
 
   background-repeat: no-repeat;
 
-  transform: scale(1.01);
+  /* Removed unnecessary zoom */
+  transform: none;
 }
 
 
@@ -1024,9 +1026,14 @@
   }
 
 
+  /* Keep the complete image visible on mobile too */
+
   .hero-bg {
     background-position:
-      60% center;
+      center center;
+
+    background-size:
+      100% 100%;
   }
 
 
