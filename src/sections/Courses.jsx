@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { COURSES_DATA } from "../../data/coursesData"; // Apna sahi path check kar lena
+import { COURSES_DATA } from "../data/coursesData"; // Apna sahi path check kar lena
 import "./Courses.css";
 
 const Courses = () => {
