@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const isActive = (path) => {
     if (path === "/") {
@@ -20,8 +36,8 @@ const Header = () => {
   return (
     <header className="site-header">
 
-      {/* ================= MAIN NAVBAR (Pure CSS Sticky Floating) ================= */}
-      <div className="main-navbar-wrapper">
+      {/* ================= MAIN NAVBAR ================= */}
+      <div className={`main-navbar-wrapper ${isScrolled ? "is-floating" : ""}`}>
         <div className="main-navbar">
           <div className="header-container">
 
@@ -70,7 +86,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ================= NOTICE TICKER ================= */}
+      {/* ================= NOTICE TICKER (Header ke niche) ================= */}
       <div className="notice-ticker">
         <div className="ticker-label">
           NOTICE

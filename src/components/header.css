@@ -11,48 +11,55 @@
 
 
 /* =========================================
-   MAIN NAVBAR (BUTTER-SMOOTH STICKY FLOATING)
+   MAIN NAVBAR & BUTTER-SMOOTH FLOATING
 ========================================= */
 
 .main-navbar-wrapper {
-  position: sticky;
-  top: 10px; /* Jaise hi scroll karenge, yeh upar 10px par ruk kar float ho jayega */
+  position: relative;
   width: 100%;
+  background: #ffffff;
   z-index: 1001;
-  padding: 8px 0; /* Padding ki wajah se smooth floating space milta hai */
-  transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-navbar {
   background: #ffffff;
   border-bottom: 1px solid #e8e0d5;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  border-radius: 0px;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Jab page scroll hona shuru hoga toh wrapper ke andar ka navbar pill ban jayega */
-@supports (animation-timeline: scroll()) {
-  /* Agar browser support kare toh advanced timeline, warna sticky toh chal hi raha hai */
+.main-navbar-wrapper.is-floating {
+  position: fixed;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1001;
+  animation: slideDownNav 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Hum yahan ek chota sa trick use karenge: jab body ya page scroll ho, toh hum CSS class ke through ya direct sticky state me style denge. 
-   Lekin pure CSS sticky me jab element 'sticky' banta hai, toh hum usko pill shape me transition kar sakte hain using scroll position or standard classes.
-   Chalo isko aur bhi smooth banane ke liye hum standard JS scroll observer ke sath buttery CSS transition dete hain: */
+.main-navbar-wrapper.is-floating .main-navbar {
+  width: 90%;
+  max-width: 1320px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 60px;
+  box-shadow: 0 20px 45px rgba(27, 42, 74, 0.12);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-.main-navbar-wrapper.is-floating .main-navbar,
-.site-header.scrolled .main-navbar {
-  width: 90% !important;
-  max-width: 1320px !important;
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1px solid rgba(226, 232, 240, 0.85) !important;
-  border-radius: 60px !important;
-  box-shadow: 0 20px 45px rgba(27, 42, 74, 0.1) !important;
+@keyframes slideDownNav {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .header-container {
@@ -67,8 +74,7 @@
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.main-navbar-wrapper.is-floating .header-container,
-.site-header.scrolled .header-container {
+.main-navbar-wrapper.is-floating .header-container {
   padding: 0 25px;
   min-height: 64px;
 }
@@ -94,8 +100,7 @@
   transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.main-navbar-wrapper.is-floating .header-logo img,
-.site-header.scrolled .header-logo img {
+.main-navbar-wrapper.is-floating .header-logo img {
   height: 48px;
 }
 
