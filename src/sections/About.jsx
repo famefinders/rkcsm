@@ -102,6 +102,26 @@ const About = () => {
       </section>
 
 
+      {/* ================= TIMELINE SECTION ================= */}
+      <section className="about-timeline-section section-space">
+        <div className="about-container">
+          <div className="about-timeline-header">
+            <span className="about-eyebrow">OUR LEGACY & JOURNEY</span>
+            <h2>Decades of growth, <br />milestone by milestone.</h2>
+            <p>From a single school in 1995 to a multi-campus educational group spanning professional studies, law, and media.</p>
+          </div>
+
+          <div className="timeline-image-wrapper">
+            <img 
+              src="/images/timeline.jpg" 
+              alt="RK Group Timeline Journey from 1995 to 2019" 
+              className="timeline-graphic-img"
+            />
+          </div>
+        </div>
+      </section>
+
+
       {/* ALL ROUND DEVELOPMENT */}
       <section className="about-development section-space">
         <div className="about-container about-two-column">
