@@ -19,6 +19,7 @@
   width: 100%;
   background: #ffffff;
   z-index: 1001;
+  /* Smooth transition for entering/leaving floating state */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -26,38 +27,44 @@
   background: #ffffff;
   border-bottom: 1px solid #e8e0d5;
   width: 100%;
+  /* Smooth transition for background, borders, and shadows */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Jab user scroll karega tab yeh floating wrapper active hoga */
 .main-navbar-wrapper.is-floating {
   position: fixed;
-  top: 15px;
+  top: 12px;
   left: 0;
   width: 100%;
   background: transparent;
   z-index: 1001;
-  animation: slideDownNav 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideDownNav 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .main-navbar-wrapper.is-floating .main-navbar {
   width: 90%;
   max-width: 1320px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: 50px;
-  box-shadow: 0 20px 40px rgba(27, 42, 74, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 60px;
+  box-shadow: 0 20px 45px rgba(27, 42, 74, 0.1);
+  /* Smooth transform transition */
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              background 0.4s ease, 
+              border-radius 0.4s ease, 
+              box-shadow 0.4s ease;
 }
 
 @keyframes slideDownNav {
-  from {
-    transform: translateY(-20px);
+  0% {
+    transform: translateY(-25px);
     opacity: 0;
   }
-  to {
+  100% {
     transform: translateY(0);
     opacity: 1;
   }
@@ -72,11 +79,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-  transition: all 0.3s ease;
+  /* Smooth padding and height transition to prevent any jerk */
+  transition: min-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-navbar-wrapper.is-floating .header-container {
-  padding: 0 25px;
+  padding: 0 28px;
   min-height: 64px;
 }
 
@@ -98,7 +107,8 @@
   height: 72px;
   max-width: 220px;
   object-fit: contain;
-  transition: height 0.3s ease;
+  /* Smooth logo resizing */
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-navbar-wrapper.is-floating .header-logo img {
@@ -125,7 +135,7 @@
   font-weight: 700;
   padding: 9px 0;
   white-space: nowrap;
-  transition: 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .desktop-nav a:hover {
