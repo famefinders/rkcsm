@@ -3,44 +3,53 @@
 ========================================= */
 
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Jab page scroll ho toh header thoda upar se float ho */
-.site-header.scrolled {
-  padding-top: 10px;
 }
 
 
 /* =========================================
-   TOP BAR (Agar hai toh)
+   NOTICE TICKER (Fixed / Static at top)
 ========================================= */
 
-.top-bar {
-  background: #1B2A4A;
-  border-bottom: 3px solid #C8920A;
-  color: #ffffff;
-}
-
-.top-bar-container {
-  max-width: 1400px;
-  min-height: 42px;
-  margin: 0 auto;
-  padding: 0 30px;
+.notice-ticker {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  min-height: 38px;
+  background: #C8920A;
+  color: #ffffff;
+  width: 100%;
+}
+
+.ticker-label {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  background: #6D1010;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ticker-content {
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 
 /* =========================================
-   MAIN NAVBAR & SMOOTH FLOATING EFFECT
+   MAIN NAVBAR & SMOOTH FLOATING ANIMATION
 ========================================= */
+
+.main-navbar-wrapper {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 .main-navbar {
   background: #ffffff;
@@ -49,8 +58,18 @@
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Jab user scroll karega tab yeh floating class active hogi */
-.main-navbar.floating {
+/* Jab user scroll karega tab yeh floating wrapper active hoga */
+.main-navbar-wrapper.is-floating {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  animation: slideDownNav 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-navbar-wrapper.is-floating .main-navbar {
   width: 90%;
   max-width: 1320px;
   margin: 0 auto;
@@ -60,6 +79,17 @@
   border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: 50px;
   box-shadow: 0 20px 40px rgba(27, 42, 74, 0.12);
+}
+
+@keyframes slideDownNav {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .header-container {
@@ -74,7 +104,7 @@
   transition: all 0.3s ease;
 }
 
-.main-navbar.floating .header-container {
+.main-navbar-wrapper.is-floating .header-container {
   padding: 0 25px;
   min-height: 64px;
 }
@@ -100,7 +130,7 @@
   transition: height 0.3s ease;
 }
 
-.main-navbar.floating .header-logo img {
+.main-navbar-wrapper.is-floating .header-logo img {
   height: 48px;
 }
 
@@ -164,45 +194,6 @@
 .desktop-nav .apply-button:hover {
   background: #6D1010;
   transform: translateY(-1px);
-}
-
-
-/* =========================================
-   NOTICE TICKER (Professional adjustment)
-========================================= */
-
-.notice-ticker {
-  display: flex;
-  align-items: center;
-  min-height: 38px;
-  background: #C8920A;
-  color: #ffffff;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  overflow: hidden;
-}
-
-/* Jaise hi scroll ho, notice bar smooth tarike se chup jaye taaki floating navbar clean dikhe */
-.site-header.scrolled .notice-ticker {
-  max-height: 0;
-  opacity: 0;
-  min-height: 0;
-}
-
-.ticker-label {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  padding: 0 22px;
-  background: #6D1010;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.ticker-content {
-  padding: 0 25px;
-  font-size: 13px;
-  font-weight: 600;
 }
 
 

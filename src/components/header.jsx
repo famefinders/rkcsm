@@ -9,7 +9,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      // Jaise hi 45px se zyada scroll hoga, navbar floating ho jayega
+      if (window.scrollY > 45) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -36,109 +37,7 @@ const Header = () => {
   return (
     <header className="site-header">
 
-      {/* ================= MAIN NAVBAR ================= */}
-      <div className={`main-navbar ${isScrolled ? "floating" : ""}`}>
-
-        <div className="header-container">
-
-          {/* LOGO */}
-          <Link
-            to="/"
-            className="header-logo"
-            onClick={closeMenu}
-          >
-            <img
-              src="/images/rk-logo-header.jpg"
-              alt="RK Group of Institutions"
-            />
-          </Link>
-
-          {/* DESKTOP NAV */}
-          <nav className="desktop-nav">
-
-            <Link
-              to="/"
-              className={isActive("/") ? "active" : ""}
-            >
-              Home
-            </Link>
-
-            <Link
-              to="/about"
-              className={isActive("/about") ? "active" : ""}
-            >
-              About
-            </Link>
-
-            <Link
-              to="/courses"
-              className={isActive("/courses") ? "active" : ""}
-            >
-              Courses
-            </Link>
-
-            <Link
-              to="/admissions"
-              className={isActive("/admissions") ? "active" : ""}
-            >
-              Admissions
-            </Link>
-
-            <Link
-              to="/careers"
-              className={isActive("/careers") ? "active" : ""}
-            >
-              Careers
-            </Link>
-
-            <Link
-              to="/alumni"
-              className={isActive("/alumni") ? "active" : ""}
-            >
-              Alumni
-            </Link>
-
-            <Link
-              to="/gallery"
-              className={isActive("/gallery") ? "active" : ""}
-            >
-              Gallery
-            </Link>
-
-            <Link
-              to="/contact"
-              className={isActive("/contact") ? "active" : ""}
-            >
-              Contact
-            </Link>
-
-            {/* APPLY BUTTON */}
-            <Link
-              to="/apply"
-              className="apply-button"
-            >
-              Apply Now
-            </Link>
-
-          </nav>
-
-          {/* MOBILE BUTTON */}
-          <button
-            className="mobile-menu-button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation"
-            aria-expanded={menuOpen}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-        </div>
-
-      </div>
-
-      {/* ================= TICKER ================= */}
+      {/* ================= NOTICE TICKER (Fixed at Top) ================= */}
       <div className="notice-ticker">
         <div className="ticker-label">
           NOTICE
@@ -150,6 +49,56 @@ const Header = () => {
         </div>
       </div>
 
+      {/* ================= MAIN NAVBAR (Floats on Scroll) ================= */}
+      <div className={`main-navbar-wrapper ${isScrolled ? "is-floating" : ""}`}>
+        <div className="main-navbar">
+          <div className="header-container">
+
+            {/* LOGO */}
+            <Link
+              to="/"
+              className="header-logo"
+              onClick={closeMenu}
+            >
+              <img
+                src="/images/rk-logo-header.jpg"
+                alt="RK Group of Institutions"
+              />
+            </Link>
+
+            {/* DESKTOP NAV */}
+            <nav className="desktop-nav">
+              <Link to="/" className={isActive("/") ? "active" : ""}>Home</Link>
+              <Link to="/about" className={isActive("/about") ? "active" : ""}>About</Link>
+              <Link to="/courses" className={isActive("/courses") ? "active" : ""}>Courses</Link>
+              <Link to="/admissions" className={isActive("/admissions") ? "active" : ""}>Admissions</Link>
+              <Link to="/careers" className={isActive("/careers") ? "active" : ""}>Careers</Link>
+              <Link to="/alumni" className={isActive("/alumni") ? "active" : ""}>Alumni</Link>
+              <Link to="/gallery" className={isActive("/gallery") ? "active" : ""}>Gallery</Link>
+              <Link to="/contact" className={isActive("/contact") ? "active" : ""}>Contact</Link>
+
+              {/* APPLY BUTTON */}
+              <Link to="/apply" className="apply-button">
+                Apply Now
+              </Link>
+            </nav>
+
+            {/* MOBILE BUTTON */}
+            <button
+              className="mobile-menu-button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation"
+              aria-expanded={menuOpen}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+
       {/* ================= MOBILE NAV ================= */}
       <nav
         className={
@@ -158,80 +107,15 @@ const Header = () => {
             : "mobile-nav"
         }
       >
-
-        <Link
-          to="/"
-          className={isActive("/") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          Home
-        </Link>
-
-        <Link
-          to="/about"
-          className={isActive("/about") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          About
-        </Link>
-
-        <Link
-          to="/courses"
-          className={isActive("/courses") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          Courses
-        </Link>
-
-        <Link
-          to="/admissions"
-          className={isActive("/admissions") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          Admissions
-        </Link>
-
-        <Link
-          to="/careers"
-          className={isActive("/careers") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          Careers
-        </Link>
-
-        <Link
-          to="/alumni"
-          className={isActive("/alumni") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          Alumni
-        </Link>
-
-        <Link
-          to="/gallery"
-          className={isActive("/gallery") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          Gallery
-        </Link>
-
-        <Link
-          to="/contact"
-          className={isActive("/contact") ? "active" : ""}
-          onClick={closeMenu}
-        >
-          Contact
-        </Link>
-
-        {/* APPLY BUTTON */}
-        <Link
-          to="/apply"
-          className="mobile-apply"
-          onClick={closeMenu}
-        >
-          Apply Now
-        </Link>
-
+        <Link to="/" className={isActive("/") ? "active" : ""} onClick={closeMenu}>Home</Link>
+        <Link to="/about" className={isActive("/about") ? "active" : ""} onClick={closeMenu}>About</Link>
+        <Link to="/courses" className={isActive("/courses") ? "active" : ""} onClick={closeMenu}>Courses</Link>
+        <Link to="/admissions" className={isActive("/admissions") ? "active" : ""} onClick={closeMenu}>Admissions</Link>
+        <Link to="/careers" className={isActive("/careers") ? "active" : ""} onClick={closeMenu}>Careers</Link>
+        <Link to="/alumni" className={isActive("/alumni") ? "active" : ""} onClick={closeMenu}>Alumni</Link>
+        <Link to="/gallery" className={isActive("/gallery") ? "active" : ""} onClick={closeMenu}>Gallery</Link>
+        <Link to="/contact" className={isActive("/contact") ? "active" : ""} onClick={closeMenu}>Contact</Link>
+        <Link to="/apply" className="mobile-apply" onClick={closeMenu}>Apply Now</Link>
       </nav>
 
     </header>
