@@ -6,37 +6,7 @@
   position: relative;
   width: 100%;
   z-index: 1000;
-}
-
-
-/* =========================================
-   NOTICE TICKER (Fixed / Static at top)
-========================================= */
-
-.notice-ticker {
-  display: flex;
-  align-items: center;
-  min-height: 38px;
-  background: #C8920A;
-  color: #ffffff;
-  width: 100%;
-}
-
-.ticker-label {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  padding: 0 22px;
-  background: #6D1010;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.ticker-content {
-  padding: 0 25px;
-  font-size: 13px;
-  font-weight: 600;
+  background: #ffffff;
 }
 
 
@@ -48,6 +18,7 @@
   position: relative;
   width: 100%;
   background: #ffffff;
+  z-index: 1001;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -65,7 +36,7 @@
   left: 0;
   width: 100%;
   background: transparent;
-  z-index: 1000;
+  z-index: 1001;
   animation: slideDownNav 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -194,6 +165,39 @@
 .desktop-nav .apply-button:hover {
   background: #6D1010;
   transform: translateY(-1px);
+}
+
+
+/* =========================================
+   NOTICE TICKER (Header ke niche wali line)
+========================================= */
+
+.notice-ticker {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  background: #C8920A;
+  color: #ffffff;
+  width: 100%;
+  position: relative;
+  z-index: 999;
+}
+
+.ticker-label {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  background: #6D1010;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ticker-content {
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 

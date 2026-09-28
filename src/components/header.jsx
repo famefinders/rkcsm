@@ -9,8 +9,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Jaise hi 45px se zyada scroll hoga, navbar floating ho jayega
-      if (window.scrollY > 45) {
+      // Jab page thoda scroll ho toh navbar floating mode me aa jaye
+      if (window.scrollY > 80) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -37,19 +37,7 @@ const Header = () => {
   return (
     <header className="site-header">
 
-      {/* ================= NOTICE TICKER (Fixed at Top) ================= */}
-      <div className="notice-ticker">
-        <div className="ticker-label">
-          NOTICE
-        </div>
-
-        <div className="ticker-content">
-          Admissions open for 2026 — Enquire now for courses,
-          eligibility and admission guidance.
-        </div>
-      </div>
-
-      {/* ================= MAIN NAVBAR (Floats on Scroll) ================= */}
+      {/* ================= MAIN NAVBAR (Pehle upar rahega, scroll par float hoga) ================= */}
       <div className={`main-navbar-wrapper ${isScrolled ? "is-floating" : ""}`}>
         <div className="main-navbar">
           <div className="header-container">
@@ -96,6 +84,18 @@ const Header = () => {
             </button>
 
           </div>
+        </div>
+      </div>
+
+      {/* ================= NOTICE TICKER (Header ke theek niche) ================= */}
+      <div className="notice-ticker">
+        <div className="ticker-label">
+          NOTICE
+        </div>
+
+        <div className="ticker-content">
+          Admissions open for 2026 — Enquire now for courses,
+          eligibility and admission guidance.
         </div>
       </div>
 
