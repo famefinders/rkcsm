@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const isActive = (path) => {
     if (path === "/") {
       return location.pathname === "/";
     }
-
     return location.pathname.toLowerCase() === path.toLowerCase();
   };
 
@@ -22,7 +37,7 @@ const Header = () => {
     <header className="site-header">
 
       {/* ================= MAIN NAVBAR ================= */}
-      <div className="main-navbar">
+      <div className={`main-navbar ${isScrolled ? "floating" : ""}`}>
 
         <div className="header-container">
 
