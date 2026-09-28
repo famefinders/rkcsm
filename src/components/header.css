@@ -1,18 +1,24 @@
 /* =========================================
-   HEADER
+   HEADER CONTAINER
 ========================================= */
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
   width: 100%;
-  background: #ffffff;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Jab page scroll ho toh header thoda upar se float ho */
+.site-header.scrolled {
+  padding-top: 10px;
 }
 
 
 /* =========================================
-   TOP BAR
+   TOP BAR (Agar hai toh)
 ========================================= */
 
 .top-bar {
@@ -31,70 +37,29 @@
   justify-content: space-between;
 }
 
-.top-info {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.top-social {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.top-social span {
-  cursor: pointer;
-  opacity: 0.9;
-  transition: 0.2s;
-}
-
-.top-social span:hover {
-  color: #E8B030;
-}
-
 
 /* =========================================
-   MAIN NAVBAR & FLOATING ANIMATION
+   MAIN NAVBAR & SMOOTH FLOATING EFFECT
 ========================================= */
 
 .main-navbar {
   background: #ffffff;
   border-bottom: 1px solid #e8e0d5;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Jab user scroll karega tab yeh floating class active hogi */
 .main-navbar.floating {
-  position: fixed;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 90%;
   max-width: 1320px;
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: 50px;
-  box-shadow: 0 15px 35px rgba(27, 42, 74, 0.1);
-  animation: slideDownNav 0.3s ease-in-out;
-  z-index: 1000;
-}
-
-@keyframes slideDownNav {
-  from {
-    transform: translate(-50%, -15px);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0);
-    opacity: 1;
-  }
+  box-shadow: 0 20px 40px rgba(27, 42, 74, 0.12);
 }
 
 .header-container {
@@ -106,12 +71,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-  transition: padding 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .main-navbar.floating .header-container {
   padding: 0 25px;
-  min-height: 66px; /* Floating hone par navbar thoda compact ho jayega */
+  min-height: 64px;
 }
 
 
@@ -136,7 +101,7 @@
 }
 
 .main-navbar.floating .header-logo img {
-  height: 52px; /* Floating mode me logo thoda chota hoga */
+  height: 48px;
 }
 
 
@@ -166,23 +131,9 @@
   color: #8B1A1A;
 }
 
-
-/* =========================================
-   ACTIVE DESKTOP NAV ITEM
-========================================= */
-
 .desktop-nav a.active {
   color: #8B1A1A;
 }
-
-.desktop-nav a.active::after {
-  width: 100%;
-}
-
-
-/* =========================================
-   GOLD UNDERLINE
-========================================= */
 
 .desktop-nav a:not(.apply-button)::after {
   content: "";
@@ -195,14 +146,10 @@
   transition: width 0.2s ease;
 }
 
-.desktop-nav a:not(.apply-button):hover::after {
+.desktop-nav a:not(.apply-button):hover::after,
+.desktop-nav a.active::after {
   width: 100%;
 }
-
-
-/* =========================================
-   APPLY NOW BUTTON
-========================================= */
 
 .desktop-nav .apply-button {
   padding: 11px 18px;
@@ -211,20 +158,17 @@
   border-radius: 3px;
   font-size: 13px;
   font-weight: 700;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .desktop-nav .apply-button:hover {
   background: #6D1010;
-  color: #ffffff;
   transform: translateY(-1px);
 }
 
 
 /* =========================================
-   NOTICE TICKER
+   NOTICE TICKER (Professional adjustment)
 ========================================= */
 
 .notice-ticker {
@@ -233,6 +177,15 @@
   min-height: 38px;
   background: #C8920A;
   color: #ffffff;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Jaise hi scroll ho, notice bar smooth tarike se chup jaye taaki floating navbar clean dikhe */
+.site-header.scrolled .notice-ticker {
+  max-height: 0;
+  opacity: 0;
+  min-height: 0;
 }
 
 .ticker-label {
@@ -254,7 +207,7 @@
 
 
 /* =========================================
-   MOBILE MENU BUTTON
+   MOBILE BUTTON & NAV
 ========================================= */
 
 .mobile-menu-button {
@@ -278,105 +231,52 @@
   background: #1B2A4A;
 }
 
-
-/* =========================================
-   MOBILE NAV
-========================================= */
-
 .mobile-nav {
   display: none;
 }
 
 
 /* =========================================
-   TABLET
+   RESPONSIVE MEDIA QUERIES
 ========================================= */
 
 @media (max-width: 1150px) {
-
-  .top-info {
-    gap: 15px;
-    font-size: 12px;
-  }
-
   .header-container {
     padding: 0 20px;
     gap: 15px;
     min-height: 74px;
   }
-
   .header-logo img {
     height: 64px;
     max-width: 210px;
   }
-
   .desktop-nav {
     gap: 15px;
   }
-
-  .desktop-nav a {
-    font-size: 13px;
-  }
-
-  .desktop-nav .apply-button {
-    padding: 10px 14px;
-  }
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
 @media (max-width: 850px) {
-
-  .top-bar-container {
-    min-height: 38px;
-    padding: 0 15px;
-  }
-
-  .top-info {
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-    font-size: 11px;
-  }
-
-  .top-info span:not(:first-child) {
-    display: none;
-  }
-
-  .top-social {
-    display: none;
-  }
-
   .header-container {
     min-height: 78px;
     padding: 0 15px;
   }
-
   .header-logo img {
     height: 58px;
     max-width: 180px;
   }
-
   .desktop-nav {
     display: none;
   }
-
   .mobile-menu-button {
     display: flex;
   }
-
   .notice-ticker {
     min-height: 34px;
   }
-
   .ticker-label {
     padding: 0 12px;
     font-size: 10px;
   }
-
   .ticker-content {
     padding: 0 12px;
     font-size: 11px;
@@ -384,7 +284,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
   .mobile-nav {
     display: flex;
     max-height: 0;
@@ -392,16 +291,12 @@
     flex-direction: column;
     background: #ffffff;
     border-bottom: 0 solid #e8e0d5;
-    transition:
-      max-height 0.3s ease,
-      border-width 0.3s ease;
+    transition: max-height 0.3s ease, border-width 0.3s ease;
   }
-
   .mobile-nav.open {
     max-height: 600px;
     border-bottom-width: 1px;
   }
-
   .mobile-nav a {
     position: relative;
     padding: 14px 20px;
@@ -410,40 +305,14 @@
     font-size: 14px;
     font-weight: 700;
     border-bottom: 1px solid #f0ebe4;
-    transition:
-      background 0.2s ease,
-      color 0.2s ease;
   }
-
-  .mobile-nav a:hover {
-    background: #FFF8E8;
-    color: #8B1A1A;
-  }
-
   .mobile-nav a.active {
     background: #FFF8E8;
     color: #8B1A1A;
   }
-
-  .mobile-nav a.active:not(.mobile-apply)::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #C8920A;
-  }
-
   .mobile-nav .mobile-apply {
     background: #8B1A1A;
     color: #ffffff;
     text-align: center;
   }
-
-  .mobile-nav .mobile-apply:hover {
-    background: #6D1010;
-    color: #ffffff;
-  }
-
 }
