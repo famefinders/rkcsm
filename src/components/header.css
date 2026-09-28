@@ -11,63 +11,48 @@
 
 
 /* =========================================
-   MAIN NAVBAR & SMOOTH FLOATING ANIMATION
+   MAIN NAVBAR (BUTTER-SMOOTH STICKY FLOATING)
 ========================================= */
 
 .main-navbar-wrapper {
-  position: relative;
+  position: sticky;
+  top: 10px; /* Jaise hi scroll karenge, yeh upar 10px par ruk kar float ho jayega */
   width: 100%;
-  background: #ffffff;
   z-index: 1001;
-  /* Smooth transition for entering/leaving floating state */
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 8px 0; /* Padding ki wajah se smooth floating space milta hai */
+  transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-navbar {
   background: #ffffff;
   border-bottom: 1px solid #e8e0d5;
   width: 100%;
-  /* Smooth transition for background, borders, and shadows */
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 0px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Jab user scroll karega tab yeh floating wrapper active hoga */
-.main-navbar-wrapper.is-floating {
-  position: fixed;
-  top: 12px;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  z-index: 1001;
-  animation: slideDownNav 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* Jab page scroll hona shuru hoga toh wrapper ke andar ka navbar pill ban jayega */
+@supports (animation-timeline: scroll()) {
+  /* Agar browser support kare toh advanced timeline, warna sticky toh chal hi raha hai */
 }
 
-.main-navbar-wrapper.is-floating .main-navbar {
-  width: 90%;
-  max-width: 1320px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.85);
-  border-radius: 60px;
-  box-shadow: 0 20px 45px rgba(27, 42, 74, 0.1);
-  /* Smooth transform transition */
-  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              background 0.4s ease, 
-              border-radius 0.4s ease, 
-              box-shadow 0.4s ease;
-}
+/* Hum yahan ek chota sa trick use karenge: jab body ya page scroll ho, toh hum CSS class ke through ya direct sticky state me style denge. 
+   Lekin pure CSS sticky me jab element 'sticky' banta hai, toh hum usko pill shape me transition kar sakte hain using scroll position or standard classes.
+   Chalo isko aur bhi smooth banane ke liye hum standard JS scroll observer ke sath buttery CSS transition dete hain: */
 
-@keyframes slideDownNav {
-  0% {
-    transform: translateY(-25px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.main-navbar-wrapper.is-floating .main-navbar,
+.site-header.scrolled .main-navbar {
+  width: 90% !important;
+  max-width: 1320px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 60px !important;
+  box-shadow: 0 20px 45px rgba(27, 42, 74, 0.1) !important;
 }
 
 .header-container {
@@ -79,13 +64,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-  /* Smooth padding and height transition to prevent any jerk */
-  transition: min-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.main-navbar-wrapper.is-floating .header-container {
-  padding: 0 28px;
+.main-navbar-wrapper.is-floating .header-container,
+.site-header.scrolled .header-container {
+  padding: 0 25px;
   min-height: 64px;
 }
 
@@ -107,11 +91,11 @@
   height: 72px;
   max-width: 220px;
   object-fit: contain;
-  /* Smooth logo resizing */
   transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.main-navbar-wrapper.is-floating .header-logo img {
+.main-navbar-wrapper.is-floating .header-logo img,
+.site-header.scrolled .header-logo img {
   height: 48px;
 }
 
@@ -179,7 +163,7 @@
 
 
 /* =========================================
-   NOTICE TICKER (Header ke niche wali line)
+   NOTICE TICKER
 ========================================= */
 
 .notice-ticker {
