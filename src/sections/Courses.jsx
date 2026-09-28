@@ -1,216 +1,6 @@
 import { useMemo, useState } from "react";
+import { COURSES_DATA } from "../../data/coursesData"; // Apna sahi path check kar lena
 import "./Courses.css";
-
-const courses = [
-  {
-    id: 1,
-    stream: "Computer Science & IT",
-    level: "Undergraduate",
-    mode: "Full-time",
-    title: "BCA",
-    fullTitle: "Bachelor of Computer Applications",
-    duration: "3 years",
-    eligibility: "10+2 any stream with Mathematics preferred",
-    description:
-      "Programming, data structures, databases and web development with lab-first teaching.",
-    highlights: [
-      "Six dedicated computer labs",
-      "Industry mini-projects each semester",
-      "Placement preparation from year two",
-    ],
-  },
-  {
-    id: 2,
-    stream: "Computer Science & IT",
-    level: "Undergraduate",
-    mode: "Full-time",
-    title: "B.Sc. (IT)",
-    fullTitle: "Bachelor of Science in Information Technology",
-    duration: "3 years",
-    eligibility: "10+2 with Science / Mathematics",
-    description:
-      "A science-led IT degree covering networks, systems and applied software engineering.",
-    highlights: [
-      "Networking and systems labs",
-      "Open-source tooling",
-      "Research-oriented final year",
-    ],
-  },
-  {
-    id: 3,
-    stream: "Computer Science & IT",
-    level: "Postgraduate",
-    mode: "Full-time",
-    title: "MCA",
-    fullTitle: "Master of Computer Applications",
-    duration: "2 years",
-    eligibility:
-      "Bachelor's degree with Mathematics at 10+2 or graduation level",
-    description:
-      "Advanced software engineering, cloud and data systems with a capstone industry project.",
-    highlights: [
-      "Capstone with industry mentor",
-      "Cloud / DevOps electives",
-      "Interview coaching",
-    ],
-  },
-  {
-    id: 4,
-    stream: "Computer Science & IT",
-    level: "Diploma",
-    mode: "Part-time / Weekend",
-    title: "PGDCA",
-    fullTitle: "Post Graduate Diploma in Computer Applications",
-    duration: "1 year",
-    eligibility: "Any graduate",
-    description:
-      "A fast, practical conversion course for graduates moving into IT roles.",
-    highlights: [
-      "Weekend batches",
-      "Office automation to programming",
-      "Portfolio of five projects",
-    ],
-  },
-
-  {
-    id: 5,
-    stream: "Mass Communication",
-    level: "Undergraduate",
-    mode: "Full-time",
-    title: "BJMC",
-    fullTitle: "Bachelor of Journalism & Mass Communication",
-    duration: "3 years",
-    eligibility: "10+2 any stream",
-    description:
-      "Reporting, editing, media law and production across print, broadcast and digital.",
-    highlights: [
-      "In-house studio and edit suites",
-      "Campus newsroom",
-      "Internships with media houses",
-    ],
-  },
-  {
-    id: 6,
-    stream: "Mass Communication",
-    level: "Postgraduate",
-    mode: "Full-time",
-    title: "MJMC",
-    fullTitle: "Master of Journalism & Mass Communication",
-    duration: "2 years",
-    eligibility: "Graduate in any discipline",
-    description:
-      "Specialised training in investigative reporting, media research and digital storytelling.",
-    highlights: [
-      "Documentary production",
-      "Media research methods",
-      "Guest faculty from newsrooms",
-    ],
-  },
-  {
-    id: 7,
-    stream: "Mass Communication",
-    level: "Diploma",
-    mode: "Part-time / Weekend",
-    title: "PG Diploma in Journalism",
-    fullTitle: "Post Graduate Diploma in Journalism",
-    duration: "1 year",
-    eligibility: "Any graduate",
-    description:
-      "Evening and weekend track for working professionals entering media.",
-    highlights: [
-      "Weekend intensives",
-      "Editing, camera and direction modules",
-      "Live assignments",
-    ],
-  },
-
-  {
-    id: 8,
-    stream: "Management",
-    level: "Undergraduate",
-    mode: "Full-time",
-    title: "BBA",
-    fullTitle: "Bachelor of Business Administration",
-    duration: "3 years",
-    eligibility: "10+2 any stream",
-    description:
-      "Business fundamentals with case-based learning in marketing, finance and operations.",
-    highlights: [
-      "Live case studies",
-      "Summer internship",
-      "Business communication lab",
-    ],
-  },
-  {
-    id: 9,
-    stream: "Management",
-    level: "Postgraduate",
-    mode: "Part-time / Weekend",
-    title: "MBA",
-    fullTitle: "Master of Business Administration",
-    duration: "2 years",
-    eligibility: "Graduate in any discipline",
-    description:
-      "Weekend MBA designed for working professionals, with specialisation tracks.",
-    highlights: [
-      "Marketing / HR / Finance specialisations",
-      "Working-professional cohort",
-      "Capstone consulting project",
-    ],
-  },
-
-  {
-    id: 10,
-    stream: "Teacher Training & Law",
-    level: "Undergraduate",
-    mode: "Full-time",
-    title: "B.Ed.",
-    fullTitle: "Bachelor of Education",
-    duration: "2 years",
-    eligibility: "Graduate with minimum qualifying marks",
-    description:
-      "Teacher preparation with supervised classroom practice in partner schools.",
-    highlights: [
-      "School internship blocks",
-      "Pedagogy workshops",
-      "Micro-teaching labs",
-    ],
-  },
-  {
-    id: 11,
-    stream: "Teacher Training & Law",
-    level: "Undergraduate",
-    mode: "Full-time",
-    title: "BA.LLB",
-    fullTitle: "Bachelor of Arts & Bachelor of Laws",
-    duration: "5 years",
-    eligibility: "10+2 any stream",
-    description:
-      "Integrated law programme combining humanities with core legal training.",
-    highlights: [
-      "Moot court",
-      "Legal aid clinic",
-      "Court visits / internships",
-    ],
-  },
-  {
-    id: 12,
-    stream: "Teacher Training & Law",
-    level: "Undergraduate",
-    mode: "Full-time",
-    title: "LLB",
-    fullTitle: "Bachelor of Laws",
-    duration: "3 years",
-    eligibility: "Any graduate",
-    description:
-      "Professional law degree with practice-oriented drafting and advocacy training.",
-    highlights: [
-      "Drafting and pleading workshops",
-      "Advocacy training",
-      "Internship support",
-    ],
-  },
-];
 
 const Courses = () => {
   const [search, setSearch] = useState("");
@@ -219,7 +9,7 @@ const Courses = () => {
   const [mode, setMode] = useState("All");
 
   const filteredCourses = useMemo(() => {
-    return courses.filter((course) => {
+    return COURSES_DATA.filter((course) => {
       const searchText = search.toLowerCase();
 
       const matchesSearch =
@@ -376,7 +166,7 @@ const Courses = () => {
               </span>
 
               <h2>
-                {filteredCourses.length} of {courses.length} programmes
+                {filteredCourses.length} of {COURSES_DATA.length} programmes
               </h2>
             </div>
 
@@ -463,7 +253,7 @@ const Courses = () => {
 
                   <a
                     href={`/admissions?course=${encodeURIComponent(
-                      `${course.title} — ${course.fullTitle}`
+                      `${course.title} —${course.fullTitle}`
                     )}`}
                     className="course-enquiry"
                   >
