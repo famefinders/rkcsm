@@ -49,7 +49,37 @@ const galleryItems = [
   category: "Academics",
   image: "/images/academic-gathering.jpg",
   desc: "Faculty members and students gathered at the college campus."
-}
+  },
+  {
+    title: "Main Campus Building",
+    category: "Campus",
+    image: "/images/campus-building.jpg",
+    desc: "Front view of our sprawling campus building and lush green lawns."
+  },
+  {
+    title: "Green Lawns & Gardens",
+    category: "Campus",
+    image: "/images/campus-lawn-1.jpg",
+    desc: "Peaceful and well-maintained green spaces across the campus."
+  },
+  {
+    title: "Campus Gardens",
+    category: "Campus",
+    image: "/images/campus-lawn-2.jpg",
+    desc: "Scenic views of the college grounds and natural surroundings."
+  },
+  {
+    title: "College Grounds",
+    category: "Campus",
+    image: "/images/campus-ground.jpg",
+    desc: "Open grounds providing an energetic atmosphere for students."
+  },
+  {
+    title: "Campus Walkway",
+    category: "Campus",
+    image: "/images/campus-pathway.jpg",
+    desc: "Connecting pathways and corridors across institutional blocks."
+  }
 ];
 
 const categories = ["All", "Campus", "Academics", "Events"];
