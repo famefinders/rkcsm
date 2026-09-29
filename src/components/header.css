@@ -1,65 +1,37 @@
 /* =========================================
-   HEADER CONTAINER
+   SMART HIDE/REVEAL HEADER CSS
 ========================================= */
 
 .site-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
   background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Jab user niche scroll karega toh header upar chup jayega */
+.site-header.hidden {
+  transform: translateY(-100%);
+}
+
+/* Jab user upar scroll karega toh header smooth slide hokar wapas aa jayega */
+.site-header.visible {
+  transform: translateY(0);
 }
 
 
 /* =========================================
-   MAIN NAVBAR & BUTTER-SMOOTH FLOATING
+   MAIN NAVBAR
 ========================================= */
-
-.main-navbar-wrapper {
-  position: relative;
-  width: 100%;
-  background: #ffffff;
-  z-index: 1001;
-}
 
 .main-navbar {
   background: #ffffff;
   border-bottom: 1px solid #e8e0d5;
   width: 100%;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.main-navbar-wrapper.is-floating {
-  position: fixed;
-  top: 12px;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  z-index: 1001;
-  animation: slideDownNav 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.main-navbar-wrapper.is-floating .main-navbar {
-  width: 90%;
-  max-width: 1320px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: 60px;
-  box-shadow: 0 20px 45px rgba(27, 42, 74, 0.12);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes slideDownNav {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .header-container {
@@ -71,12 +43,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.main-navbar-wrapper.is-floating .header-container {
-  padding: 0 25px;
-  min-height: 64px;
 }
 
 
@@ -97,11 +63,6 @@
   height: 72px;
   max-width: 220px;
   object-fit: contain;
-  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.main-navbar-wrapper.is-floating .header-logo img {
-  height: 48px;
 }
 
 
@@ -178,8 +139,6 @@
   background: #C8920A;
   color: #ffffff;
   width: 100%;
-  position: relative;
-  z-index: 999;
 }
 
 .ticker-label {
