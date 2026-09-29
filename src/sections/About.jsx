@@ -1,10 +1,16 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 import "./About.css";
+
 const About = () => {
+  useScrollReveal(); // Poore page par smooth scroll reveal animation ke liye
+
   return (
     <main className="about-page">
 
       {/* ABOUT HERO */}
-      <section className="about-hero">
+      <section className="about-hero reveal-on-scroll">
         <div className="about-container">
           <div className="about-hero-content">
             <span className="about-eyebrow">ABOUT US</span>
@@ -21,12 +27,12 @@ const About = () => {
       </section>
 
 
-      {/* OUR STORY */}
-      <section className="about-story section-space">
+      {/* 2.1 ABOUT SOCIETY */}
+      <section className="about-story section-space reveal-on-scroll">
         <div className="about-container about-two-column">
 
           <div className="about-section-title">
-            <span className="about-eyebrow">OUR STORY</span>
+            <span className="about-eyebrow">2.1 ABOUT SOCIETY</span>
             <h2>Education with a purpose</h2>
           </div>
 
@@ -56,44 +62,129 @@ const About = () => {
       </section>
 
 
-      {/* REACH */}
-      <section className="about-reach">
+      {/* 2.2 OUR INSTITUTES, COLLEGES & UNITS */}
+      <section className="about-reach reveal-on-scroll">
         <div className="about-container">
 
           <div className="about-reach-heading">
-            <span className="about-eyebrow">OUR REACH</span>
-            <h2>Growing with every generation</h2>
+            <span className="about-eyebrow">2.2 INSTITUTES & UNITS</span>
+            <h2>Our Specialized Colleges & Units</h2>
           </div>
 
           <div className="about-reach-grid">
 
             <div className="about-reach-card">
               <div className="reach-number">01</div>
-              <h3>New Delhi</h3>
+              <h3>2.2.1 Law College</h3>
               <p>
-                Our New Delhi campuses offer programmes in Computer
-                Applications, Information Technology, Media Technologies,
-                Mass Communication & Journalism, Management and Films &
-                Television Studies.
+                Providing comprehensive legal education including LLB (3 Years) and BA.LLB (5 Years) approved by BCI.
               </p>
             </div>
 
             <div className="about-reach-card">
               <div className="reach-number">02</div>
-              <h3>Firozabad</h3>
+              <h3>2.2.2 UG College</h3>
               <p>
-                Our Firozabad institutions provide professional education
-                supported by classrooms, library facilities, computer labs,
-                auditorium and other campus facilities.
+                Offering undergraduate degree programmes like B.Com focused on commerce and professional skills.
               </p>
             </div>
 
             <div className="about-reach-card">
               <div className="reach-number">03</div>
-              <h3>Professional Education</h3>
+              <h3>2.2.3 Teachers Training</h3>
               <p>
-                The Society continues to focus on quality and professional
-                education that prepares students for their respective fields.
+                Dedicated teacher education programmes including B.Ed and D.El.Ed approved by NCTE.
+              </p>
+            </div>
+
+            <div className="about-reach-card">
+              <div className="reach-number">04</div>
+              <h3>2.2.4 Sports Academy</h3>
+              <p>
+                Promoting physical education, sports training, annual tournaments, and athletic development.
+              </p>
+            </div>
+
+            <div className="about-reach-card">
+              <div className="reach-number">05</div>
+              <h3>2.2.5 K-12 School</h3>
+              <p>
+                English medium school framework laying a strong foundational education for young minds.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2.3 OFFICE BEARERS */}
+      <section className="about-development section-space reveal-on-scroll">
+        <div className="about-container about-two-column">
+
+          <div className="about-section-title">
+            <span className="about-eyebrow">2.3 OFFICE BEARERS</span>
+            <h2>Leadership & Administration</h2>
+          </div>
+
+          <div className="about-development-content">
+            <p>
+              Our management and staff members bring decades of academic expertise, institutional governance, and administrative dedication to ensure educational excellence.
+            </p>
+            <div className="development-list">
+              <div className="development-item">
+                <span>👤</span>
+                <div>
+                  <h3>Management Committee</h3>
+                  <p>Guiding the institutional vision with transparent leadership and strategic planning.</p>
+                </div>
+              </div>
+              <div className="development-item">
+                <span>🎓</span>
+                <div>
+                  <h3>Academic Directors & Principals</h3>
+                  <p>Overseeing curriculum delivery, student discipline, and faculty mentorship.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* 2.4 CAMPUS LOCATION */}
+      <section className="about-reach reveal-on-scroll">
+        <div className="about-container">
+
+          <div className="about-reach-heading">
+            <span className="about-eyebrow">2.4 CAMPUS LOCATION</span>
+            <h2>Our Campuses in New Delhi & Firozabad</h2>
+          </div>
+
+          <div className="about-reach-grid">
+
+            <div className="about-reach-card">
+              <div className="reach-number">01</div>
+              <h3>New Delhi Campuses</h3>
+              <p>
+                Offering specialized programmes in Computer Applications, IT, Media Technologies, Mass Communication, and Management.
+              </p>
+            </div>
+
+            <div className="about-reach-card">
+              <div className="reach-number">02</div>
+              <h3>Firozabad Campuses (Uttar Pradesh)</h3>
+              <p>
+                Equipped with sprawling green lawns, modern smart classrooms, moot court rooms, science labs, and a central library.
+              </p>
+            </div>
+
+            <div className="about-reach-card">
+              <div className="reach-number">03</div>
+              <h3>Infrastructure</h3>
+              <p>
+                Purpose-built facilities designed to foster holistic student growth and professional readiness.
               </p>
             </div>
 
@@ -103,7 +194,7 @@ const About = () => {
 
 
       {/* ================= TIMELINE SECTION ================= */}
-      <section className="about-timeline-section section-space">
+      <section className="about-timeline-section section-space reveal-on-scroll">
         <div className="about-container">
           <div className="about-timeline-header">
             <span className="about-eyebrow">OUR LEGACY & JOURNEY</span>
@@ -123,7 +214,7 @@ const About = () => {
 
 
       {/* ALL ROUND DEVELOPMENT */}
-      <section className="about-development section-space">
+      <section className="about-development section-space reveal-on-scroll">
         <div className="about-container about-two-column">
 
           <div className="about-section-title">
@@ -204,65 +295,13 @@ const About = () => {
       </section>
 
 
-      {/* PURPOSE CARDS */}
-      <section className="about-purpose">
-        <div className="about-container">
-
-          <div className="about-purpose-heading">
-            <span className="about-eyebrow">WHAT DRIVES US</span>
-            <h2>Our purpose, standards and support</h2>
-          </div>
-
-          <div className="purpose-grid">
-
-            <div className="purpose-card">
-              <span>01</span>
-              <h3>Purpose</h3>
-              <p>
-                To contribute towards spreading literacy and creating
-                opportunities for professional education.
-              </p>
-            </div>
-
-            <div className="purpose-card">
-              <span>02</span>
-              <h3>Standards</h3>
-              <p>
-                To provide quality and professional education through
-                structured academic programmes and learning facilities.
-              </p>
-            </div>
-
-            <div className="purpose-card">
-              <span>03</span>
-              <h3>Support</h3>
-              <p>
-                Career counselling, workshops and seminars help students
-                understand opportunities beyond the classroom.
-              </p>
-            </div>
-
-            <div className="purpose-card">
-              <span>04</span>
-              <h3>Reach</h3>
-              <p>
-                Educational institutions and programmes across New Delhi
-                and Firozabad in Uttar Pradesh.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* MISSION */}
-      <section className="about-mission">
+      {/* 2.5 OUR MISSION & MOTTO */}
+      <section className="about-mission reveal-on-scroll">
         <div className="about-container">
 
           <div className="mission-box">
 
-            <span className="about-eyebrow">OUR MISSION</span>
+            <span className="about-eyebrow">2.5 OUR MISSION & MOTTO</span>
 
             <blockquote>
               “We are committed to give our students quality & professional
@@ -273,6 +312,7 @@ const About = () => {
 
             <div className="mission-line"></div>
 
+            <p className="mission-motto-text"><strong>Motto:</strong> विद्या धनम् सर्वधनम् प्रधानम्</p>
             <p>R. K. C. Educational Society</p>
 
           </div>
@@ -282,7 +322,7 @@ const About = () => {
 
 
       {/* CTA */}
-      <section className="about-cta">
+      <section className="about-cta reveal-on-scroll">
         <div className="about-container">
 
           <div className="about-cta-content">
@@ -295,9 +335,9 @@ const About = () => {
               career goals.
             </p>
 
-            <a href="/courses" className="about-cta-button">
+            <Link to="/courses" className="about-cta-button">
               Explore courses <span>→</span>
-            </a>
+            </Link>
           </div>
 
         </div>
