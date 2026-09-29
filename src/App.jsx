@@ -21,7 +21,7 @@ import About from "./sections/About";
 import Courses from "./sections/Courses";
 import Admissions from "./sections/Admissions";
 import Apply from "./sections/Apply";
-import Careers from "./sections/Career"; 
+import Faculty from "./sections/Faculty"; 
 import Alumni from "./sections/Alumni";
 import Contact, { HomeEnquiry } from "./sections/Contact";
 import Gallery from "./sections/Gallery";
@@ -101,7 +101,7 @@ function App() {
 
         <Route path="/apply" element={<Apply />} />
 
-        <Route path="/careers" element={<Careers />} />
+        <Route path="/faculty" element={<Faculty />} />
 
         <Route path="/alumni" element={<Alumni />} />
 
