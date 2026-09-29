@@ -306,7 +306,7 @@ const About = () => {
         <div className="about-container about-two-column">
 
           <div className="about-section-title">
-            <span className="about-eyebrow">MAKE DONATIONS — 80G</span>
+            <span className="about-eyebrow">MAKE DONATIONS</span>
             <h2>Support our educational mission</h2>
           </div>
 
