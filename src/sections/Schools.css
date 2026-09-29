@@ -400,15 +400,17 @@
 }
 
 
-/* LINK */
+/* LINK (Explore programmes button fixed to pure white) */
 
-.school-link {
+.school-link,
+.school-link span,
+.school-link b {
   display: inline-flex;
   align-items: center;
 
   gap: 12px;
 
-  color: #ffffff;
+  color: #ffffff !important;
 
   font-size: 10px;
   font-weight: 800;
@@ -431,7 +433,12 @@
 
 .school-link:hover {
   gap: 18px;
-  color: #e2b970;
+  color: #e2b970 !important;
+}
+
+.school-link:hover span,
+.school-link:hover b {
+  color: #e2b970 !important;
 }
 
 
