@@ -129,7 +129,7 @@
 
 
 /* =========================================
-   NOTICE TICKER
+   NOTICE TICKER WITH MARQUEE
 ========================================= */
 
 .notice-ticker {
@@ -139,6 +139,7 @@
   background: #C8920A;
   color: #ffffff;
   width: 100%;
+  overflow: hidden;
 }
 
 .ticker-label {
@@ -150,14 +151,23 @@
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+  flex-shrink: 0;
+  z-index: 2;
 }
 
-.ticker-content {
-  padding: 0 25px;
+.ticker-content-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+.ticker-content-wrapper marquee {
   font-size: 13px;
   font-weight: 600;
+  color: #ffffff;
+  display: block;
+  width: 100%;
 }
-
 
 /* =========================================
    MOBILE BUTTON & NAV

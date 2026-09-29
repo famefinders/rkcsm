@@ -92,17 +92,17 @@ const Header = () => {
       </div>
 
       {/* ================= NOTICE TICKER ================= */}
-      <div className="notice-ticker">
-        <div className="ticker-label">
-          NOTICE
-        </div>
+<div className="notice-ticker">
+  <div className="ticker-label">
+    NOTICE
+  </div>
 
-        <div className="ticker-content">
-          Admissions open for 2026 — Enquire now for courses,
-          eligibility and admission guidance.
-        </div>
-      </div>
-
+  <div className="ticker-content-wrapper">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      Admissions open for 2026 — Enquire now for courses, eligibility and admission guidance.
+    </marquee>
+  </div>
+</div>
       {/* ================= MOBILE NAV ================= */}
       <nav
         className={
