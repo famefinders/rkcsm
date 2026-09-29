@@ -63,6 +63,7 @@ const Header = () => {
           <nav className="desktop-nav">
             <Link to="/" className={isActive("/") ? "active" : ""}>Home</Link>
             <Link to="/about" className={isActive("/about") ? "active" : ""}>About</Link>
+            <Link to="/recognitions" className={isActive("/recognitions") ? "active" : ""}>Recognitions</Link>
             <Link to="/courses" className={isActive("/courses") ? "active" : ""}>Courses</Link>
             <Link to="/admissions" className={isActive("/admissions") ? "active" : ""}>Admissions</Link>
             <Link to="/careers" className={isActive("/careers") ? "active" : ""}>Careers</Link>
@@ -113,6 +114,7 @@ const Header = () => {
       >
         <Link to="/" className={isActive("/") ? "active" : ""} onClick={closeMenu}>Home</Link>
         <Link to="/about" className={isActive("/about") ? "active" : ""} onClick={closeMenu}>About</Link>
+        <Link to="/recognitions" className={isActive("/recognitions") ? "active" : ""} onClick={closeMenu}>Recognitions</Link>
         <Link to="/courses" className={isActive("/courses") ? "active" : ""} onClick={closeMenu}>Courses</Link>
         <Link to="/admissions" className={isActive("/admissions") ? "active" : ""} onClick={closeMenu}>Admissions</Link>
         <Link to="/careers" className={isActive("/careers") ? "active" : ""} onClick={closeMenu}>Careers</Link>
