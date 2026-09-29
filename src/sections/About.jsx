@@ -301,6 +301,38 @@ const About = () => {
       </section>
 
 
+     {/* DONATIONS & 80G SUPPORT */}
+      <section className="about-donations section-space reveal-on-scroll">
+        <div className="about-container about-two-column">
+
+          <div className="about-section-title">
+            <span className="about-eyebrow">MAKE DONATIONS — 80G</span>
+            <h2>Support our educational mission</h2>
+          </div>
+
+          <div className="about-story-text">
+            <p>
+              R. K. C. Educational Society welcomes contributions and voluntary donations 
+              to help expand our literacy programmes, student scholarships, and campus facilities.
+            </p>
+            <p>
+              All contributions made to the Society are eligible for tax deductions under 
+              <strong> Section 80G of the Income Tax Act</strong>. 
+            </p>
+            <p>
+              If you wish to contribute or support our infrastructure development, please reach out 
+              to our administrative desk or email us for bank transfer and receipt guidelines.
+            </p>
+            <div style={{ marginTop: "20px" }}>
+              <Link to="/contact" className="about-cta-button" style={{ display: "inline-block", textDecoration: "none" }}>
+                Contact for Donations <span>→</span>
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="about-cta reveal-on-scroll">
         <div className="about-container">
