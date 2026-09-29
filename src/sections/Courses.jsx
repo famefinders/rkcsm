@@ -1,8 +1,12 @@
 import { useMemo, useState } from "react";
-import { COURSES_DATA } from "../data/coursesData"; // Apna sahi path check kar lena
+import { Link } from "react-router-dom";
+import { COURSES_DATA } from "../data/coursesData";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 import "./Courses.css";
 
 const Courses = () => {
+  useScrollReveal(); // Poore page par smooth scroll reveal animation ke liye
+
   const [search, setSearch] = useState("");
   const [stream, setStream] = useState("All");
   const [level, setLevel] = useState("All");
@@ -46,7 +50,7 @@ const Courses = () => {
     <main className="courses-page">
 
       {/* HERO */}
-      <section className="courses-hero">
+      <section className="courses-hero reveal-on-scroll">
         <div className="courses-container">
           <div className="courses-hero-content">
 
@@ -61,9 +65,8 @@ const Courses = () => {
             </h1>
 
             <p>
-              Explore our undergraduate, postgraduate and diploma
-              programmes across computing, media, management,
-              teacher training and law.
+              Explore our undergraduate, postgraduate, diploma and professional
+              programmes including B.Com, B.Ed, D.El.Ed, LLB and BA.LLB.
             </p>
 
           </div>
@@ -72,7 +75,7 @@ const Courses = () => {
 
 
       {/* COURSE EXPLORER */}
-      <section className="courses-explorer">
+      <section className="courses-explorer reveal-on-scroll">
 
         <div className="courses-container">
 
@@ -83,7 +86,7 @@ const Courses = () => {
 
             <input
               type="text"
-              placeholder="Search courses, e.g. journalism, MCA, weekend"
+              placeholder="Search courses, e.g. B.Com, LLB, B.Ed, D.El.Ed"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -107,6 +110,7 @@ const Courses = () => {
                 <option>Mass Communication</option>
                 <option>Management</option>
                 <option>Teacher Training & Law</option>
+                <option>Commerce & School</option>
               </select>
 
             </div>
@@ -124,6 +128,7 @@ const Courses = () => {
                 <option>Undergraduate</option>
                 <option>Postgraduate</option>
                 <option>Diploma</option>
+                <option>School</option>
               </select>
 
             </div>
@@ -251,15 +256,15 @@ const Courses = () => {
                   </div>
 
 
-                  <a
-                    href={`/admissions?course=${encodeURIComponent(
+                  <Link
+                    to={`/admissions?course=${encodeURIComponent(
                       `${course.title} —${course.fullTitle}`
                     )}`}
                     className="course-enquiry"
                   >
                     Enquire about this course
                     <span>→</span>
-                  </a>
+                  </Link>
 
                 </article>
 
@@ -290,7 +295,7 @@ const Courses = () => {
 
 
       {/* CTA */}
-      <section className="courses-cta">
+      <section className="courses-cta reveal-on-scroll">
 
         <div className="courses-container">
 
@@ -302,6 +307,7 @@ const Courses = () => {
 
             <h2>
               Not sure which programme
+              <br />
               is right for you?
             </h2>
 
@@ -310,13 +316,13 @@ const Courses = () => {
               based on your education and career goals.
             </p>
 
-            <a
-              href="/admissions"
+            <Link
+              to="/admissions"
               className="courses-cta-button"
             >
               Talk to admissions
               <span>→</span>
-            </a>
+            </Link>
 
           </div>
 
