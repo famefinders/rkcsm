@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 import "./Admissions.css";
 
 const API_BASE_URL =
   import.meta.env.VITE_API_URL || "https://rkcsm.onrender.com";
 
 const Admissions = () => {
+  useScrollReveal();
   const [searchParams] = useSearchParams();
 
   const courseFromUrl = searchParams.get("course") || "";
@@ -140,7 +142,7 @@ const Admissions = () => {
     <main className="admissions-page">
 
       {/* HERO */}
-      <section className="admissions-hero">
+      <section className="admissions-hero reveal-on-scroll">
         <div className="admissions-container">
 
           <div className="admissions-hero-content">
@@ -156,9 +158,8 @@ const Admissions = () => {
             </h1>
 
             <p>
-              Take the first step towards a professional education.
-              Send us your enquiry and our admissions team will guide
-              you through the process.
+              Take the first step towards a professional education in B.Com, B.Ed, D.El.Ed, LLB and BA.LLB.
+              Send us your enquiry and our admissions team will guide you through the process.
             </p>
 
           </div>
@@ -166,73 +167,46 @@ const Admissions = () => {
         </div>
       </section>
 
-      {/* STEPS */}
-      <section className="admission-steps-section">
+      {/* STEPS & PROCESS */}
+      <section className="admission-steps-section reveal-on-scroll">
 
         <div className="admissions-container">
 
           <div className="admissions-heading">
 
             <span className="admissions-eyebrow">
-              HOW IT WORKS
+              ADMISSION PROCESS
             </span>
 
-            <h2>Apply in four simple steps</h2>
+            <h2>How to secure your admission</h2>
+            <p>Structured guidelines for B.Com, B.Ed, D.El.Ed, LLB, and BA.LLB programmes.</p>
 
           </div>
 
           <div className="admission-steps">
 
             <div className="admission-step">
-
               <span>01</span>
-
-              <h3>Send an enquiry</h3>
-
-              <p>
-                Tell us your details and the programme you
-                are interested in.
-              </p>
-
+              <h3>Course Selection</h3>
+              <p>Choose your preferred professional degree or teacher training programme based on eligibility.</p>
             </div>
 
             <div className="admission-step">
-
               <span>02</span>
-
-              <h3>Counselling call</h3>
-
-              <p>
-                Our team will connect with you and help answer
-                your questions.
-              </p>
-
+              <h3>Counselling & Helpdesk</h3>
+              <p>Connect with our admissions desk for guidance regarding university norms and seat availability.</p>
             </div>
 
             <div className="admission-step">
-
               <span>03</span>
-
-              <h3>Document check</h3>
-
-              <p>
-                Submit the required academic and supporting
-                documents.
-              </p>
-
+              <h3>Document Verification</h3>
+              <p>Submit academic marksheets, ID proof, and statutory certificates as required by governing bodies.</p>
             </div>
 
             <div className="admission-step">
-
               <span>04</span>
-
-              <h3>Seat confirmation</h3>
-
-              <p>
-                Complete the required admission formalities
-                for your selected programme.
-              </p>
-
+              <h3>Fee & Confirmation</h3>
+              <p>Complete admission formalities and fee submission to confirm your enrollment.</p>
             </div>
 
           </div>
@@ -241,8 +215,39 @@ const Admissions = () => {
 
       </section>
 
+      {/* SCHOLARSHIPS & DOWNLOADS */}
+      <section className="admission-resources-section reveal-on-scroll">
+        <div className="admissions-container">
+          <div className="resources-grid">
+            
+            <div className="resource-card">
+              <span className="admissions-eyebrow">FINANCIAL SUPPORT</span>
+              <h3>Scholarships & Concessions</h3>
+              <p>
+                Merit-based scholarships and financial assistance schemes are available for eligible students 
+                as per government and institutional norms. Reach out to our helpdesk for details.
+              </p>
+            </div>
+
+            <div className="resource-card">
+              <span className="admissions-eyebrow">OFFLINE FORMS</span>
+              <h3>Download Prospectus & Forms</h3>
+              <p>
+                Prefer offline submission? Download our official admission enquiry form or prospectus in PDF format.
+              </p>
+              <div className="download-links-group">
+                <a href="/downloads/admission-form.pdf" download className="pdf-download-btn">
+                  Download Admission Form (PDF) ↓
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* FORM */}
-      <section className="admission-form-section">
+      <section className="admission-form-section reveal-on-scroll">
 
         <div className="admissions-container admission-form-layout">
 
@@ -250,7 +255,7 @@ const Admissions = () => {
           <div className="admission-form-intro">
 
             <span className="admissions-eyebrow">
-              ADMISSION ENQUIRY
+              ONLINE APPLICATION
             </span>
 
             <h2>
@@ -260,17 +265,15 @@ const Admissions = () => {
             </h2>
 
             <p>
-              Fill in your details and select the programme
-              you're interested in. Our team will get in touch
-              with you.
+              Fill in your details and select your course of interest. Our admissions helpdesk will connect with you promptly.
             </p>
 
             <div className="admission-contact-note">
 
-              <span>NEED HELP?</span>
+              <span>ADMISSIONS HELPDESK</span>
 
               <strong>
-                Speak with our admissions team.
+                Speak with our counsellors.
               </strong>
 
               <a href="mailto:info@rkfma.com">
@@ -408,52 +411,28 @@ const Admissions = () => {
                     Select a course
                   </option>
 
-                  <option value="BCA — Bachelor of Computer Applications">
-                    BCA — Bachelor of Computer Applications
+                  <option value="B.Com — Bachelor of Commerce">
+                    B.Com — Bachelor of Commerce
                   </option>
 
-                  <option value="B.Sc. (IT) — Bachelor of Science in Information Technology">
-                    B.Sc. (IT) — Bachelor of Science in Information Technology
+                  <option value="B.Ed — Bachelor of Education">
+                    B.Ed — Bachelor of Education
                   </option>
 
-                  <option value="MCA — Master of Computer Applications">
-                    MCA — Master of Computer Applications
+                  <option value="D.El.Ed — Diploma in Elementary Education">
+                    D.El.Ed — Diploma in Elementary Education
                   </option>
 
-                  <option value="PGDCA — Post Graduate Diploma in Computer Applications">
-                    PGDCA — Post Graduate Diploma in Computer Applications
+                  <option value="LLB — Bachelor of Laws (3 Years)">
+                    LLB — Bachelor of Laws (3 Years)
                   </option>
 
-                  <option value="BJMC — Bachelor of Journalism & Mass Communication">
-                    BJMC — Bachelor of Journalism & Mass Communication
+                  <option value="BA.LLB — Bachelor of Arts & Bachelor of Laws (5 Years)">
+                    BA.LLB — Bachelor of Arts & Bachelor of Laws (5 Years)
                   </option>
 
-                  <option value="MJMC — Master of Journalism & Mass Communication">
-                    MJMC — Master of Journalism & Mass Communication
-                  </option>
-
-                  <option value="PG Diploma in Journalism">
-                    PG Diploma in Journalism
-                  </option>
-
-                  <option value="BBA — Bachelor of Business Administration">
-                    BBA — Bachelor of Business Administration
-                  </option>
-
-                  <option value="MBA — Master of Business Administration">
-                    MBA — Master of Business Administration
-                  </option>
-
-                  <option value="B.Ed. — Bachelor of Education">
-                    B.Ed. — Bachelor of Education
-                  </option>
-
-                  <option value="BA.LLB — Bachelor of Arts & Bachelor of Laws">
-                    BA.LLB — Bachelor of Arts & Bachelor of Laws
-                  </option>
-
-                  <option value="LLB — Bachelor of Laws">
-                    LLB — Bachelor of Laws
+                  <option value="School / K-12 Admissions">
+                    School / K-12 Admissions
                   </option>
 
                 </select>
@@ -515,7 +494,7 @@ const Admissions = () => {
 
       {/* BOTTOM CTA */}
 
-      <section className="admission-bottom">
+      <section className="admission-bottom reveal-on-scroll">
 
         <div className="admissions-container">
 

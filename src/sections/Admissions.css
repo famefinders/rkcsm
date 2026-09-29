@@ -78,11 +78,17 @@
 }
 
 .admissions-heading h2 {
-  margin: 0;
+  margin: 0 0 10px;
   font-size: clamp(36px, 4vw, 52px);
   line-height: 1.08;
   letter-spacing: -1.5px;
   color: #101b35;
+}
+
+.admissions-heading p {
+  margin: 0;
+  color: #667085;
+  font-size: 16px;
 }
 
 .admission-steps {
@@ -118,6 +124,58 @@
   font-size: 14px;
   line-height: 1.7;
   color: #707887;
+}
+
+
+/* =========================
+   RESOURCES / SCHOLARSHIPS & DOWNLOADS
+========================= */
+
+.admission-resources-section {
+  padding: 60px 0 100px;
+  background: #fff;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.resource-card {
+  background: #f7f8fa;
+  padding: 40px;
+  border: 1px solid #e4e7eb;
+  border-radius: 12px;
+}
+
+.resource-card h3 {
+  margin: 10px 0 15px;
+  font-size: 24px;
+  color: #101b35;
+}
+
+.resource-card p {
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #667085;
+}
+
+.pdf-download-btn {
+  display: inline-block;
+  background: #101b35;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.pdf-download-btn:hover {
+  background: #172646;
 }
 
 
@@ -325,89 +383,51 @@
 
 
 /* =========================
-   TABLET
+   TABLET & MOBILE
 ========================= */
 
 @media (max-width: 950px) {
-
   .admission-steps {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .admission-form-layout {
     grid-template-columns: 1fr;
     gap: 55px;
   }
-
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 600px) {
-
   .admissions-container {
     width: min(100% - 28px, 1180px);
   }
-
   .admissions-hero {
     min-height: 440px;
   }
-
   .admissions-hero-content {
     padding: 65px 0;
   }
-
   .admissions-hero h1 {
     font-size: 47px;
-    letter-spacing: -1.5px;
   }
-
-  .admissions-hero p {
-    font-size: 16px;
-    line-height: 1.65;
-  }
-
-  .admission-steps-section {
-    padding: 70px 0;
-  }
-
   .admission-steps {
     grid-template-columns: 1fr;
   }
-
-  .admission-step {
-    min-height: auto;
-  }
-
-  .admission-step > span {
-    margin-bottom: 45px;
-  }
-
-  .admission-form-section {
-    padding: 70px 0;
-  }
-
   .admission-form {
     padding: 22px;
   }
-
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
-
-  .admission-bottom {
-    padding: 70px 0;
-  }
-
 }
 
-/* =================================
-   ADMISSION SUCCESS MESSAGE
-   ================================= */
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
 
 .admission-success {
   padding: 55px 38px;
