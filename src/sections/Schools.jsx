@@ -10,6 +10,7 @@ function Schools() {
       short: "Systems & Management",
       text: "Professional programmes in commerce, education and computer applications with a focus on career-oriented learning.",
       courses: ["B.Com", "B.Ed", "D.El.Ed"],
+      cardClass: "card-maroon",
     },
     {
       number: "02",
@@ -18,6 +19,7 @@ function Schools() {
       short: "Law & Legal Studies",
       text: "Professional legal education designed to develop strong foundations in law, advocacy and legal practice.",
       courses: ["BA.LLB", "LLB"],
+      cardClass: "card-dark-red",
     },
     {
       number: "03",
@@ -26,6 +28,7 @@ function Schools() {
       short: "Films & Media",
       text: "Media and communication education covering journalism, films, television and modern digital media.",
       courses: ["Mass Communication", "Film & TV", "Digital Media"],
+      cardClass: "card-blue",
     },
     {
       number: "04",
@@ -34,6 +37,7 @@ function Schools() {
       short: "Art & Design",
       text: "Creative education across design and visual arts for students looking to build careers in the creative industry.",
       courses: ["Fashion", "Interior", "Fine Arts"],
+      cardClass: "card-purple",
     },
     {
       number: "05",
@@ -42,6 +46,7 @@ function Schools() {
       short: "Sports & Development",
       text: "A platform focused on sports, physical development and opportunities for students with sporting interests.",
       courses: ["Sports & Physical Development"],
+      cardClass: "card-green",
     },
   ];
 
@@ -97,7 +102,7 @@ function Schools() {
 
           {institutions.map((institution) => (
             <article
-              className="school-card"
+              className={`school-card ${institution.cardClass}`}
               key={institution.number}
             >
 
@@ -159,10 +164,10 @@ function Schools() {
 
 
           {/* =========================================
-              FEATURE / CTA CARD
+              FEATURE / CTA CARD (Golden/Yellow Theme)
           ========================================= */}
 
-          <article className="schools-feature-card">
+          <article className="schools-feature-card card-gold">
 
             <div className="feature-top">
 
