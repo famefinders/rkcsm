@@ -37,6 +37,12 @@ const galleryItems = [
     category: "Events",
     image: "/images/cultural-festival.jpg",
     desc: "Students participating in annual cultural and arts events."
+  },
+  {
+    title: "Moot Court Room",
+    category: "Academics",
+    image: "/images/moot-court.jpg",
+    desc: "Students participating in practical moot court training sessions."
   }
 ];
 
