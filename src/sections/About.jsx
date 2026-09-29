@@ -4,7 +4,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 import "./About.css";
 
 const About = () => {
-  useScrollReveal(); // Poore page par smooth scroll reveal animation ke liye
+  useScrollReveal();
 
   return (
     <main className="about-page">
@@ -27,12 +27,12 @@ const About = () => {
       </section>
 
 
-      {/* 2.1 ABOUT SOCIETY */}
+      {/* ABOUT SOCIETY */}
       <section className="about-story section-space reveal-on-scroll">
         <div className="about-container about-two-column">
 
           <div className="about-section-title">
-            <span className="about-eyebrow">2.1 ABOUT SOCIETY</span>
+            <span className="about-eyebrow">ABOUT SOCIETY</span>
             <h2>Education with a purpose</h2>
           </div>
 
@@ -62,12 +62,12 @@ const About = () => {
       </section>
 
 
-      {/* 2.2 OUR INSTITUTES, COLLEGES & UNITS */}
+      {/* INSTITUTES & UNITS */}
       <section className="about-reach reveal-on-scroll">
         <div className="about-container">
 
           <div className="about-reach-heading">
-            <span className="about-eyebrow">2.2 INSTITUTES & UNITS</span>
+            <span className="about-eyebrow">INSTITUTES & UNITS</span>
             <h2>Our Specialized Colleges & Units</h2>
           </div>
 
@@ -75,7 +75,7 @@ const About = () => {
 
             <div className="about-reach-card">
               <div className="reach-number">01</div>
-              <h3>2.2.1 Law College</h3>
+              <h3>Law College</h3>
               <p>
                 Providing comprehensive legal education including LLB (3 Years) and BA.LLB (5 Years) approved by BCI.
               </p>
@@ -83,7 +83,7 @@ const About = () => {
 
             <div className="about-reach-card">
               <div className="reach-number">02</div>
-              <h3>2.2.2 UG College</h3>
+              <h3>UG College</h3>
               <p>
                 Offering undergraduate degree programmes like B.Com focused on commerce and professional skills.
               </p>
@@ -91,7 +91,7 @@ const About = () => {
 
             <div className="about-reach-card">
               <div className="reach-number">03</div>
-              <h3>2.2.3 Teachers Training</h3>
+              <h3>Teachers Training</h3>
               <p>
                 Dedicated teacher education programmes including B.Ed and D.El.Ed approved by NCTE.
               </p>
@@ -99,7 +99,7 @@ const About = () => {
 
             <div className="about-reach-card">
               <div className="reach-number">04</div>
-              <h3>2.2.4 Sports Academy</h3>
+              <h3>Sports Academy</h3>
               <p>
                 Promoting physical education, sports training, annual tournaments, and athletic development.
               </p>
@@ -107,7 +107,7 @@ const About = () => {
 
             <div className="about-reach-card">
               <div className="reach-number">05</div>
-              <h3>2.2.5 K-12 School</h3>
+              <h3>K-12 School</h3>
               <p>
                 English medium school framework laying a strong foundational education for young minds.
               </p>
@@ -118,12 +118,12 @@ const About = () => {
       </section>
 
 
-      {/* 2.3 OFFICE BEARERS */}
+      {/* OFFICE BEARERS */}
       <section className="about-development section-space reveal-on-scroll">
         <div className="about-container about-two-column">
 
           <div className="about-section-title">
-            <span className="about-eyebrow">2.3 OFFICE BEARERS</span>
+            <span className="about-eyebrow">OFFICE BEARERS</span>
             <h2>Leadership & Administration</h2>
           </div>
 
@@ -153,12 +153,12 @@ const About = () => {
       </section>
 
 
-      {/* 2.4 CAMPUS LOCATION */}
+      {/* CAMPUS LOCATION */}
       <section className="about-reach reveal-on-scroll">
         <div className="about-container">
 
           <div className="about-reach-heading">
-            <span className="about-eyebrow">2.4 CAMPUS LOCATION</span>
+            <span className="about-eyebrow">CAMPUS LOCATION</span>
             <h2>Our Campuses in New Delhi & Firozabad</h2>
           </div>
 
@@ -188,26 +188,6 @@ const About = () => {
               </p>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-
-      {/* ================= TIMELINE SECTION ================= */}
-      <section className="about-timeline-section section-space reveal-on-scroll">
-        <div className="about-container">
-          <div className="about-timeline-header">
-            <span className="about-eyebrow">OUR LEGACY & JOURNEY</span>
-            <h2>Decades of growth, <br />milestone by milestone.</h2>
-            <p>From a single school in 1995 to a multi-campus educational group spanning professional studies, law, and media.</p>
-          </div>
-
-          <div className="timeline-image-wrapper">
-            <img 
-              src="/images/timeline.jpg" 
-              alt="RK Group Timeline Journey from 1995 to 2019" 
-              className="timeline-graphic-img"
-            />
           </div>
         </div>
       </section>
@@ -295,13 +275,13 @@ const About = () => {
       </section>
 
 
-      {/* 2.5 OUR MISSION & MOTTO */}
+      {/* OUR MISSION & MOTTO */}
       <section className="about-mission reveal-on-scroll">
         <div className="about-container">
 
           <div className="mission-box">
 
-            <span className="about-eyebrow">2.5 OUR MISSION & MOTTO</span>
+            <span className="about-eyebrow">OUR MISSION & MOTTO</span>
 
             <blockquote>
               “We are committed to give our students quality & professional
