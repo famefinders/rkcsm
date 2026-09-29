@@ -38,6 +38,32 @@ const ScrollToTop = () => {
 };
 
 const Home = () => {
+  // Global Scroll Reveal Effect for homepage sections
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          observerInstance.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((sec) => {
+      sec.classList.add("reveal-on-scroll");
+      observer.observe(sec);
+    });
+
+    return () => {
+      sections.forEach((sec) => observer.unobserve(sec));
+    };
+  }, []);
+
   return (
     <>
       <Hero />
