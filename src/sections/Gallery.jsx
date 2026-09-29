@@ -43,7 +43,13 @@ const galleryItems = [
     category: "Academics",
     image: "/images/moot-court.jpg",
     desc: "Students participating in practical moot court training sessions."
-  }
+  },
+  {
+  title: "Academic Meet & Faculty",
+  category: "Academics",
+  image: "/images/academic-gathering.jpg",
+  desc: "Faculty members and students gathered at the college campus."
+}
 ];
 
 const categories = ["All", "Campus", "Academics", "Events"];
