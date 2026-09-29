@@ -26,6 +26,7 @@ import Alumni from "./sections/Alumni";
 import Contact, { HomeEnquiry } from "./sections/Contact";
 import Gallery from "./sections/Gallery";
 import Footer from "./components/Footer";
+import Recognitions from "./sections/Recognitions";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -107,6 +108,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/gallery" element={<Gallery />} />
+
+        <Route path="/recognitions" element={<Recognitions />} />
 
       </Routes>
 
