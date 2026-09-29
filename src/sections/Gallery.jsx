@@ -5,32 +5,38 @@ const galleryItems = [
   {
     title: "RKCSM Campus",
     category: "Campus",
-    image: "/images/campus.jpg"
+    image: "/images/campus.jpg",
+    desc: "Main campus building showing our vibrant environment."
   },
   {
     title: "Computer Laboratory",
     category: "Academics",
-    image: "/images/computer-lab.jpg"
+    image: "/images/computer-lab.jpg",
+    desc: "State-of-the-art computer labs equipped with modern systems."
   },
   {
     title: "Media & Production Studio",
     category: "Academics",
-    image: "/images/media-studio.jpg"
+    image: "/images/media-studio.jpg",
+    desc: "Professional studio for mass communication and journalism students."
   },
   {
     title: "Library",
     category: "Campus",
-    image: "/images/library.jpg"
+    image: "/images/library.jpg",
+    desc: "Extensive collection of books, journals and study materials."
   },
   {
     title: "Convocation",
     category: "Events",
-    image: "/images/convocation.jpg"
+    image: "/images/convocation.jpg",
+    desc: "Celebrating academic success and graduation milestones."
   },
   {
     title: "Cultural Festival",
     category: "Events",
-    image: "/images/cultural-festival.jpg"
+    image: "/images/cultural-festival.jpg",
+    desc: "Students participating in annual cultural and arts events."
   }
 ];
 
@@ -38,6 +44,7 @@ const categories = ["All", "Campus", "Academics", "Events"];
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [activeImage, setActiveImage] = useState(null);
 
   const filteredItems =
     activeCategory === "All"
@@ -75,7 +82,7 @@ const Gallery = () => {
             <h2>Inside our learning environment</h2>
 
             <p>
-              A glimpse into the academic and campus experiences at RKCSM.
+              A glimpse into the academic and campus experiences at RKCSM. Click any image to view details.
             </p>
           </div>
 
@@ -102,7 +109,11 @@ const Gallery = () => {
           <div className="gallery-grid">
 
             {filteredItems.map((item, index) => (
-              <div className="gallery-card" key={index}>
+              <div 
+                className="gallery-card" 
+                key={index}
+                onClick={() => setActiveImage(item)}
+              >
 
                 <div className="gallery-image">
                   <img
@@ -123,6 +134,21 @@ const Gallery = () => {
 
         </div>
       </section>
+
+      {/* LIGHTBOX MODAL */}
+      {activeImage && (
+        <div className="lightbox-modal" onClick={() => setActiveImage(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setActiveImage(null)}>&times;</button>
+            <img src={activeImage.image} alt={activeImage.title} />
+            <div className="lightbox-details">
+              <span className="lightbox-cat">{activeImage.category}</span>
+              <h2>{activeImage.title}</h2>
+              <p>{activeImage.desc}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CTA */}
       <section className="gallery-cta">
