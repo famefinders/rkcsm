@@ -65,8 +65,8 @@ const Header = () => {
             <Link to="/about" className={isActive("/about") ? "active" : ""}>About</Link>
             <Link to="/recognitions" className={isActive("/recognitions") ? "active" : ""}>Recognitions</Link>
             <Link to="/courses" className={isActive("/courses") ? "active" : ""}>Courses</Link>
+            <Link to="/faculty" className={isActive("/faculty") ? "active" : ""}>Faculty</Link>
             <Link to="/admissions" className={isActive("/admissions") ? "active" : ""}>Admissions</Link>
-            <Link to="/careers" className={isActive("/careers") ? "active" : ""}>Careers</Link>
             <Link to="/alumni" className={isActive("/alumni") ? "active" : ""}>Alumni</Link>
             <Link to="/gallery" className={isActive("/gallery") ? "active" : ""}>Gallery</Link>
             <Link to="/contact" className={isActive("/contact") ? "active" : ""}>Contact</Link>
@@ -93,17 +93,18 @@ const Header = () => {
       </div>
 
       {/* ================= NOTICE TICKER ================= */}
-<div className="notice-ticker">
-  <div className="ticker-label">
-    NOTICE
-  </div>
+      <div className="notice-ticker">
+        <div className="ticker-label">
+          NOTICE
+        </div>
 
-  <div className="ticker-content-wrapper">
-    <marquee behavior="scroll" direction="left" scrollamount="5">
-      Admissions open for 2026 — Enquire now for courses, eligibility and admission guidance.
-    </marquee>
-  </div>
-</div>
+        <div className="ticker-content-wrapper">
+          <marquee behavior="scroll" direction="left" scrollamount="5">
+            Admissions open for 2026 — Enquire now for courses, eligibility and admission guidance.
+          </marquee>
+        </div>
+      </div>
+
       {/* ================= MOBILE NAV ================= */}
       <nav
         className={
@@ -116,8 +117,8 @@ const Header = () => {
         <Link to="/about" className={isActive("/about") ? "active" : ""} onClick={closeMenu}>About</Link>
         <Link to="/recognitions" className={isActive("/recognitions") ? "active" : ""} onClick={closeMenu}>Recognitions</Link>
         <Link to="/courses" className={isActive("/courses") ? "active" : ""} onClick={closeMenu}>Courses</Link>
+        <Link to="/faculty" className={isActive("/faculty") ? "active" : ""} onClick={closeMenu}>Faculty</Link>
         <Link to="/admissions" className={isActive("/admissions") ? "active" : ""} onClick={closeMenu}>Admissions</Link>
-        <Link to="/careers" className={isActive("/careers") ? "active" : ""} onClick={closeMenu}>Careers</Link>
         <Link to="/alumni" className={isActive("/alumni") ? "active" : ""} onClick={closeMenu}>Alumni</Link>
         <Link to="/gallery" className={isActive("/gallery") ? "active" : ""} onClick={closeMenu}>Gallery</Link>
         <Link to="/contact" className={isActive("/contact") ? "active" : ""} onClick={closeMenu}>Contact</Link>
