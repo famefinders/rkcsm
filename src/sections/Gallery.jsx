@@ -110,49 +110,45 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* HIRE A SPACE SECTION (Moved up so it's clearly visible) */}
-      <section className="gallery-space-section section-space reveal-on-scroll" style={{ padding: "80px 0", background: "#f7f8fa" }}>
-        <div className="gallery-container" style={{ width: "min(1180px, calc(100% - 40px))", margin: "0 auto" }}>
+      {/* HIRE A SPACE SECTION */}
+      <section className="hire-space-section">
+        <div className="hire-space-container">
           
-          <div style={{ maxWidth: "700px", marginBottom: "40px" }}>
-            <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase", letterSpacing: "2px", display: "inline-block", marginBottom: "15px" }}>
-              INFRASTRUCTURE HIRE
-            </span>
-            <h2 style={{ fontSize: "clamp(32px, 4vw, 42px)", color: "#101b35", margin: "0 0 10px 0" }}>
-              Hire Our Campus Spaces
-            </h2>
-            <p style={{ color: "#667085", fontSize: "16px", margin: 0 }}>
+          <div className="hire-space-heading">
+            <span className="hire-space-eyebrow">INFRASTRUCTURE HIRE</span>
+            <h2>Hire Our Campus Spaces</h2>
+            <p>
               Spacious classrooms, fully equipped seminar halls, auditoriums, and open grounds available for academic events, examinations, and institutional gatherings.
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+          <div className="hire-space-grid">
             
-            <div style={{ background: "#ffffff", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
-              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>01 / Academic Rooms</span>
-              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Classrooms</h3>
-              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: "0 0 20px 0" }}>
+            <div className="hire-space-card">
+              <span className="card-badge">01 / Academic Rooms</span>
+              <h3>Classrooms</h3>
+              <p>
                 Well-ventilated, well-lit smart classrooms equipped with seating arrangements and projection facilities suitable for coaching, tests, and training sessions.
               </p>
-              <a href="/contact" style={{ fontSize: "13px", fontWeight: "750", color: "#101b35", textDecoration: "none" }}>Enquire for Booking →</a>
+              <a href="/contact" className="card-link">Enquire for Booking →</a>
             </div>
 
-            <div style={{ background: "#ffffff", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
-              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>02 / Events & Meets</span>
-              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Seminar or Auditorium</h3>
-              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: "0 0 20px 0" }}>
+            <div className="hire-space-card">
+              <span className="card-badge">02 / Events & Meets</span>
+              <h3>Seminar or Auditorium</h3>
+              <p>
                 Spacious air-conditioned mini auditorium and seminar halls fitted with advanced sound systems, lighting, and audio-visual setups for conferences and cultural meets.
               </p>
-              <a href="/contact" style={{ fontSize: "13px", fontWeight: "750", color: "#101b35", textDecoration: "none" }}>Enquire for Booking →</a>
+              <a href="/contact" className="card-link">Enquire for Booking →</a>
             </div>
 
-            <div style={{ background: "#ffffff", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
-              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>03 / Sports & Gatherings</span>
-              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Open Grounds</h3>
-              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: "0 0 20px 0" }}>
+            <div className="hire-space-card">
+              <span className="card-badge">03 / Sports & Gatherings</span>
+              <h3>Open Grounds</h3>
+              <p>
                 Expansive open lawns and sports grounds ideal for large-scale community events, sports tournaments, institutional functions, and outdoor exhibitions.
               </p>
-              <a href="/contact" style={{ fontSize: "13px", fontWeight: "750", color: "#101b35", textDecoration: "none" }}>Enquire for Booking →</a>
+              <a href="/contact" className="card-link">Enquire for Booking →</a>
             </div>
 
           </div>
@@ -161,7 +157,7 @@ const Gallery = () => {
       </section>
 
       {/* GALLERY */}
-      <section className="gallery-main" style={{ background: "#ffffff", padding: "80px 0" }}>
+      <section className="gallery-main">
         <div className="gallery-container">
 
           <div className="gallery-heading">
