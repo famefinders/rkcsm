@@ -73,6 +73,18 @@ const Footer = () => {
 
       </div>
 
+      {/* DISCLAIMER SECTION */}
+      <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", background: "#08101b", padding: "30px 20px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", color: "#94a3b8", fontSize: "13px", lineHeight: "1.6" }}>
+          <p style={{ margin: "0 0 8px 0", fontWeight: "700", color: "#cbd5e1", textTransform: "uppercase", letterSpacing: "1px", fontSize: "11px" }}>
+            Disclaimer
+          </p>
+          <p style={{ margin: 0 }}>
+            The information provided on this official website of RK Group of Institutions is for general informational and educational purposes only. All efforts have been made to ensure the accuracy of the data, including courses, admissions, and fee structures. However, statutory regulations and university guidelines may apply. For official verification, please contact our administrative desk directly.
+          </p>
+        </div>
+      </div>
+
       {/* BOTTOM */}
       <div className="footer-bottom">
 
