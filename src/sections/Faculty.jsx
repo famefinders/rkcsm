@@ -82,6 +82,55 @@ const Faculty = () => {
         </div>
       </section>
 
+      {/* WORK WITH US SECTION */}
+      <section className="faculty-main section-space reveal-on-scroll" style={{ background: "#ffffff" }}>
+        <div className="faculty-container">
+          
+          <div className="faculty-heading">
+            <span className="faculty-eyebrow">WORK WITH US</span>
+            <h2>Join Our Academic & Administrative Team</h2>
+            <p>We invite passionate educators, researchers, and administrative professionals to grow with our institutions.</p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginTop: "30px" }}>
+            
+            <div className="faculty-card">
+              <div className="faculty-card-top">
+                <span className="fac-badge">Faculty Roles</span>
+                <span className="fac-num">01</span>
+              </div>
+              <h3>Teaching Positions</h3>
+              <p>Looking for Assistant Professors, Lecturers, and Visiting Faculty across Law, Commerce, Education, and Sports departments.</p>
+            </div>
+
+            <div className="faculty-card">
+              <div className="faculty-card-top">
+                <span className="fac-badge">Administration</span>
+                <span className="fac-num">02</span>
+              </div>
+              <h3>Administrative & Support</h3>
+              <p>Opportunities for admissions counsellors, lab assistants, office management, and campus operations staff.</p>
+            </div>
+
+            <div className="faculty-card">
+              <div className="faculty-card-top">
+                <span className="fac-badge">Applications</span>
+                <span className="fac-num">03</span>
+              </div>
+              <h3>How to Apply</h3>
+              <p>Send your updated resume and area of interest directly to our official email and our HR team will review your profile.</p>
+              <div style={{ marginTop: "20px" }}>
+                <a href="mailto:info@rkfma.com" className="faculty-btn" style={{ textDecoration: "none" }}>
+                  Send Your Profile →
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* CTA SECTION */}
       <section className="faculty-cta reveal-on-scroll">
         <div className="faculty-container">
