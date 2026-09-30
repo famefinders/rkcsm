@@ -193,6 +193,75 @@ const About = () => {
       </section>
 
 
+      {/* CAMPUS & FACILITIES SECTION */}
+      <section className="about-facilities section-space reveal-on-scroll">
+        <div className="about-container">
+          
+          <div className="about-section-title" style={{ maxWidth: "700px", marginBottom: "40px" }}>
+            <span className="about-eyebrow">CAMPUS & INFRASTRUCTURE</span>
+            <h2>World-Class Facilities for Holistic Growth</h2>
+            <p style={{ color: "#667085", marginTop: "10px" }}>
+              Our campus is equipped with specialized academic infrastructure designed to bridge 
+              theoretical learning with practical execution.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
+            
+            <div style={{ background: "#f7f8fa", padding: "30px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>01 / Growth & Skills</span>
+              <h3 style={{ fontSize: "20px", color: "#101b35", margin: "10px 0 10px" }}>Extra-Curricular Activities</h3>
+              <p style={{ color: "#667085", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
+                Regular workshops, seminars, professional internships, and practical field work fostering industry readiness.
+              </p>
+            </div>
+
+            <div style={{ background: "#f7f8fa", padding: "30px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>02 / Legal Training</span>
+              <h3 style={{ fontSize: "20px", color: "#101b35", margin: "10px 0 10px" }}>Moot Court</h3>
+              <p style={{ color: "#667085", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
+                A fully equipped simulation courtroom providing law students with hands-on advocacy and trial practice.
+              </p>
+            </div>
+
+            <div style={{ background: "#f7f8fa", padding: "30px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>03 / Practical Learning</span>
+              <h3 style={{ fontSize: "20px", color: "#101b35", margin: "10px 0 10px" }}>Specialised Laboratories</h3>
+              <p style={{ color: "#667085", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
+                Advanced labs covering Science (PCB), Mathematics, Psychology, Arts & Crafts, Physical Education, and Computer Labs.
+              </p>
+            </div>
+
+            <div style={{ background: "#f7f8fa", padding: "30px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>04 / Knowledge Hub</span>
+              <h3 style={{ fontSize: "20px", color: "#101b35", margin: "10px 0 10px" }}>Resource Library</h3>
+              <p style={{ color: "#667085", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
+                Comprehensive collection featuring E-Journals, reference books, academic magazines, newspapers, and text books.
+              </p>
+            </div>
+
+            <div style={{ background: "#f7f8fa", padding: "30px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>05 / Physical Wellness</span>
+              <h3 style={{ fontSize: "20px", color: "#101b35", margin: "10px 0 10px" }}>Sports Facilities</h3>
+              <p style={{ color: "#667085", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
+                Extensive indoor and outdoor sports infrastructure including Cricket, Football, Volleyball, Badminton, Athletics, and Chess.
+              </p>
+            </div>
+
+            <div style={{ background: "#f7f8fa", padding: "30px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>06 / Events & Seminars</span>
+              <h3 style={{ fontSize: "20px", color: "#101b35", margin: "10px 0 10px" }}>Sabhaagaar (Auditorium)</h3>
+              <p style={{ color: "#667085", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
+                A spacious air-conditioned mini auditorium and seminar hall equipped with modern audio-visual systems.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
       {/* ALL ROUND DEVELOPMENT */}
       <section className="about-development section-space reveal-on-scroll">
         <div className="about-container about-two-column">
