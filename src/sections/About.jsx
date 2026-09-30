@@ -262,6 +262,50 @@ const About = () => {
       </section>
 
 
+      {/* COMMUNITY DEVELOPMENT & EXTENSION ACTIVITIES */}
+      <section className="about-community section-space reveal-on-scroll">
+        <div className="about-container">
+          
+          <div className="about-section-title" style={{ maxWidth: "700px", marginBottom: "40px" }}>
+            <span className="about-eyebrow">SOCIAL RESPONSIBILITY</span>
+            <h2>Community Development & Extension Activities</h2>
+            <p style={{ color: "#667085", marginTop: "10px" }}>
+              Our commitment goes beyond classrooms, reaching out to society through impactful welfare initiatives and rural empowerment.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+            
+            <div style={{ background: "#f7f8fa", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>01 / Social Welfare</span>
+              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Free Education</h3>
+              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: 0 }}>
+                Providing accessible learning opportunities, foundational education support, and academic resources for underprivileged children and deserving youth.
+              </p>
+            </div>
+
+            <div style={{ background: "#f7f8fa", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>02 / Public Outreach</span>
+              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Awareness Camps</h3>
+              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: 0 }}>
+                Organizing regular health, legal literacy, environmental conservation, and social awareness campaigns led by our students and faculty.
+              </p>
+            </div>
+
+            <div style={{ background: "#f7f8fa", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>03 / Rural Upliftment</span>
+              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Adoption of Nearby Villages</h3>
+              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: 0 }}>
+                Adopting surrounding rural areas to drive sustainable development, sanitation drives, digital literacy workshops, and community welfare programmes.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
       {/* ALL ROUND DEVELOPMENT */}
       <section className="about-development section-space reveal-on-scroll">
         <div className="about-container about-two-column">
