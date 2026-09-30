@@ -24,7 +24,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div style={{ background: "#f4f6f9", minHeight: "100vh", padding: "40px 20px", fontFamily: "sans-serif" }}>
+    <div style={{ background: "#f4f6f9", minHeight: "100vh", padding: "40px 20px", marginTop: "120px", fontFamily: "sans-serif" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         
         {/* HEADER */}
