@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -93,9 +94,25 @@ const Footer = () => {
           All rights reserved.
         </p>
 
-        <div className="footer-bottom-links">
+        <div className="footer-bottom-links" style={{ display: "flex", alignItems: "center", gap: "15px" }}>
           <a href="/contact">Contact</a>
           <a href="/admissions">Admissions</a>
+          {/* HIDDEN / SUBTLE ADMIN ACCESS LINK */}
+          <Link 
+            to="/admin" 
+            style={{ 
+              color: "inherit", 
+              fontSize: "11px", 
+              textDecoration: "none", 
+              opacity: "0.15", 
+              transition: "opacity 0.2s" 
+            }}
+            onMouseEnter={(e) => e.target.style.opacity = "1"}
+            onMouseLeave={(e) => e.target.style.opacity = "0.15"}
+            title="Admin Dashboard"
+          >
+            • Admin
+          </Link>
         </div>
 
       </div>
