@@ -38,11 +38,91 @@
   line-height: 1.7;
 }
 
+/* HIRE A SPACE SECTION */
+
+.hire-space-section {
+  padding: 100px 20px;
+  background: #f5f6f8;
+}
+
+.hire-space-heading {
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+.hire-space-heading h2 {
+  color: #101b35;
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 0 0 15px;
+}
+
+.hire-space-heading p {
+  color: #687080;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hire-space-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.hire-space-card {
+  background: #ffffff;
+  padding: 35px;
+  border: 1px solid #d7dce4;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hire-space-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(16, 27, 53, 0.08);
+  border-color: #d59b24;
+}
+
+.card-badge {
+  display: inline-block;
+  color: #d59b24;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hire-space-card h3 {
+  font-size: 22px;
+  color: #101b35;
+  margin: 0 0 12px 0;
+}
+
+.hire-space-card p {
+  color: #687080;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+}
+
+.card-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #101b35;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-link:hover {
+  color: #d59b24;
+}
+
 /* MAIN */
 
 .gallery-main {
   padding: 100px 20px;
-  background: #f5f6f8;
+  background: #ffffff;
 }
 
 .gallery-heading {
@@ -105,6 +185,8 @@
   overflow: hidden;
   background: white;
   cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #d7dce4;
 }
 
 .gallery-image {
@@ -284,6 +366,7 @@
 
 @media (max-width: 900px) {
 
+  .hire-space-grid,
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -300,14 +383,17 @@
     font-size: 44px;
   }
 
+  .hire-space-section,
   .gallery-main {
     padding: 70px 20px;
   }
 
+  .hire-space-heading h2,
   .gallery-heading h2 {
     font-size: 34px;
   }
 
+  .hire-space-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
   }
