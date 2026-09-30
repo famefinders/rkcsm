@@ -17,7 +17,8 @@ const recognitionItems = [
   {
     title: "Dr. B. R. Ambedkar Agra University",
     desc: "Affiliated for academic curriculum, examinations, and degree conferment across programmes.",
-    badge: "University Affiliation"
+    badge: "University Affiliation",
+    isDbrau: true // DBRAU links ke liye flag
   },
   {
     title: "SCERT Uttar Pradesh",
@@ -88,6 +89,18 @@ const Recognitions = () => {
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
+                
+                {/* DBRAU OFFICIAL LINKS & REGISTRATIONS */}
+                {item.isDbrau && (
+                  <div style={{ marginTop: "15px", paddingTop: "12px", borderTop: "1px solid #eee", display: "flex", flexDirection: "column", gap: "6px" }}>
+                    <a href="https://www.dbrau.org.in" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", color: "#8b1a1a", fontWeight: "700", textDecoration: "none" }}>
+                      → DBRAU Official Site
+                    </a>
+                    <a href="https://www.dbrauaaems.in" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", color: "#8b1a1a", fontWeight: "700", textDecoration: "none" }}>
+                      → DBRAU Exam & Registration Portal
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
