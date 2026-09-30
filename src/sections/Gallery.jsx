@@ -45,10 +45,10 @@ const galleryItems = [
     desc: "Students participating in practical moot court training sessions."
   },
   {
-  title: "Academic Meet & Faculty",
-  category: "Academics",
-  image: "/images/academic-gathering.jpg",
-  desc: "Faculty members and students gathered at the college campus."
+    title: "Academic Meet & Faculty",
+    category: "Academics",
+    image: "/images/academic-gathering.jpg",
+    desc: "Faculty members and students gathered at the college campus."
   },
   {
     title: "Main Campus Building",
@@ -101,83 +101,16 @@ const Gallery = () => {
       {/* HERO */}
       <section className="gallery-hero">
         <div className="gallery-container">
-
           <span className="gallery-label">CAMPUS LIFE</span>
-
           <h1>Life at RKCSM</h1>
-
           <p>
             Explore our campuses, classrooms, laboratories, events and
             the experiences that make student life memorable.
           </p>
-
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section className="gallery-main">
-        <div className="gallery-container">
-
-          <div className="gallery-heading">
-            <span className="gallery-label">GALLERY</span>
-
-            <h2>Inside our learning environment</h2>
-
-            <p>
-              A glimpse into the academic and campus experiences at RKCSM. Click any image to view details.
-            </p>
-          </div>
-
-          {/* FILTERS */}
-          <div className="gallery-filters">
-
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={
-                  activeCategory === category
-                    ? "gallery-filter active"
-                    : "gallery-filter"
-                }
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
-
-          </div>
-
-          {/* GRID */}
-          <div className="gallery-grid">
-
-            {filteredItems.map((item, index) => (
-              <div 
-                className="gallery-card" 
-                key={index}
-                onClick={() => setActiveImage(item)}
-              >
-
-                <div className="gallery-image">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                  />
-
-                  <div className="gallery-overlay">
-                    <span>{item.category}</span>
-                    <h3>{item.title}</h3>
-                  </div>
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* HIRE A SPACE SECTION */}
+      {/* HIRE A SPACE SECTION (Moved up so it's clearly visible) */}
       <section className="gallery-space-section section-space reveal-on-scroll" style={{ padding: "80px 0", background: "#f7f8fa" }}>
         <div className="gallery-container" style={{ width: "min(1180px, calc(100% - 40px))", margin: "0 auto" }}>
           
@@ -227,6 +160,63 @@ const Gallery = () => {
         </div>
       </section>
 
+      {/* GALLERY */}
+      <section className="gallery-main" style={{ background: "#ffffff", padding: "80px 0" }}>
+        <div className="gallery-container">
+
+          <div className="gallery-heading">
+            <span className="gallery-label">GALLERY</span>
+            <h2>Inside our learning environment</h2>
+            <p>
+              A glimpse into the academic and campus experiences at RKCSM. Click any image to view details.
+            </p>
+          </div>
+
+          {/* FILTERS */}
+          <div className="gallery-filters">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={
+                  activeCategory === category
+                    ? "gallery-filter active"
+                    : "gallery-filter"
+                }
+                onClick={() => setActiveCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* GRID */}
+          <div className="gallery-grid">
+            {filteredItems.map((item, index) => (
+              <div 
+                className="gallery-card" 
+                key={index}
+                onClick={() => setActiveImage(item)}
+              >
+                <div className="gallery-image">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  <div className="gallery-overlay">
+                    <span>{item.category}</span>
+                    <h3>{item.title}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* LIGHTBOX MODAL */}
       {activeImage && (
         <div className="lightbox-modal" onClick={() => setActiveImage(null)}>
@@ -245,20 +235,15 @@ const Gallery = () => {
       {/* CTA */}
       <section className="gallery-cta">
         <div className="gallery-container">
-
           <span className="gallery-label">EXPERIENCE RKCSM</span>
-
           <h2>Come and experience the campus yourself.</h2>
-
           <p>
             Have questions about admissions or our programmes?
             Our team is ready to help.
           </p>
-
           <a href="/contact" className="gallery-button">
             Contact us →
           </a>
-
         </div>
       </section>
 
