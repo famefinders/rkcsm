@@ -215,6 +215,50 @@ const Admissions = () => {
 
       </section>
 
+
+      {/* PLACEMENT CELL & RECRUITERS */}
+      <section className="admission-steps-section reveal-on-scroll" style={{ background: "#f7f8fa" }}>
+        <div className="admissions-container">
+          
+          <div className="admissions-heading" style={{ maxWidth: "700px", marginBottom: "40px" }}>
+            <span className="admissions-eyebrow">CAREER & PLACEMENTS</span>
+            <h2>Placement Cell & Recruiters</h2>
+            <p style={{ color: "#667085", marginTop: "10px" }}>
+              Connecting academic excellence with corporate opportunities through dedicated career guidance, training sessions, and top-tier recruiters.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+            
+            <div style={{ background: "#ffffff", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>01 / Career Guidance</span>
+              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Dedicated Placement Cell</h3>
+              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: 0 }}>
+                Providing students with resume building workshops, mock interviews, aptitude training, and personalized career mentoring.
+              </p>
+            </div>
+
+            <div style={{ background: "#ffffff", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>02 / Industry Connect</span>
+              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Corporate Recruiters</h3>
+              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: 0 }}>
+                Strong network of industry partners, law firms, financial institutions, and media houses facilitating internships and final placements.
+              </p>
+            </div>
+
+            <div style={{ background: "#ffffff", padding: "35px", border: "1px solid #e4e7eb", borderRadius: "10px" }}>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase" }}>03 / Skill Enhancement</span>
+              <h3 style={{ fontSize: "22px", color: "#101b35", margin: "12px 0 12px" }}>Training & Internships</h3>
+              <p style={{ color: "#667085", fontSize: "15px", lineHeight: "1.7", margin: 0 }}>
+                Mandatory internships and practical training programmes enabling students to gain hands-on corporate and institutional exposure.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* SCHOLARSHIPS & DOWNLOADS */}
       <section className="admission-resources-section reveal-on-scroll">
         <div className="admissions-container">
