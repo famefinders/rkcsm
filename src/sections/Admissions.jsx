@@ -215,6 +215,66 @@ const Admissions = () => {
 
       </section>
 
+      {/* CAREER COUNSELLING SECTION */}
+      <section className="career-counselling-section" style={{ padding: "90px 0", background: "#f7f8fa" }}>
+        <div style={{ width: "min(1180px, calc(100% - 40px))", margin: "0 auto" }}>
+          
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "50px", alignItems: "center" }}>
+            
+            <div>
+              <span style={{ color: "#d59b24", fontSize: "12px", fontWeight: "800", textTransform: "uppercase", letterSpacing: "2px", display: "inline-block", marginBottom: "15px" }}>
+                EXPERT GUIDANCE
+              </span>
+              <h2 style={{ fontSize: "clamp(32px, 4vw, 42px)", color: "#101b35", margin: "0 0 15px 0", lineHeight: "1.2" }}>
+                Free Career Counselling & Course Guidance
+              </h2>
+              <p style={{ color: "#667085", fontSize: "16px", lineHeight: "1.7", margin: "0 0 25px 0" }}>
+                Confused about which career path or professional course to choose after your schooling or graduation? Our experienced academic counsellors are here to help you map out your future based on your interests, skills, and industry demands.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 30px 0", display: "flex", flexDirection: "column", gap: "12px", color: "#101b35", fontWeight: "600", fontSize: "15px" }}>
+                <li>✓ One-on-one session with expert counsellors</li>
+                <li>✓ Detailed insights into job scopes and industry trends</li>
+                <li>✓ Personalized course and scholarship recommendations</li>
+              </ul>
+              <a href="/contact" style={{ display: "inline-block", background: "#101b35", color: "#ffffff", padding: "14px 28px", fontWeight: "750", borderRadius: "6px", textDecoration: "none" }}>
+                Book a Counselling Session →
+              </a>
+            </div>
+
+            <div style={{ background: "#ffffff", padding: "40px", border: "1px solid #e4e7eb", borderRadius: "12px", boxShadow: "0 15px 30px rgba(16, 27, 53, 0.05)" }}>
+              <span style={{ color: "#8b1a1a", fontSize: "12px", fontWeight: "800", textTransform: "uppercase", letterSpacing: "1px" }}>QUICK ENQUIRY</span>
+              <h3 style={{ fontSize: "24px", color: "#101b35", margin: "10px 0 20px 0" }}>Request a Callback</h3>
+              
+              <form style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+                <div>
+                  <label style={{ display: "block", fontSize: "13px", fontWeight: "700", color: "#344054", marginBottom: "6px" }}>Full Name</label>
+                  <input type="text" placeholder="Enter your full name" style={{ width: "100%", padding: "12px", border: "1px solid #d7dce4", borderRadius: "6px", fontSize: "14px" }} />
+                </div>
+                <div>
+                  <label style={{ display: "block", fontSize: "13px", fontWeight: "700", color: "#344054", marginBottom: "6px" }}>Phone Number</label>
+                  <input type="tel" placeholder="Enter your mobile number" style={{ width: "100%", padding: "12px", border: "1px solid #d7dce4", borderRadius: "6px", fontSize: "14px" }} />
+                </div>
+                <div>
+                  <label style={{ display: "block", fontSize: "13px", fontWeight: "700", color: "#344054", marginBottom: "6px" }}>Interested Course</label>
+                  <select style={{ width: "100%", padding: "12px", border: "1px solid #d7dce4", borderRadius: "6px", fontSize: "14px", background: "#fff" }}>
+                    <option>Select Programme</option>
+                    <option>Mass Communication & Journalism</option>
+                    <option>Computer Science & IT</option>
+                    <option>Management & Business</option>
+                    <option>Law / Legal Studies</option>
+                  </select>
+                </div>
+                <button type="submit" style={{ background: "#d59b24", color: "#101b35", border: "none", padding: "14px", fontWeight: "750", borderRadius: "6px", cursor: "pointer", marginTop: "10px" }}>
+                  Submit Enquiry
+                </button>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
 
       {/* PLACEMENT CELL & RECRUITERS */}
       <section className="admission-steps-section reveal-on-scroll" style={{ background: "#f7f8fa" }}>
