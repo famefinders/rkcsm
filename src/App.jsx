@@ -27,6 +27,7 @@ import Contact, { HomeEnquiry } from "./sections/Contact";
 import Gallery from "./sections/Gallery";
 import Footer from "./components/Footer";
 import Recognitions from "./sections/Recognitions";
+import AdminDashboard from "./sections/AdminDashboard";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -161,6 +162,8 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
 
         <Route path="/recognitions" element={<Recognitions />} />
+
+        <Route path="/admin" element={<AdminDashboard />} />
 
       </Routes>
 
