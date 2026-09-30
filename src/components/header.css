@@ -23,11 +23,6 @@
   transform: translateY(0);
 }
 
-/* GLOBAL PAGE PADDING FIX FOR FIXED HEADER */
-body {
-  padding-top: 135px;
-}
-
 
 /* =========================================
    MAIN NAVBAR
@@ -224,9 +219,6 @@ body {
 }
 
 @media (max-width: 850px) {
-  body {
-    padding-top: 115px;
-  }
   .header-container {
     min-height: 78px;
     padding: 0 15px;
