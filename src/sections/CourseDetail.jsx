@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearchParams, Link } from "react0-router-dom"; // wait, standard import
+import { useSearchParams, Link } from "react-router-dom"; // wait, standard import
 import { COURSES_DATA } from "../data/coursesData";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import "./Courses.css";
