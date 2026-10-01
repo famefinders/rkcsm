@@ -1,5 +1,3 @@
-// src/data/coursesData.js
-
 export const COURSES_DATA = [
   {
     id: 1,
@@ -12,7 +10,8 @@ export const COURSES_DATA = [
     eligibility: "10+2 any stream with Mathematics preferred",
     description: "Programming, data structures, databases and web development with lab-first teaching.",
     highlights: ["Six dedicated computer labs", "Industry mini-projects each semester", "Placement preparation from year two"],
-    category: "Computer Science & IT"
+    category: "Computer Science & IT",
+    image: "/images/bca.jpg"
   },
   {
     id: 2,
@@ -25,7 +24,8 @@ export const COURSES_DATA = [
     eligibility: "10+2 with Science / Mathematics",
     description: "A science-led IT degree covering networks, systems and applied software engineering.",
     highlights: ["Networking and systems labs", "Open-source tooling", "Research-oriented final year"],
-    category: "Computer Science & IT"
+    category: "Computer Science & IT",
+    image: "/images/bsc-it.jpg"
   },
   {
     id: 3,
@@ -38,7 +38,8 @@ export const COURSES_DATA = [
     eligibility: "Bachelor's degree with Mathematics at 10+2 or graduation level",
     description: "Advanced software engineering, cloud and data systems with a capstone industry project.",
     highlights: ["Capstone with industry mentor", "Cloud / DevOps electives", "Interview coaching"],
-    category: "Computer Science & IT"
+    category: "Computer Science & IT",
+    image: "/images/mca.jpg"
   },
   {
     id: 4,
@@ -51,7 +52,8 @@ export const COURSES_DATA = [
     eligibility: "Any graduate",
     description: "A fast, practical conversion course for graduates moving into IT roles.",
     highlights: ["Weekend batches", "Office automation to programming", "Portfolio of five projects"],
-    category: "Computer Science & IT"
+    category: "Computer Science & IT",
+    image: "/images/pgdca.jpg"
   },
   {
     id: 5,
@@ -64,7 +66,8 @@ export const COURSES_DATA = [
     eligibility: "10+2 any stream",
     description: "Reporting, editing, media law and production across print, broadcast and digital.",
     highlights: ["In-house studio and edit suites", "Campus newsroom", "Internships with media houses"],
-    category: "Media & film"
+    category: "Media & film",
+    image: "/images/bjmc.jpg"
   },
   {
     id: 6,
@@ -77,7 +80,8 @@ export const COURSES_DATA = [
     eligibility: "Graduate in any discipline",
     description: "Specialised training in investigative reporting, media research and digital storytelling.",
     highlights: ["Documentary production", "Media research methods", "Guest faculty from newsrooms"],
-    category: "Media & film"
+    category: "Media & film",
+    image: "/images/mjmc.jpg"
   },
   {
     id: 7,
@@ -90,7 +94,8 @@ export const COURSES_DATA = [
     eligibility: "Any graduate",
     description: "Evening and weekend track for working professionals entering media.",
     highlights: ["Weekend intensives", "Editing, camera and direction modules", "Live assignments"],
-    category: "Media & film"
+    category: "Media & film",
+    image: "/images/pg-journalism.jpg"
   },
   {
     id: 8,
@@ -103,7 +108,8 @@ export const COURSES_DATA = [
     eligibility: "10+2 any stream",
     description: "Business fundamentals with case-based learning in marketing, finance and operations.",
     highlights: ["Live case studies", "Summer internship", "Business communication lab"],
-    category: "Commerce"
+    category: "Commerce",
+    image: "/images/bba.jpg"
   },
   {
     id: 9,
@@ -116,7 +122,8 @@ export const COURSES_DATA = [
     eligibility: "Graduate in any discipline",
     description: "Weekend MBA designed for working professionals, with specialisation tracks.",
     highlights: ["Marketing / HR / Finance specialisations", "Working-professional cohort", "Capstone consulting project"],
-    category: "Commerce"
+    category: "Commerce",
+    image: "/images/mba.jpg"
   },
   {
     id: 10,
@@ -129,7 +136,8 @@ export const COURSES_DATA = [
     eligibility: "Graduate with minimum qualifying marks",
     description: "Teacher preparation with supervised classroom practice in partner schools.",
     highlights: ["School internship blocks", "Pedagogy workshops", "Micro-teaching labs"],
-    category: "Education"
+    category: "Education",
+    image: "/images/bed.jpg"
   },
   {
     id: 11,
@@ -142,7 +150,8 @@ export const COURSES_DATA = [
     eligibility: "10+2 any stream",
     description: "Integrated law programme combining humanities with core legal training.",
     highlights: ["Moot court", "Legal aid clinic", "Court visits / internships"],
-    category: "Law"
+    category: "Law",
+    image: "/images/ba-llb.jpg"
   },
   {
     id: 12,
@@ -155,6 +164,7 @@ export const COURSES_DATA = [
     eligibility: "Any graduate",
     description: "Professional law degree with practice-oriented drafting and advocacy training.",
     highlights: ["Drafting and pleading workshops", "Advocacy training", "Internship support"],
-    category: "Law"
+    category: "Law",
+    image: "/images/llb.jpg"
   }
 ];

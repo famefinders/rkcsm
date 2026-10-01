@@ -12,17 +12,17 @@ const CourseDetail = () => {
   // Find the selected course data
   const course = COURSES_DATA.find((c) => c.id === courseId) || COURSES_DATA[0];
 
-  // TODO: Apni course-wise image yahan set kar lena (e.g. course.image ya custom path)
-  const customBgImage = "/images/bca.jpg"; // Yahan apni image ka path ya URL daal dena
+  // Dynamically pick the image specific to this course, fallback to bca if missing
+  const currentBgImage = course.image || "/images/bca.jpg";
 
   return (
     <main className="courses-page" style={{ background: "#f8f9fa" }}>
-      {/* HERO SECTION WITH CUSTOM BACKGROUND IMAGE PLACEHOLDER */}
+      {/* HERO SECTION WITH DYNAMIC COURSE BACKGROUND IMAGE */}
       <section 
         className="courses-hero reveal-on-scroll" 
         style={{ 
           position: "relative",
-          backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.85), rgba(16, 27, 53, 0.85)), url('${customBgImage}')`,
+          backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.85), rgba(16, 27, 53, 0.85)), url('${currentBgImage}')`,
           backgroundColor: "#101b35",
           backgroundSize: "cover",
           backgroundPosition: "center",
