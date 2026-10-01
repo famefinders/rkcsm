@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearchParams, Link } from "react-router-dom"; // wait, standard import
+import { useSearchParams, Link } from "react-router-dom";
 import { COURSES_DATA } from "../data/coursesData";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import "./Courses.css";
@@ -13,7 +13,7 @@ const CourseDetail = () => {
   const course = COURSES_DATA.find((c) => c.id === courseId) || COURSES_DATA[0];
 
   // TODO: Apni course-wise image yahan set kar lena (e.g. course.image ya custom path)
-  const customBgImage = ""; // Yahan apni image ka path ya URL daal dena
+  const customBgImage = "/images/bca.jpg"; // Yahan apni image ka path ya URL daal dena
 
   return (
     <main className="courses-page" style={{ background: "#f8f9fa" }}>
@@ -22,9 +22,7 @@ const CourseDetail = () => {
         className="courses-hero reveal-on-scroll" 
         style={{ 
           position: "relative",
-          backgroundImage: customBgImage 
-            ? `linear-gradient(rgba(16, 27, 53, 0.85), rgba(16, 27, 53, 0.85)), url('${customBgImage}')`
-            : undefined, // Agar image empty hogi toh default clean gradient/color rahega
+          backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.85), rgba(16, 27, 53, 0.85)), url('${customBgImage}')`,
           backgroundColor: "#101b35",
           backgroundSize: "cover",
           backgroundPosition: "center",
