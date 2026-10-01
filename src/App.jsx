@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Courses from "./sections/Courses";
+import CourseDetail from "./sections/CourseDetail";
 import Admissions from "./sections/Admissions";
 import Apply from "./sections/Apply";
 import Faculty from "./sections/Faculty"; 
@@ -64,6 +65,8 @@ function App() {
         <Route path="/recognitions" element={<Recognitions />} />
 
         <Route path="/admin" element={<AdminDashboard />} />
+
+        <Route path="/course-detail" element={<CourseDetail />} />
 
       </Routes>
 
