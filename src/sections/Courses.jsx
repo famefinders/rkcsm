@@ -256,15 +256,28 @@ const Courses = () => {
                   </div>
 
 
-                  <Link
-                    to={`/admissions?course=${encodeURIComponent(
-                      `${course.title} —${course.fullTitle}`
-                    )}`}
-                    className="course-enquiry"
-                  >
-                    Enquire about this course
-                    <span>→</span>
-                  </Link>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "15px" }}>
+                    {/* CHECK DETAILS BUTTON */}
+                    <Link
+                      to={`/course-detail?id=${course.id}`}
+                      className="course-enquiry"
+                      style={{ background: "#101b35", color: "#fff", textAlign: "center", textDecoration: "none" }}
+                    >
+                      Check Details
+                      <span>→</span>
+                    </Link>
+
+                    {/* EXISTING ENQUIRE BUTTON */}
+                    <Link
+                      to={`/admissions?course=${encodeURIComponent(
+                        `${course.title} —${course.fullTitle}`
+                      )}`}
+                      className="course-enquiry"
+                    >
+                      Enquire about this course
+                      <span>→</span>
+                    </Link>
+                  </div>
 
                 </article>
 
