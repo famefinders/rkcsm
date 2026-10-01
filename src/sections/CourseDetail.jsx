@@ -14,13 +14,22 @@ const CourseDetail = () => {
 
   return (
     <main className="courses-page" style={{ background: "#f8f9fa" }}>
-      {/* HERO SECTION */}
-      <section className="courses-hero reveal-on-scroll">
+      {/* HERO SECTION WITH RELEVANT BACKGROUND IMAGE */}
+      <section 
+        className="courses-hero reveal-on-scroll" 
+        style={{ 
+          position: "relative",
+          backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.85), rgba(16, 27, 53, 0.85)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "#fff"
+        }}
+      >
         <div className="courses-container">
           <div className="courses-hero-content">
-            <span className="courses-eyebrow">{course.stream}</span>
-            <h1>{course.title}</h1>
-            <p>{course.fullTitle}</p>
+            <span className="courses-eyebrow" style={{ color: "#d59b24" }}>{course.stream}</span>
+            <h1 style={{ color: "#fff" }}>{course.title}</h1>
+            <p style={{ color: "#e4e7eb" }}>{course.fullTitle}</p>
           </div>
         </div>
       </section>
@@ -50,7 +59,7 @@ const CourseDetail = () => {
                 <li>Software Developer / Professional</li>
                 <li>Data Analyst & Consultant</li>
                 <li>Core Domain Specialist</li>
-                <li>Research & Higher Studies (MCA/MBA/etc.)</li>
+                <li>Research & Higher Studies</li>
               </ul>
             </div>
 
