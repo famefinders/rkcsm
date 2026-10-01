@@ -256,12 +256,12 @@ const Courses = () => {
                   </div>
 
 
-                  <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "15px" }}>
-                    {/* CHECK DETAILS BUTTON */}
+                  <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "15px" }}>
+                    {/* CHECK DETAILS BUTTON (Without background, clean black text style) */}
                     <Link
                       to={`/course-detail?id=${course.id}`}
                       className="course-enquiry"
-                      style={{ background: "#101b35", color: "#fff", textAlign: "center", textDecoration: "none" }}
+                      style={{ color: "#101b35", fontWeight: "700" }}
                     >
                       Check Details
                       <span>→</span>
