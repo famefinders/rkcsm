@@ -11,7 +11,7 @@ import Header from "./components/header";
 import Footer from "./components/Footer";
 
 // Pages & Components imports
-import Home from "./pages/Home";
+import Home from "./sections/Home";
 import About from "./sections/About";
 import Courses from "./sections/Courses";
 import Admissions from "./sections/Admissions";
