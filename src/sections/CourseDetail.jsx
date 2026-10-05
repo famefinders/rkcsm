@@ -25,7 +25,7 @@ const CourseDetail = () => {
           backgroundColor: "#101b35",
           overflow: "hidden",
           color: "#fff",
-          padding: "100px 20px"
+          padding: "80px 20px 140px 20px"
         }}
       >
         {/* Background Image Container */}
