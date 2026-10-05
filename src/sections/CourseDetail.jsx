@@ -22,7 +22,7 @@ const CourseDetail = () => {
         className="courses-hero reveal-on-scroll" 
         style={{ 
           position: "relative",
-          backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.85), rgba(16, 27, 53, 0.85)), url('${currentBgImage}')`,
+          backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.55), rgba(16, 27, 53, 0.55)), url('${currentBgImage}')`,
           backgroundColor: "#101b35",
           backgroundSize: "cover",
           backgroundPosition: "center",
