@@ -199,10 +199,6 @@
 .course-card {
   display: flex;
   flex-direction: column;
-  min-height: 670px;
-  padding: 30px;
-  border: 1px solid #e1e4e8;
-  background: #fff;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -211,7 +207,6 @@
 
 .course-card:hover {
   transform: translateY(-5px);
-  border-color: #d7dbe1;
   box-shadow: 0 20px 45px rgba(16,27,53,0.08);
 }
 
@@ -222,7 +217,7 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
-  margin-bottom: 55px;
+  margin-bottom: 25px;
 }
 
 .course-stream {
@@ -260,7 +255,6 @@
 }
 
 .course-description {
-  min-height: 75px;
   margin: 0 0 28px;
   font-size: 14px;
   line-height: 1.7;
@@ -275,8 +269,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   padding: 20px 0;
-  border-top: 1px solid #e7e9ed;
-  border-bottom: 1px solid #e7e9ed;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .course-meta div {
@@ -306,7 +300,7 @@
 
 .course-eligibility {
   padding: 22px 0;
-  border-bottom: 1px solid #e7e9ed;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .course-eligibility p {
@@ -358,7 +352,7 @@
   align-items: center;
   margin-top: auto;
   padding-top: 20px;
-  border-top: 1px solid #e7e9ed;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   text-decoration: none;
   font-size: 13px;
   font-weight: 750;
@@ -543,11 +537,10 @@
 
   .course-card {
     min-height: auto;
-    padding: 25px;
   }
 
   .course-card-top {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .course-description {

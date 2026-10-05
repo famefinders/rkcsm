@@ -228,122 +228,147 @@ const Courses = () => {
 
             <div className="courses-grid">
 
-              {filteredCourses.map((course) => (
+              {filteredCourses.map((course) => {
+                // Category ke hisaab se card ka background color match kar rahe hain
+                let cardBgColor = "#ffffff";
+                let cardBorderColor = "#e1e4e8";
 
-                <article
-                  className="course-card"
-                  key={course.id}
-                  style={{ overflow: "hidden", borderRadius: "16px", display: "flex", flexDirection: "column" }}
-                >
+                if (course.category === "Computer Science & IT") {
+                  cardBgColor = "#f4f7fa";
+                  cardBorderColor = "#d0d9e2";
+                } else if (course.category === "Media & film") {
+                  cardBgColor = "#faf6f0";
+                  cardBorderColor = "#e6dcd0";
+                } else if (course.category === "Commerce" || course.category === "Management") {
+                  cardBgColor = "#f5f6f8";
+                  cardBorderColor = "#dcdfe5";
+                } else if (course.category === "Law" || course.category === "Education") {
+                  cardBgColor = "#fbf9f5";
+                  cardBorderColor = "#eae3d2";
+                }
 
-                  {/* COURSE CARD TOP IMAGE THUMBNAIL */}
-                  <div style={{ width: "100%", height: "180px", overflow: "hidden", background: "#f0f2f5" }}>
-                    <img 
-                      src={course.image || "/images/bca.jpg"} 
-                      alt={course.title}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "center"
-                      }}
-                    />
-                  </div>
+                return (
+                  <article
+                    className="course-card"
+                    key={course.id}
+                    style={{ 
+                      overflow: "hidden", 
+                      borderRadius: "16px", 
+                      display: "flex", 
+                      flexDirection: "column",
+                      backgroundColor: cardBgColor,
+                      border: `1px solid ${cardBorderColor}`
+                    }}
+                  >
 
-                  <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
-                    <div className="course-card-top">
-
-                      <span className="course-stream">
-                        {course.stream}
-                      </span>
-
-                      <span className="course-number">
-                        {String(course.id).padStart(2, "0")}
-                      </span>
-
+                    {/* COURSE CARD TOP IMAGE THUMBNAIL */}
+                    <div style={{ width: "100%", height: "180px", overflow: "hidden", background: "#101b35" }}>
+                      <img 
+                        src={course.image || "/images/bca.jpg"} 
+                        alt={course.title}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: "center"
+                        }}
+                      />
                     </div>
 
+                    <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
+                      <div className="course-card-top">
 
-                    <h3>{course.title}</h3>
+                        <span className="course-stream" style={{ color: "#d59b24", fontWeight: "700" }}>
+                          {course.stream}
+                        </span>
 
-                    <h4>{course.fullTitle}</h4>
+                        <span className="course-number">
+                          {String(course.id).padStart(2, "0")}
+                        </span>
 
-                    <p className="course-description">
-                      {course.description}
-                    </p>
-
-
-                    <div className="course-meta">
-
-                      <div>
-                        <span>LEVEL</span>
-                        <strong>{course.level}</strong>
                       </div>
 
-                      <div>
-                        <span>DURATION</span>
-                        <strong>{course.duration}</strong>
+
+                      <h3 style={{ color: "#101b35", marginTop: "10px" }}>{course.title}</h3>
+
+                      <h4 style={{ color: "#485365", fontSize: "14px", marginBottom: "15px" }}>{course.fullTitle}</h4>
+
+                      <p className="course-description" style={{ color: "#707887", fontSize: "14px" }}>
+                        {course.description}
+                      </p>
+
+
+                      <div className="course-meta">
+
+                        <div>
+                          <span>LEVEL</span>
+                          <strong>{course.level}</strong>
+                        </div>
+
+                        <div>
+                          <span>DURATION</span>
+                          <strong>{course.duration}</strong>
+                        </div>
+
+                        <div>
+                          <span>MODE</span>
+                          <strong>{course.mode}</strong>
+                        </div>
+
                       </div>
 
-                      <div>
-                        <span>MODE</span>
-                        <strong>{course.mode}</strong>
+
+                      <div className="course-eligibility">
+
+                        <span>ELIGIBILITY</span>
+
+                        <p>{course.eligibility}</p>
+
                       </div>
 
+
+                      <div className="course-highlights">
+
+                        <span>HIGHLIGHTS</span>
+
+                        <ul>
+                          {course.highlights.map((highlight, index) => (
+                            <li key={index}>
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+
+                      </div>
+
+
+                      <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "auto", paddingTop: "15px" }}>
+                        {/* CHECK DETAILS BUTTON */}
+                        <Link
+                          to={`/course-detail?id=${course.id}`}
+                          className="course-enquiry"
+                          style={{ color: "#101b35", fontWeight: "700" }}
+                        >
+                          Check Details
+                          <span>→</span>
+                        </Link>
+
+                        {/* EXISTING ENQUIRE BUTTON */}
+                        <Link
+                          to={`/admissions?course=${encodeURIComponent(
+                            `${course.title} —${course.fullTitle}`
+                          )}`}
+                          className="course-enquiry"
+                        >
+                          Enquire about this course
+                          <span>→</span>
+                        </Link>
+                      </div>
                     </div>
 
-
-                    <div className="course-eligibility">
-
-                      <span>ELIGIBILITY</span>
-
-                      <p>{course.eligibility}</p>
-
-                    </div>
-
-
-                    <div className="course-highlights">
-
-                      <span>HIGHLIGHTS</span>
-
-                      <ul>
-                        {course.highlights.map((highlight, index) => (
-                          <li key={index}>
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
-
-                    </div>
-
-
-                    <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "auto", paddingTop: "15px" }}>
-                      {/* CHECK DETAILS BUTTON */}
-                      <Link
-                        to={`/course-detail?id=${course.id}`}
-                        className="course-enquiry"
-                        style={{ color: "#101b35", fontWeight: "700" }}
-                      >
-                        Check Details
-                        <span>→</span>
-                      </Link>
-
-                      {/* EXISTING ENQUIRE BUTTON */}
-                      <Link
-                        to={`/admissions?course=${encodeURIComponent(
-                          `${course.title} —${course.fullTitle}`
-                        )}`}
-                        className="course-enquiry"
-                      >
-                        Enquire about this course
-                        <span>→</span>
-                      </Link>
-                    </div>
-                  </div>
-
-                </article>
-
-              ))}
+                  </article>
+                );
+              })}
 
             </div>
 
