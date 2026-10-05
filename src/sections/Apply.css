@@ -18,7 +18,7 @@
 ========================= */
 
 .apply-form-section {
-  padding: 90px 0 100px;
+  padding: 130px 0 100px; /* Navbar ke overlap ko hatane ke liye top padding badha di hai */
   background: #fdf8f2;
 }
 
@@ -401,7 +401,7 @@
 
 @media (max-width: 900px) {
   .apply-form-section {
-    padding: 70px 0 80px;
+    padding: 100px 0 80px;
   }
 
   .apply-form-layout {
@@ -440,7 +440,7 @@
   }
 
   .apply-form-section {
-    padding: 50px 0 60px;
+    padding: 80px 0 60px;
   }
 
   .apply-form-intro h1 {
