@@ -17,20 +17,54 @@ const CourseDetail = () => {
 
   return (
     <main className="courses-page" style={{ background: "#f8f9fa" }}>
-      {/* HERO SECTION WITH DYNAMIC COURSE BACKGROUND IMAGE */}
+      {/* HERO SECTION WITH PERFECT FIT IMAGE (NO CUTTING) */}
       <section 
         className="courses-hero reveal-on-scroll" 
         style={{ 
           position: "relative",
-          backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.55), rgba(16, 27, 53, 0.55)), url('${currentBgImage}')`,
           backgroundColor: "#101b35",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          color: "#fff"
+          overflow: "hidden",
+          color: "#fff",
+          padding: "80px 0"
         }}
       >
-        <div className="courses-container">
+        {/* Background Image Container */}
+        <div 
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 1
+          }}
+        >
+          <img 
+            src={currentBgImage} 
+            alt={course.title}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+              opacity: "0.55"
+            }}
+          />
+          {/* Dark Overlay for better text readability */}
+          <div 
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(16, 27, 53, 0.6)"
+            }}
+          />
+        </div>
+
+        {/* Content over image */}
+        <div className="courses-container" style={{ position: "relative", zIndex: 2 }}>
           <div className="courses-hero-content">
             <span className="courses-eyebrow" style={{ color: "#d59b24" }}>{course.stream}</span>
             <h1 style={{ color: "#fff" }}>{course.title}</h1>
