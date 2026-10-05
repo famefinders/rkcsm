@@ -24,7 +24,8 @@ const CourseDetail = () => {
           position: "relative",
           backgroundImage: `linear-gradient(rgba(16, 27, 53, 0.55), rgba(16, 27, 53, 0.55)), url('${currentBgImage}')`,
           backgroundColor: "#101b35",
-          backgroundSize: "cover",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           color: "#fff"
         }}
