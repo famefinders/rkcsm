@@ -49,22 +49,67 @@ const Courses = () => {
   return (
     <main className="courses-page">
 
-      {/* HERO */}
-      <section className="courses-hero reveal-on-scroll">
-        <div className="courses-container">
+      {/* HERO SECTION WITH DYNAMIC COURSES BACKGROUND IMAGE */}
+      <section 
+        className="courses-hero reveal-on-scroll" 
+        style={{ 
+          position: "relative",
+          backgroundColor: "#101b35",
+          overflow: "hidden",
+          color: "#fff",
+          padding: "80px 0"
+        }}
+      >
+        {/* Background Image Container */}
+        <div 
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 1
+          }}
+        >
+          <img 
+            src="/images/courses.jpg" 
+            alt="Courses Hero"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+              opacity: "0.9"
+            }}
+          />
+          {/* Dark Overlay for text readability */}
+          <div 
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(16, 27, 53, 0.25)"
+            }}
+          />
+        </div>
+
+        {/* Content over image */}
+        <div className="courses-container" style={{ position: "relative", zIndex: 2 }}>
           <div className="courses-hero-content">
 
-            <span className="courses-eyebrow">
+            <span className="courses-eyebrow" style={{ color: "#d59b24" }}>
               OUR PROGRAMMES
             </span>
 
-            <h1>
+            <h1 style={{ color: "#fff" }}>
               Find the programme
               <br />
               that fits your future
             </h1>
 
-            <p>
+            <p style={{ color: "#e4e7eb" }}>
               Explore our undergraduate, postgraduate, diploma and professional
               programmes including B.Com, B.Ed, D.El.Ed, LLB and BA.LLB.
             </p>
