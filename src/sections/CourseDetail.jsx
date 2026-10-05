@@ -17,7 +17,7 @@ const CourseDetail = () => {
 
   return (
     <main className="courses-page" style={{ background: "#f8f9fa" }}>
-      {/* HERO SECTION WITH PERFECT FIT IMAGE (NO CUTTING) */}
+      {/* HERO SECTION WITH EDGE-TO-EDGE BANNER IMAGE */}
       <section 
         className="courses-hero reveal-on-scroll" 
         style={{ 
@@ -25,7 +25,7 @@ const CourseDetail = () => {
           backgroundColor: "#101b35",
           overflow: "hidden",
           color: "#fff",
-          padding: "100px 0"
+          padding: "100px 20px"
         }}
       >
         {/* Background Image Container */}
@@ -45,7 +45,7 @@ const CourseDetail = () => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
               objectPosition: "center",
               opacity: "0.9"
             }}
@@ -64,7 +64,7 @@ const CourseDetail = () => {
         </div>
 
         {/* Content over image */}
-        <div className="courses-container" style={{ position: "relative", zIndex: 2 }}>
+        <div className="courses-container" style={{ position: "relative", zIndex: 2, maxWidth: "1200px", margin: "0 auto" }}>
           <div className="courses-hero-content">
             <span className="courses-eyebrow" style={{ color: "#d59b24" }}>{course.stream}</span>
             <h1 style={{ color: "#fff" }}>{course.title}</h1>
