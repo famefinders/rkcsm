@@ -47,7 +47,7 @@ const CourseDetail = () => {
               height: "100%",
               objectFit: "cover",
               objectPosition: "center",
-              opacity: "0.55"
+              opacity: "0.9"
             }}
           />
           {/* Dark Overlay for better text readability */}
@@ -58,7 +58,7 @@ const CourseDetail = () => {
               left: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(16, 27, 53, 0.6)"
+              backgroundColor: "rgba(16, 27, 53, 0.25)"
             }}
           />
         </div>
