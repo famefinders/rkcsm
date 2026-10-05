@@ -25,7 +25,7 @@ const CourseDetail = () => {
           backgroundColor: "#101b35",
           overflow: "hidden",
           color: "#fff",
-          padding: "80px 0"
+          padding: "100px 0"
         }}
       >
         {/* Background Image Container */}
@@ -45,7 +45,7 @@ const CourseDetail = () => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "contain",
               objectPosition: "center",
               opacity: "0.9"
             }}
@@ -58,7 +58,7 @@ const CourseDetail = () => {
               left: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(16, 27, 53, 0.25)"
+              backgroundColor: "rgba(16, 27, 53, 0.3)"
             }}
           />
         </div>
