@@ -97,7 +97,7 @@ const Footer = () => {
         <div className="footer-bottom-links" style={{ display: "flex", alignItems: "center", gap: "15px" }}>
           <a href="/contact">Contact</a>
           <a href="/admissions">Admissions</a>
-          {/* HIDDEN / SUBTLE ADMIN ACCESS LINK */}
+          {/* HIDDEN / SUBTLE ADMIN ACCESS LINK
           <Link 
             to="/admin" 
             style={{ 
@@ -112,7 +112,7 @@ const Footer = () => {
             title="Admin Dashboard"
           >
             • Admin
-          </Link>
+          </Link> */}
         </div>
 
       </div>
