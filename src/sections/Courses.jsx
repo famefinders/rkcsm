@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { COURSES_DATA } from "../data/coursesData";
 import { useScrollReveal } from "../hooks/useScrollReveal";
@@ -6,45 +6,6 @@ import "./Courses.css";
 
 const Courses = () => {
   useScrollReveal(); // Poore page par smooth scroll reveal animation ke liye
-
-  const [search, setSearch] = useState("");
-  const [stream, setStream] = useState("All");
-  const [level, setLevel] = useState("All");
-  const [mode, setMode] = useState("All");
-
-  const filteredCourses = useMemo(() => {
-    return COURSES_DATA.filter((course) => {
-      const searchText = search.toLowerCase();
-
-      const matchesSearch =
-        course.title.toLowerCase().includes(searchText) ||
-        course.fullTitle.toLowerCase().includes(searchText) ||
-        course.description.toLowerCase().includes(searchText);
-
-      const matchesStream =
-        stream === "All" || course.stream === stream;
-
-      const matchesLevel =
-        level === "All" || course.level === level;
-
-      const matchesMode =
-        mode === "All" || course.mode === mode;
-
-      return (
-        matchesSearch &&
-        matchesStream &&
-        matchesLevel &&
-        matchesMode
-      );
-    });
-  }, [search, stream, level, mode]);
-
-  const resetFilters = () => {
-    setSearch("");
-    setStream("All");
-    setLevel("All");
-    setMode("All");
-  };
 
   return (
     <main className="courses-page">
@@ -119,96 +80,13 @@ const Courses = () => {
       </section>
 
 
-      {/* COURSE EXPLORER */}
+      {/* COURSE EXPLORER (BINA FILTERS KE) */}
       <section className="courses-explorer reveal-on-scroll">
 
         <div className="courses-container">
 
-          {/* SEARCH */}
-          <div className="course-search-box">
-
-            <span className="search-icon">⌕</span>
-
-            <input
-              type="text"
-              placeholder="Search courses, e.g. B.Com, LLB, B.Ed, D.El.Ed"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-
-          </div>
-
-
-          {/* FILTERS */}
-          <div className="course-filters">
-
-            <div className="filter-group">
-
-              <label>Stream</label>
-
-              <select
-                value={stream}
-                onChange={(e) => setStream(e.target.value)}
-              >
-                <option>All</option>
-                <option>Computer Science & IT</option>
-                <option>Mass Communication</option>
-                <option>Management</option>
-                <option>Teacher Training & Law</option>
-                <option>Commerce & School</option>
-              </select>
-
-            </div>
-
-
-            <div className="filter-group">
-
-              <label>Level</label>
-
-              <select
-                value={level}
-                onChange={(e) => setLevel(e.target.value)}
-              >
-                <option>All</option>
-                <option>Undergraduate</option>
-                <option>Postgraduate</option>
-                <option>Diploma</option>
-                <option>School</option>
-              </select>
-
-            </div>
-
-
-            <div className="filter-group">
-
-              <label>Mode</label>
-
-              <select
-                value={mode}
-                onChange={(e) => setMode(e.target.value)}
-              >
-                <option>All</option>
-                <option>Full-time</option>
-                <option>Part-time / Weekend</option>
-              </select>
-
-            </div>
-
-
-            {(search || stream !== "All" || level !== "All" || mode !== "All") && (
-              <button
-                className="reset-filters"
-                onClick={resetFilters}
-              >
-                Reset filters
-              </button>
-            )}
-
-          </div>
-
-
           {/* RESULT HEADER */}
-          <div className="courses-result-header">
+          <div className="courses-result-header" style={{ paddingTop: 0 }}>
 
             <div>
               <span className="courses-eyebrow">
@@ -216,179 +94,159 @@ const Courses = () => {
               </span>
 
               <h2>
-                {filteredCourses.length} of {COURSES_DATA.length} programmes
+                {COURSES_DATA.length} Programmes Available
               </h2>
             </div>
 
           </div>
 
 
-          {/* COURSES */}
-          {filteredCourses.length > 0 ? (
+          {/* COURSES GRID */}
+          <div className="courses-grid">
 
-            <div className="courses-grid">
+            {COURSES_DATA.map((course) => {
+              // Category ke hisaab se card ka background color match kar rahe hain
+              let cardBgColor = "#ffffff";
+              let cardBorderColor = "#e1e4e8";
 
-              {filteredCourses.map((course) => {
-                // Category ke hisaab se card ka background color match kar rahe hain
-                let cardBgColor = "#ffffff";
-                let cardBorderColor = "#e1e4e8";
+              if (course.category === "Computer Science & IT") {
+                cardBgColor = "#f4f7fa";
+                cardBorderColor = "#d0d9e2";
+              } else if (course.category === "Media & film") {
+                cardBgColor = "#faf6f0";
+                cardBorderColor = "#e6dcd0";
+              } else if (course.category === "Commerce" || course.category === "Management") {
+                cardBgColor = "#f5f6f8";
+                cardBorderColor = "#dcdfe5";
+              } else if (course.category === "Law" || course.category === "Education") {
+                cardBgColor = "#fbf9f5";
+                cardBorderColor = "#eae3d2";
+              }
 
-                if (course.category === "Computer Science & IT") {
-                  cardBgColor = "#f4f7fa";
-                  cardBorderColor = "#d0d9e2";
-                } else if (course.category === "Media & film") {
-                  cardBgColor = "#faf6f0";
-                  cardBorderColor = "#e6dcd0";
-                } else if (course.category === "Commerce" || course.category === "Management") {
-                  cardBgColor = "#f5f6f8";
-                  cardBorderColor = "#dcdfe5";
-                } else if (course.category === "Law" || course.category === "Education") {
-                  cardBgColor = "#fbf9f5";
-                  cardBorderColor = "#eae3d2";
-                }
+              return (
+                <article
+                  className="course-card"
+                  key={course.id}
+                  style={{ 
+                    overflow: "hidden", 
+                    borderRadius: "16px", 
+                    display: "flex", 
+                    flexDirection: "column", 
+                    backgroundColor: cardBgColor,
+                    border: `1px solid ${cardBorderColor}`
+                  }}
+                >
 
-                return (
-                  <article
-                    className="course-card"
-                    key={course.id}
-                    style={{ 
-                      overflow: "hidden", 
-                      borderRadius: "16px", 
-                      display: "flex", 
-                      flexDirection: "column",
-                      backgroundColor: cardBgColor,
-                      border: `1px solid ${cardBorderColor}`
-                    }}
-                  >
+                  {/* COURSE CARD TOP IMAGE THUMBNAIL */}
+                  <div style={{ width: "100%", height: "180px", overflow: "hidden", background: "#101b35" }}>
+                    <img 
+                      src={course.image || "/images/bca.jpg"} 
+                      alt={course.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center"
+                      }}
+                    />
+                  </div>
 
-                    {/* COURSE CARD TOP IMAGE THUMBNAIL */}
-                    <div style={{ width: "100%", height: "180px", overflow: "hidden", background: "#101b35" }}>
-                      <img 
-                        src={course.image || "/images/bca.jpg"} 
-                        alt={course.title}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          objectPosition: "center"
-                        }}
-                      />
+                  <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
+                    <div className="course-card-top">
+
+                      <span className="course-stream" style={{ color: "#d59b24", fontWeight: "700" }}>
+                        {course.stream}
+                      </span>
+
+                      <span className="course-number">
+                        {String(course.id).padStart(2, "0")}
+                      </span>
+
                     </div>
 
-                    <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
-                      <div className="course-card-top">
 
-                        <span className="course-stream" style={{ color: "#d59b24", fontWeight: "700" }}>
-                          {course.stream}
-                        </span>
+                    <h3 style={{ color: "#101b35", marginTop: "10px" }}>{course.title}</h3>
 
-                        <span className="course-number">
-                          {String(course.id).padStart(2, "0")}
-                        </span>
+                    <h4 style={{ color: "#485365", fontSize: "14px", marginBottom: "15px" }}>{course.fullTitle}</h4>
 
+                    <p className="course-description" style={{ color: "#707887", fontSize: "14px" }}>
+                      {course.description}
+                    </p>
+
+
+                    <div className="course-meta">
+
+                      <div>
+                        <span>LEVEL</span>
+                        <strong>{course.level}</strong>
                       </div>
 
-
-                      <h3 style={{ color: "#101b35", marginTop: "10px" }}>{course.title}</h3>
-
-                      <h4 style={{ color: "#485365", fontSize: "14px", marginBottom: "15px" }}>{course.fullTitle}</h4>
-
-                      <p className="course-description" style={{ color: "#707887", fontSize: "14px" }}>
-                        {course.description}
-                      </p>
-
-
-                      <div className="course-meta">
-
-                        <div>
-                          <span>LEVEL</span>
-                          <strong>{course.level}</strong>
-                        </div>
-
-                        <div>
-                          <span>DURATION</span>
-                          <strong>{course.duration}</strong>
-                        </div>
-
-                        <div>
-                          <span>MODE</span>
-                          <strong>{course.mode}</strong>
-                        </div>
-
+                      <div>
+                        <span>DURATION</span>
+                        <strong>{course.duration}</strong>
                       </div>
 
-
-                      <div className="course-eligibility">
-
-                        <span>ELIGIBILITY</span>
-
-                        <p>{course.eligibility}</p>
-
+                      <div>
+                        <span>MODE</span>
+                        <strong>{course.mode}</strong>
                       </div>
 
-
-                      <div className="course-highlights">
-
-                        <span>HIGHLIGHTS</span>
-
-                        <ul>
-                          {course.highlights.map((highlight, index) => (
-                            <li key={index}>
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-
-                      </div>
-
-
-                      <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "auto", paddingTop: "15px" }}>
-                        {/* CHECK DETAILS BUTTON */}
-                        <Link
-                          to={`/course-detail?id=${course.id}`}
-                          className="course-enquiry"
-                          style={{ color: "#101b35", fontWeight: "700" }}
-                        >
-                          Check Details
-                          <span>→</span>
-                        </Link>
-
-                        {/* EXISTING ENQUIRE BUTTON */}
-                        <Link
-                          to={`/admissions?course=${encodeURIComponent(
-                            `${course.title} —${course.fullTitle}`
-                          )}`}
-                          className="course-enquiry"
-                        >
-                          Enquire about this course
-                          <span>→</span>
-                        </Link>
-                      </div>
                     </div>
 
-                  </article>
-                );
-              })}
 
-            </div>
+                    <div className="course-eligibility">
 
-          ) : (
+                      <span>ELIGIBILITY</span>
 
-            <div className="no-courses">
+                      <p>{course.eligibility}</p>
 
-              <h3>No programmes found</h3>
+                    </div>
 
-              <p>
-                Try changing your search or filters.
-              </p>
 
-              <button onClick={resetFilters}>
-                Show all programmes
-              </button>
+                    <div className="course-highlights">
 
-            </div>
+                      <span>HIGHLIGHTS</span>
 
-          )}
+                      <ul>
+                        {course.highlights.map((highlight, index) => (
+                          <li key={index}>
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+
+                    </div>
+
+
+                    <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "auto", paddingTop: "15px" }}>
+                      {/* CHECK DETAILS BUTTON */}
+                      <Link
+                        to={`/course-detail?id=${course.id}`}
+                        className="course-enquiry"
+                        style={{ color: "#101b35", fontWeight: "700" }}
+                      >
+                        Check Details
+                        <span>→</span>
+                      </Link>
+
+                      {/* EXISTING ENQUIRE BUTTON */}
+                      <Link
+                        to={`/admissions?course=${encodeURIComponent(
+                          `${course.title} —${course.fullTitle}`
+                        )}`}
+                        className="course-enquiry"
+                      >
+                        Enquire about this course
+                        <span>→</span>
+                      </Link>
+                    </div>
+                  </div>
+
+                </article>
+              );
+            })}
+
+          </div>
 
         </div>
       </section>
