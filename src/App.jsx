@@ -22,7 +22,7 @@ import Alumni from "./sections/Alumni";
 import Contact from "./sections/Contact";
 import Gallery from "./sections/Gallery";
 import Recognitions from "./sections/Recognitions";
-import AdminDashboard from "./sections/AdminDashboard";
+//import AdminDashboard from "./sections/AdminDashboard";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -64,7 +64,7 @@ function App() {
 
         <Route path="/recognitions" element={<Recognitions />} />
 
-        <Route path="/admin" element={<AdminDashboard />} />
+        /* <Route path="/admin" element={<AdminDashboard />} /> */
 
         <Route path="/course-detail" element={<CourseDetail />} />
 
